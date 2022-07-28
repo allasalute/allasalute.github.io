@@ -1,0 +1,27 @@
+.c-header {
+  padding-bottom: $global-padding-small;
+  padding-top: 50px;
+  width: 100%;
+
+  @media screen and (max-width: $sm) {
+    margin-top: $global-padding-small;
+  }
+
+  &__logo {
+    background-color: $white;
+    border: 2px solid $global-border-color;
+    border-radius: $global-radius-large;
+    padding: $global-padding-xxsmall $global-padding-small;
+  }
+
+  &__btn {
+    min-width: 128px;
+    height: 50px;
+    margin-left: 12px;
+
+    @media screen and (max-width: $md) {
+      margin-top: $global-padding-small;
+      margin-left: 0px;
+    }
+  }
+}

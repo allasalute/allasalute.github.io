@@ -1,0 +1,10 @@
+.c-landing {
+
+    &__info {
+        width: 31%;
+
+        @media screen and (max-width: $md) {
+            width: auto;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.u-styled-link {
+    color: $purplish-brown;
+    text-decoration: underline;
+  @include font-size(16px, 1.5);
+  font-weight: 500;
+
+    &--inherit {
+        font-size: inherit;
+        color: inherit;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        outline: none;
+    }
+}
+
+.u-link-no-underline {
+    color: $white;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+        outline: none;
+    }
+}
+
+.u-link-no-decoration {
+    text-decoration: none;
+    color: inherit;
+}

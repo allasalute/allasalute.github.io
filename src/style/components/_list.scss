@@ -1,0 +1,30 @@
+.c-list {
+    @include font-size(24px, 1.58);
+    font-weight: bold;
+
+    &__item.is-small {
+        @include font-size(18px, 1.5);
+        font-weight: normal;
+    }
+
+    &__body {
+        @include font-size(18px, 1.5);
+        font-weight: normal;
+        display: block;
+    }
+
+    &__content{
+        padding-left: $global-padding-xlarge;
+
+        &:before {
+            content: '';
+            width: 14px;
+            height: 14px;
+            background-color: $global-brand-color;
+            border-radius: 14px;
+            display: inline-block;
+            margin-left: -$global-padding-xlarge;
+            margin-right: $global-padding-small;
+        }
+    }
+}

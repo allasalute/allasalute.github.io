@@ -1,0 +1,34 @@
+.c-sidebar {
+    flex: 1 1 30%;
+
+    &__inner {
+        background-color: $tint;
+        border-radius: $global-radius-large;
+        padding: $global-padding-xxlarge;
+        display: flex;
+        min-height: 565px;
+        justify-content: center;
+        align-items: center;
+
+        @media screen and (max-width: $md) {
+            min-height: 200px;
+            padding: $global-padding-small;
+        }
+    }
+
+    @media screen and (max-width: $md) {
+        width: 50%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    &.is-wellbeing {
+        .c-sidebar__inner {
+            min-height: auto;
+        }
+        @media screen and (max-width: $sm) {
+            width: 70%;
+        }
+    }
+
+}

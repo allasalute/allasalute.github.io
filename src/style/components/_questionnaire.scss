@@ -1,0 +1,55 @@
+.c-questionnaire {
+    &__radio {
+        width: 31%;
+        @media screen and (max-width: $sm) {
+            width: 48%;
+        }
+
+         &--big {
+                width: 48%;
+         }
+    }
+
+    &__btn {
+        width: 31%;
+
+        @media screen and (max-width: $sm) {
+            width: 100%;
+            margin-bottom: $global-padding-small;
+        }
+    }
+
+    &__radio-wrapper {
+        margin-top: auto;
+        margin-bottom: $global-padding-small;
+
+        &--is-active {
+            .c-questionnaire__radio {
+                opacity: 0.5;
+            }
+            .c-form__group--checked {
+                opacity: 1;
+            }
+        } 
+    }
+
+    &__number {
+         width: 31%;
+         margin-right: $global-padding-large;
+
+         @media screen and (max-width: $sm) {
+             width: 100%;
+             margin-bottom: $global-padding-small;
+             margin-right: 0;
+         }
+    }
+
+    &__drink-card-wrapper {
+        overflow-x: scroll;
+        padding-bottom: $global-padding-medium;
+        
+        .c-drink-card:not(:last-child) {
+            margin-right: $global-padding-large;
+        }
+    }
+}

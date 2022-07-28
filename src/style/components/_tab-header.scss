@@ -1,0 +1,33 @@
+.c-tab-header {
+    background-color: $tint;
+    border-radius: $global-radius-large;
+    padding: 6px;
+    display: flex;
+    align-self: flex-start;
+
+    @media screen and (max-width: $md) {
+        flex-wrap: wrap;
+    }
+
+    &__btn {
+        flex: 1 1 0px;
+        min-width: 90px;
+        line-height: 1.5;
+
+        &:not(:first-child) {
+            margin-left: 6px;
+
+            @media screen and (max-width: $md) {
+                margin-top: 6px;
+            }
+        }
+
+        @media screen and (max-width: $md) {
+            max-width: none;
+        }
+
+         @media screen and (max-width: $sm) {
+             flex: initial;
+         }
+    }
+}

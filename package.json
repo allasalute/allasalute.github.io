@@ -1,0 +1,110 @@
+{
+    "name": "uos-abreast-of-health-website",
+    "homepage": "https://ssannino.github.io",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@sentry/browser": "7.3.0",
+        "@testing-library/jest-dom": "5.16.4",
+        "@testing-library/react": "13.3.0",
+        "@testing-library/user-event": "14.2.1",
+        "classnames": "2.3.1",
+        "core-js": "3.23.2",
+        "flow-bin": "0.181.0",
+        "flow-typed": "^2.1.2",
+        "gh-pages": "^4.0.0",
+        "i18next": "21.8.10",
+        "i18next-browser-languagedetector": "6.1.4",
+        "moment": "2.29.3",
+        "node-sass": "7.0.1",
+        "prop-types": "15.8.1",
+        "react": "18.2.0",
+        "react-app-polyfill": "3.0.0",
+        "react-cookie": "4.1.1",
+        "react-datepicker": "4.8.0",
+        "react-dom": "18.2.0",
+        "react-focus-lock": "2.9.1",
+        "react-ga": "3.3.1",
+        "react-i18next": "11.17.2",
+        "react-redux": "8.0.2",
+        "react-responsive": "9.0.0-beta.10",
+        "react-router-dom": "5.2.0",
+        "react-scripts": "^5.0.1",
+        "redux": "4.2.0",
+        "redux-logger": "^3.0.6",
+        "redux-mock-store": "^1.5.4",
+        "redux-persist": "^6.0.0",
+        "redux-promise-middleware": "^6.1.2",
+        "redux-thunk": "^2.3.0",
+        "sanitize.css": "^12.0.1",
+        "superagent": "^5.3.1",
+        "url-search-params-polyfill": "^8.1.0"
+    },
+    "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "flow": "flow",
+        "flow:update-lib-types": "flow-typed install --ignoreDeps dev",
+        "test": "react-scripts test",
+        "test:coverage": "react-scripts test --verbose --coverage",
+        "eject": "react-scripts eject",
+        "version": "echo $npm_package_name@$npm_package_version",
+        "lint": "node_modules/.bin/eslint ./src/ --max-warnings=0"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "plugin:jsx-a11y/recommended",
+            "plugin:prettier/recommended"
+        ],
+        "plugins": [
+            "jsx-a11y"
+        ]
+    },
+    "prettier": {
+        "arrowParens": "avoid",
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false,
+        "printWidth": 120,
+        "semi": true,
+        "singleQuote": false,
+        "tabWidth": 2,
+        "trailingComma": "none",
+        "useTabs": false
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "src/**/*.js": [
+            "eslint"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all",
+            "ie 11"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version",
+            "ie 11"
+        ]
+    },
+    "devDependencies": {
+        "eslint-config-prettier": "8.5.0",
+        "eslint-plugin-jsx-a11y": "6.6.1",
+        "eslint-plugin-prettier": "4.2.1",
+        "husky": "8.0.1",
+        "lint-staged": "13.0.3",
+        "prettier": "^2.7.1",
+        "testing-library": "^0.0.2"
+    }
+}

@@ -1,0 +1,945 @@
+{
+	"translation": {
+		"alcoholRisks": {
+			"title": "Risks",
+			"strapline": "Research shows that regularly drinking alcohol is associated with a higher risk of developing breast cancer. <0>{{list}}</0>",
+			"list": [
+				"Your risk of breast cancer will depend on how much alcohol you tend to drink.",
+				"The more alcohol you regularly drink, the more likely you are to develop breast cancer at some point in your life.",
+				"Even drinking just two units of alcohol a day can increase risk."
+			],
+			"body": "Breast cancer increases with the number of units of alcohol drunk per day <0>{{list}}</0>",
+			"statisticsList": [
+				"Out of 100 women who do not drink, 11 will probably develop breast cancer in their lifetime.",
+				"Out of 100 women who drink 2 units of alcohol a day (for example, a standard glass of wine), about 14 will develop breast cancer in their lifetime.",
+				"In other words, drinking 2 units of alcohol a day results in 3 extra women out of 100 developing breast cancer."
+			],
+			"ctas": [
+				"See how your drink measures up",
+				"Tips and tricks on cutting down"
+			],
+			"graphAltText": "A graph showing 'how many units of alcohol drunk per day' on the x-axis with 'number of women out of 100 with breast cancer' on the y-axis. The graph shows how drinking more units of alcohol a day, increases the likelihood of having breast cancer.",
+			"source": "Source: Breast Cancer Now. Information last reviewed: November 2017. Adapted with thanks to Breast Cancer Now."
+		},
+		"common": {
+			"add": "Add one {{measurement}}",
+			"appName": "Abreast of health",
+			"appDescription": "How can you improve your breast health?",
+			"cancel": "Cancel",
+			"close": "Close",
+			"endSession": "End Session",
+			"false": "False",
+			"next": "Next",
+			"myData": "My Data",
+			"learnMore": "Learn More",
+			"learnMoreAltText": "Learn More about {{topic}}",
+			"select": "Select...",
+			"previous": "Previous",
+			"findOutNow": "Find out now",
+			"reset": "Reset",
+			"results": "My Results",
+			"risks": "Risks",
+			"subtract": "Subtract one {{measurement}}",
+			"true": "True",
+			"home": "Home"
+		},
+		"cookies": {
+			"banner": {
+				"acceptAll": "Accept all Cookies",
+				"manageCookies": "Manage Cookies",
+				"message": "We use cookies to collect information about how you use our website to ensure we give you the best experience possible."
+			},
+			"title": "Cookie Preferences",
+			"subHeading": "We use cookies to collect information about how you use our website to ensure we give you the best experience possible. You can manage your cookies in the table below.",
+			"headers": {
+				"cookie": "Cookie",
+				"name": "Name",
+				"purpose": "Purpose",
+				"toggle": "Enabled"
+			},
+			"body": {
+				"ga": "Google Analytics (Optional)",
+				"gaPurpose": "These cookies are used to collect information about how visitors use our website. We use the information to compile reports and to help us improve the website. The cookies collect information in a way that does not directly identify anyone, including the number of visitors to the website, where visitors have come to the website from and the pages they visited.",
+				"gaPurposeToggle": "Toggle the Google analytics cookie setting",
+				"optIn": "Cookie Opt in (Strictly necessary)",
+				"optInPurpose": "We use this cookie to remember your preference to accept or reject the Google Analytics cookies.",
+				"seen": "Seen cookie page (Strictly necessary)",
+				"seenPurpose": "We use this cookie to remember you have visited the cookie preferences page and hide the cookie banner pop up on subsequent visits to this website."
+			}
+		},
+		"changeMyRisks": {
+			"title": "Keep Your Breasts Healthy",
+			"strapline": "There are many different things that affect a woman’s risk of developing breast cancer.",
+			"canChange": {
+				"title": "Things you can change",
+				"body": "Although there are risk factors for breast cancer which you cannot change, you can reduce your risk of breast cancer by paying attention to your lifestyle. \n\nResearchers estimate that 19% of breast cancer in the UK can be attributed to physical inactivity, being overweight and drinking alcohol. \n\nTo reduce your risk of breast cancer \n<0>{{list}}</0>",
+				"list": [
+					"Women who are overweight or obese after the menopause have a higher risk of breast cancer than women who are a healthy weight. Younger women who gain weight during their adult life are also at an increased risk. You can reduce your personal risk of breast cancer by maintaining a healthy weight.",
+					"Doing regular physical activity helps to maintain a healthy weight but also helps to reduce breast cancer risk in other ways.",
+					"Alcohol alone is thought to be responsible for 7% of breast cancers in the UK and may in fact be one of the easiest factors to change."
+				],
+				"listHeaders": [
+					"Be a healthy weight",
+					"Be physically active",
+					"Limit how much alcohol you drink"
+				],
+				"ctas": [
+					"Breast cancer risk and body weight",
+					"Breast cancer risk and alcohol",
+					"Breast cancer risk and physical activity"
+				],
+				"source": "Source: Cancer Research UK, Breast cancer risk factors, Accessed May 2018."
+			},
+			"cannotChange": {
+				"title": "Things you cannot change",
+				"body": "Some of these factors are difficult or not possible to change. These include: \n <0>{{list}}</0>",
+				"list": [
+					"Women are much more likely to develop breast cancer than men.",
+					"Older women have a higher chance of developing breast cancer than younger women. The NHS invites women aged 47 to 73 years to attend breast screening once every three years. Those above the age of 73 years can self-refer to the program through their GP.",
+					"Some women (around 15% of all women who develop breast cancer) have a strong family history of breast cancer and approximately 5% of women with breast cancer have inherited a change in a particular gene that means that they have a high risk of developing this disease. You can read more about this on Breast Cancer Now's website. If you think you may have a strong family history of breast cancer, or believe you are at increased risk, then please do talk to your GP about your concern."
+				],
+				"listHeaders": [
+					"Being Female",
+					"Age",
+					"Family History & Genes"
+				],
+				"otherFactors": "Other factors \n<0>{{list}}</0>",
+				"otherFactorsListHeaders": [
+					"Life Events",
+					"Hormone Therapies"
+				],
+				"otherFactorsList": [
+					"Starting your periods at an older age, having children, and breastfeeding are all linked to a lower risk of developing breast cancer later in life.",
+					"Taking hormone replacement therapy (HRT) or the contraceptive pill can also affect your risk of developing breast cancer. If this is something you are worried about we recommend that you discuss this with your GP."
+				]
+			},
+			"source": "Source: Cancer Research UK, Breast cancer risk factors, Accessed May 2018."
+		},
+		"diet": {
+			"title": "Eat Well",
+			"body": "Eating well is a good way of maintaining a healthy weight, which keeps your risks of breast and bowel cancer, heart and cardiovascular disease low. The Government recommends that you try to: <0>{{list}}</0>",
+			"list": [
+				"Eat at least 5 portions of a variety of fruit and vegetables every day",
+				"Base meals on potatoes, bread, rice, pasta and other starchy carbohydrates; choosing wholegrain versions where possible",
+				"Have some dairy or dairy alternatives; choosing lower fat and lower sugar options",
+				"Eat some beans, pulses, fish, eggs, meat and other proteins (including 2 portions of fish every week, one of which should be oily)",
+				"Choose unsaturated oils and spreads and eat in small amounts",
+				"Drink 6 to 8 cups/glasses of fluid a day",
+				"If consuming foods and drinks high in fat, salt or sugar have these less often and in small amounts."
+			]
+		},
+		"drinks": {
+			"common": {
+				"alcoholContent": "Alcohol content: {{unit}} units",
+				"ABV": "(ABV {{percentage}}%",
+				"drinkInfo": "{{count}} unit - {{abv}}%",
+				"drinkInfo_plural": "{{count}} units - {{abv}}%",
+				"half": "Half",
+				"equivalentTo": "Equivalent to: {{number}} heaped teaspoons of sugar",
+				"calories": "Calories: {{calories}} kcal (Cal)",
+				"container": {
+					"bottle": "Bottle",
+					"pint": "Pint",
+					"smallCan": "Small can",
+					"largeCan": "Large can",
+					"smallGlass": "Small glass",
+					"standardGlass": "Standard glass",
+					"largeGlass": "Large glass",
+					"glass": "Glass"
+				}
+			},
+			"tag": "{{name}}, {{unit}} units - {{abv}}%",
+			"lowStrengthPint": {
+				"name": "Lower strength beer/cider (pint)"
+			},
+			"higherStrengthPint": {
+				"name": "Higher strength beer/cider (pint)"
+			},
+			"lowStrengthCan": {
+				"name": "Lower strength beer/cider (500ml)"
+			},
+			"higherStrengthCan": {
+				"name": "Higher strength beer/cider (500ml)"
+			},
+			"higherStrengthLagerSmallCan": {
+				"name": "Higher strength lager"
+			},
+			"higherStrengthLagerLargeCan": {
+				"name": "Higher strength lager"
+			},
+			"higherStrengthLagerBottle": {
+				"name": "Higher strength lager"
+			},
+			"smallWine": {
+				"name": "Wine (125ml)"
+			},
+			"regularWine": {
+				"name": "Wine (175ml)"
+			},
+			"largeWine": {
+				"name": "Wine (250ml)"
+			},
+			"bottleWine": {
+				"name": "Wine (bottle)"
+			},
+			"champagne": {
+				"name": "Champagne (175ml)"
+			},
+			"alcopop": {
+				"name": "Alcopop (275ml)"
+			},
+			"singleSpirit": {
+				"name": "Spirit (single)"
+			},
+			"doubleSprit": {
+				"name": "Spirit (double)"
+			},
+			"creamliqueur": {
+				"name": "Irish cream liqueur (double)"
+			},
+			"fortified_wine": {
+				"name": "Port or Sherry (50ml)"
+			},
+			"pimms": {
+				"name": "Pimm's or similar (double)"
+			}
+		},
+		"footer": {
+			"accessibility": "Accessibility Statement",
+			"privacy": "Privacy Policy"
+		},
+		"header": {
+			"logoAlt": "Abreast Of Health"
+		},
+		"homeTiles": {
+			"improveBreastHealth": {
+				"title": "Improve Your Breast Health",
+				"subHeading": "Learn about the myths and how you can increase your likelihood of having the best breast health."
+			},
+			"factors": {
+				"title": "Factors That Impact Your Breast Health",
+				"alcohol": "Alcohol related factors.",
+				"other": "Other related factors."
+			},
+			"changeMyRisks": {
+				"title": "Keep Your Breasts Healthy",
+				"strapline": "Best practices to maintain healthy breasts."
+			},
+			"alcoholRisks": {
+				"title": "Risks",
+				"strapline": "Research shows that regularly drinking alcohol decreases your breast health."
+			},
+			"whatsInMyDrink": {
+				"title": "What’s in Your Drink?",
+				"strapline": "Learn about the units within your drink and what they equate to in calories."
+			},
+			"topTips": {
+				"title": "Top Tips",
+				"strapline": "There are many benefits of reducing your alcohol intake."
+			},
+			"weight": {
+				"title": "Weight"
+			},
+			"stayingActive": {
+				"title": "Physical Activity"
+			},
+			"diet": {
+				"title": "A healthy diet",
+				"strapline": "What you eat is important for your weight and future health."
+			},
+			"myths": {
+				"title": "Breast Health Myths",
+				"strapline": "There are many myths and misconceptions about breast health."
+			},
+			"wellbeing": {
+				"title": "Wellbeing"
+			},
+			"smoking": {
+				"title": "Smoking"
+			}
+		},
+		"howIsThisPage": {
+			"title": "How is this page?",
+			"good": "Good",
+			"indifferent": "Indifferent",
+			"bad": "Bad",
+			"thanks": "Thanks for your feedback."
+		},
+		"intro": {
+			"title": "How can you be more healthy?",
+			"body": "This app is designed to give you information about health risks and easy ways to stay in good health. This includes:",
+			"list": {
+				"one": "Alcohol and smoking habits",
+				"two": "Body weight",
+				"three": "Physical Exercise"
+			},
+			"subtext": "It only takes 5 minutes and is completely anonymous"
+		},
+		"myths": {
+			"title": "Breast Cancer Myths",
+			"myth": "myth",
+			"risk": "risk",
+			"body": "There are many myths and misconceptions about what can raise your risk of developing cancer. Try the quiz below to see whether you know what’s fact and what’s fiction for your breast health. \n\nSelect which factors you think are a risk factor for developing breast cancer.",
+			"deodorant": {
+				"category": "Deodorant",
+				"title": "Does deodorant increase breast cancer risks?",
+				"false": "Well done! There is no good evidence to suggest that deodorants affect your risk of developing breast cancer. Women are advised to avoid using a deodorant, antiperspirant or talc containing aluminium when they go for a mammogram only because the aluminium might show up on the x-ray image and give an inaccurate reading.",
+				"true": "Actually, it isn’t a risk! There is no good evidence to suggest that deodorants affect your risk of developing breast cancer. Women are advised to avoid using a deodorant, antiperspirant or talc containing aluminium when they go for a mammogram only because the aluminium might show up on the x-ray image and give an inaccurate reading"
+			},
+			"obesity": {
+				"category": "Obesity",
+				"title": "Does obesity increase breast cancer risks?",
+				"false": "Actually, it is a risk! Putting on weight in adulthood (after the age of 18) increases your risk of developing breast cancer after the menopause. Being overweight or obese after the menopause increases your risk of breast cancer.",
+				"true": "Correct answer! Putting on weight in adulthood (after the age of 18) increases your risk of developing breast cancer after the menopause. Being overweight or obese after the menopause increases your risk of breast cancer."
+			},
+			"hrt": {
+				"category": "HRT",
+				"title": "Does HRT increase breast cancer risks?",
+				"false": "Actually, it is a risk! Using HRT to treat menopausal symptoms can slightly increase your risk of breast cancer during the years you take it. The longer you use HRT, the greater your risk. But once you stop taking HRT, this risk will begin to fall. Within a year or two, it will be about the same as if you had never taken it.",
+				"true": "Correct answer! Using HRT to treat menopausal symptoms can slightly increase your risk of breast cancer during the years you take it. The longer you use HRT, the greater your risk. But once you stop taking HRT, this risk will begin to fall. Within a year or two, it will be about the same as if you had never taken it."
+			},
+			"underwireBra": {
+				"category": "Underwired Bras",
+				"title": "Do underwired bras increase breast cancer risks?",
+				"false": "Correct answer! Wearing underwired bras does not affect your risk of developing breast cancer. Some studies have suggested underwired bras restrict movement of lymph fluid, however, there is no evidence to suggest this is the case, or that wearing any kind of bra affects your breast cancer risk. In fact, a good-fitting bra provides support. Women should be properly measured for their bras, which should be tried on to ensure a good fit. Bras that do not fit properly can cause discomfort and breast or back pain.",
+				"true": "Actually, it isn’t a risk! Wearing underwired bras does not affect your risk of developing breast cancer. Some studies have suggested underwired bras restrict movement of lymph fluid, however, there is no evidence to suggest this is the case, or that wearing any kind of bra affects your breast cancer risk. In fact, a good-fitting bra provides support. Women should be properly measured for their bras, which should be tried on to ensure a good fit. Bras that do not fit properly can cause discomfort and breast or back pain."
+			},
+			"alcohol": {
+				"category": "Alcohol",
+				"title": "Does alcohol increase breast cancer risks?",
+				"false": "Actually, it is a risk! Research shows that regularly drinking alcohol is associated with a higher risk of developing breast cancer. Your risk of breast cancer will depend on how much alcohol you tend to drink. The more alcohol you drink regularly, the more likely you are to develop breast cancer at some point in your life. Even drinking just one drink a day can increase your risk.",
+				"true": "Correct answer! Research shows that regularly drinking alcohol is associated with a higher risk of developing breast cancer. Your risk of breast cancer will depend on how much alcohol you tend to drink. The more alcohol you drink regularly, the more likely you are to develop breast cancer at some point in your life. Even drinking just one drink a day can increase your risk."
+			}
+		},
+		"offline": {
+			"title": "Offline",
+			"subtitle": "You have lost internet connection. You may experience some issues using the site while offline, so please re-connect to continue."
+		},
+		"onboarding": {
+			"title": "How can I improve my \nbreast health?",
+			"body": "This app is designed to give you information about health risks and easy ways to stay in good health. This includes: \n\n <0>{{list}}</0>",
+			"list": [
+				"Alcohol and smoking habits",
+				"Body weight",
+				"Physical exercise"
+			],
+			"infoCard": {
+				"time": "Around 1 minute",
+				"questions": "6 Questions",
+				"data": "Anonymous Data"
+			}
+		},
+		"progressBar": "{{current}} / {{max}} - {{category}}",
+		"progressBarAltText": "Section {{current}} out of {{max}}, this section is about {{category}}.",
+		"questionnaire": {
+			"showResult": "Show Result",
+			"unitsKey": "Units Key",
+			"one": {
+				"title": "How often do you have a drink containing alcohol?",
+				"category": "Alcohol",
+				"questions": {
+					"question-one-1": {
+						"label": "Never"
+					},
+					"question-one-2": {
+						"label": "Monthly",
+						"sublabel": "or Less"
+					},
+					"question-one-3": {
+						"label": "2 - 4",
+						"sublabel": "Times a Month"
+					},
+					"question-one-4": {
+						"label": "2 - 3",
+						"sublabel": "Times a Week"
+					},
+					"question-one-5": {
+						"label": "4 - 5",
+						"sublabel": "Times a Week"
+					},
+					"question-one-6": {
+						"label": "6+",
+						"sublabel": "Times a Week"
+					}
+				}
+			},
+			"two": {
+				"title": "How many units of alcohol do you drink on a typical day when you are drinking?",
+				"category": "Alcohol",
+				"questions": {
+					"question-two-1": {
+						"label": "1 - 2",
+						"sublabel": "Units"
+					},
+					"question-two-2": {
+						"label": "3 - 4",
+						"sublabel": "Units"
+					},
+					"question-two-3": {
+						"label": "5 - 6",
+						"sublabel": "Units"
+					},
+					"question-two-4": {
+						"label": "7 - 9",
+						"sublabel": "Units"
+					},
+					"question-two-5": {
+						"label": "10 - 15",
+						"sublabel": "Units"
+					},
+					"question-two-6": {
+						"label": "16+",
+						"sublabel": "Units"
+					}
+				}
+			},
+			"three": {
+				"title": "How often do you have six or more units of alcohol on one occasion?",
+				"category": "Alcohol",
+				"questions": {
+					"question-three-1": {
+						"label": "Never"
+					},
+					"question-three-2": {
+						"label": "Less than monthly"
+					},
+					"question-three-3": {
+						"label": "Monthly"
+					},
+					"question-three-4": {
+						"label": "Weekly"
+					},
+					"question-three-5": {
+						"label": "Daily or almost daily"
+					}
+				}
+			},
+			"four": {
+				"title": "Do you smoke cigarettes at all nowadays?",
+				"category": "Smoking",
+				"questions": {
+					"question-four-1": {
+						"label": "Yes"
+					},
+					"question-four-2": {
+						"label": "Sometimes"
+					},
+					"question-four-3": {
+						"label": "No"
+					}
+				},
+				"questionOptions": [
+					"Yes",
+					"No"
+				]
+			},
+			"five": {
+				"title": "How tall are you without shoes?",
+				"category": "Height",
+				"questions": {
+					"question-five-1": {
+						"label": {
+							"ft": "Feet",
+							"inch": "Inches",
+							"cm": "Centimetres"
+						},
+						"tab": {
+							"one": "ft / in",
+							"two": "cm"
+						},
+						"tabAltText": {
+							"one": "Enter your height using feet and inches",
+							"two": "Enter your height using centimetres"
+						}
+					}
+				}
+			},
+			"six": {
+				"title": "How much do you weigh without clothes and shoes?",
+				"category": "Weight",
+				"questions": {
+					"question-six-1": {
+						"label": {
+							"st": "Stone",
+							"lbs": "Pounds",
+							"kg": "Kilograms"
+						},
+						"tab": {
+							"one": "st / lbs",
+							"two": "kg"
+						},
+						"tabAltText": {
+							"one": "Enter your weight using stone and pounds",
+							"two": "Enter your height using kilograms"
+						}
+					}
+				}
+			},
+			"measurements": {
+				"ft": "Foot",
+				"st": "Stone",
+				"lbs": "Pound",
+				"kg": "Kilogram",
+				"cm": "Centimetres",
+				"inch": "Inch"
+			}
+		},
+		"questionnaireResults": {
+			"title": "Your Feedback",
+			"alcoholIntake": {
+				"title": "Your Alcohol Intake",
+				"error": "Error in the drinkcat algorithm. Please mention this to research staff!",
+				"intro": {
+					"drinkCategoryOne": {
+						"body": "Your answers suggest you are drinking at lower risk levels. \n\n Drinking little or no alcohol brings many health benefits, including keeping risks of breast cancer low."
+					},
+					"drinkCategoryTwo": {
+						"body": "Your answers suggest you are drinking at lower risk levels. \n\n Drinking little or no alcohol brings many health benefits, including keeping risks of breast cancer low."
+					},
+					"drinkCategoryZero": {
+						"title": "You said you drink little or no alcohol.",
+						"subHeading": "Drinking little or no alcohol brings many health benefits, including keeping risks of breast cancer low."
+					},
+					"drinkCategoryThree": {
+						"title": "You may be drinking close to 14 units of alcohol per week.",
+						"body": "You could reduce your chances of disease and improve your future health by making a few changes to your drinking."
+					},
+					"drinkCategoryFour": {
+						"body": "You drink {{averageWeekUnits}} units of alcohol per week, on average.\n\n You could reduce your chances of disease and improve your future health by making a few changes to your drinking. \n <0>{{list}}</0>",
+						"list": [
+							"Reducing your alcohol intake by as little as {{unit}} unit per week ({{number}} standard 175ml glasses of wine) would reduce your risks to lower levels.",
+							"Drinking less alcohol reduces your risk of developing conditions such as cancers, heart or liver disease."
+						],
+						"listMultiple": [
+							"Reducing your alcohol intake by as little as {{unit}} units per week ({{number}} standard 175ml glasses of wine) would reduce your risks to lower levels.",
+							"Drinking less alcohol reduces your risk of developing conditions such as cancers, heart or liver disease."
+						]
+					},
+					"drinksCategoryFive": {
+						"body": "You drink {{averageWeekUnits}} units of alcohol per week, on average.\n\n You could reduce your chances of disease and improve your future health by making a few changes to your drinking.\n <0>{{list}}</0>",
+						"list": [
+							"Reducing your alcohol intake will reduce your chances of having conditions such as cancers, heart or liver disease, or alcohol dependence.",
+							"The lower the amount of alcohol you drink, the lower your chances are to have these conditions."
+						]
+					},
+					"drinkCategorySix": {
+						"body": "You drink {{averageWeekUnits}} units of alcohol per week, on average.\n\n Your answers suggest that although you rarely drink alcohol, you drink more than 5 units (for instance, half a bottle of wine) when you do. \n\nYou could significantly reduce your risk of harm on the days you drink by having no more than 5 units of alcohol.",
+						"list": [
+							"Reducing your alcohol intake will reduce your chances of having conditions such as cancers, heart or liver disease, or alcohol dependence.",
+							"The lower the amount of alcohol you drink, the lower your chances are to have these conditions."
+						]
+					},
+					"drinkCategorySeven": {
+						"body": "You drink at lower risks levels: {{averageWeekUnits}} units of alcohol per week, on average"
+					},
+					"other": {
+						"title": "According to the data you just provided, you may be drinking {{number}} units of alcohol per week, on average."
+					}
+				}
+			},
+			"comparedToOthers": {
+				"title": "What do you drink compared to others?",
+				"percentageBar": {
+					"clinic": {
+						"ctaText": "In this clinic",
+						"caption": "{{percentage}} percent of women drink less alcohol"
+					},
+					"england": {
+						"ctaText": "In England",
+						"caption": "{{percentage}}% of women drink less alcohol"
+					}
+				}
+			},
+			"deptOfHealthRecommendations": {
+				"title": "To maintain good health, the Department of Health recommends to: <0>{{list}}</0>",
+				"list": [
+					"Not drink more than 14 units of alcohol a week.",
+					"Not drink 6 units or more on a single occasion.",
+					"Have several alcohol-free days each week."
+				],
+				"cta": "Find out what is in your drink"
+			},
+			"alcoholRisks": {
+				"title": "Risks of alcohol-related harm"
+			},
+			"smoking": {
+				"title": "Your Smoking",
+				"smoker": {
+					"list": [
+						"Every month, over a third of smokers attempt to quit.",
+						"On any attempt, 18% of people seeking to quit succeed."
+					],
+					"support": "Support and medication are available to help with this, <0>{{link}}</0>.",
+					"supportLink": "click here to find out more"
+				},
+				"nonSmoker": {
+					"list": [
+						"You said you do not smoke.",
+						"Not smoking is one of the best ways to stay healthy."
+					]
+				}
+			},
+			"weight": {
+				"title": "Your Weight",
+				"bmiCategories": {
+					"one": [
+						"Based on your answers, your body mass index (BMI) is {{bmi}}. A BMI below 18.5 means your weight is low.",
+						"If you are concerned about this, please seek advice from your GP."
+					],
+					"two": [
+						"Based on your answers, you have a healthy weight.",
+						"Keeping a weight below {{stone}}st {{lbs}}lb ({{kilos}}kg) is a good way to stay healthy."
+					],
+					"three": [
+						"Based on your answers, your body mass index may be a little high.",
+						"Doctors recommend a healthy weight to keep risks of illness low.",
+						"For women your height, this is likely to be under {{stone}}st {{lbs}}lb ({{kilos}}kg).",
+						"You can find easy tips on healthy eating and keeping active under ‘Home’."
+					],
+					"four": [
+						"Based on your answers, your body mass index may be high.",
+						"Doctors recommend aiming for a healthy weight to keep risks of illness low.",
+						"For women your height, this is likely to be under {{stone}}st {{lbs}}lb ({{kilos}}kg).",
+						"You can find easy tips on healthy eating and keeping active under ‘Home’."
+					]
+				}
+			}
+		},
+		"session": {
+			"end": "End of session",
+			"endBody": "Your session has ended, please complete the questionnaire again to view your results."
+		},
+		"share": {
+			"title": "Share",
+			"success": "URL Copied to clipboard"
+		},
+		"smoking": {
+			"title": "Smoking",
+			"body": "Cutting down or stopping smoking is one of the best things you can do to prevent a range of health problems. \n\nHere are some things you can do if you smoke: \n\n <0>{{list}}</0>",
+			"list": [
+				"Sign up to <a href=\"https://www.nhs.uk/smokefree\" rel=\"noreferrer noopener\" target=\"_blank\">NHS Smokefree</a> to receive free tips, support and motivation.",
+				"Call the Smokefree National Helpline on 0300 123 1044 to speak to a trained adviser"
+			]
+		},
+		"stayingActive": {
+			"title": "Staying Active",
+			"researchListTitle": "Research studies have shown that: <0>{{list}}</0>",
+			"researchList": [
+				"30 minutes of physical activity a day or 3 ½ hours a week can reduce your risk of breast cancer by at least 20%",
+				"It doesn't matter what sort of activity you do, it is the amount that makes a difference",
+				"What matters is that the activity gets you warmer, breathing harder, and your heart beating faster."
+			],
+			"activityBenefitsListTitle": "Regular physical activity is sometimes described as a wonder drug. People who do regular physical activity have: <0>{{list}}</0>",
+			"activityBenefitsList": [
+				"Up to a 50% lower risk of colon cancer and type 2 diabetes",
+				"Up to a 35% lower risk of coronary heart disease or stroke",
+				"Up to a 30% lower risk of depression or dementia",
+				"Up to an 80% lower risk of osteoarthritis."
+			],
+			"nhsRecommendationListTitle": "To stay healthy, the NHS recommends that you: <0>{{list}}</0>",
+			"nhsRecommendationList": [
+				"Aim to be active daily",
+				"Do at least 150 minutes of moderate physical activity every week (for instance cycling or brisk walking), or at least 75 minutes of vigorous physical activity",
+				"Do strength exercises on 2 or more days a week that work all the major muscles (legs, hips, back, abdomen, chest, shoulders and arms)",
+				"Minimise the amount of time you spend sitting."
+			],
+			"activityList": [
+				"Walking or cycling to work",
+				"Getting off the bus one stop before your destination",
+				"Going for a walk or a ride with friends rather than meeting for coffee."
+			],
+			"activityListTitle": "Don't worry about hitting these targets straight away.",
+			"activityListStrapline": "Choose an activity you enjoy and fits in your daily life. The easiest way is to build activity into the things you do every day, for instance: <0>{{list}}</0> Additional information:",
+			"additionalInformation": "Additional information",
+			"moderatePhysicalActivity": {
+				"ctaText": "What is moderate physical activity?",
+				"modal": {
+					"title": "Moderate physical activity",
+					"body": "Moderate activity will raise your heart rate, and make you breathe faster and feel warmer. One way to tell if you're working at a moderate level is if you can still talk, but you can't sing the words to a song.\n\nExamples of moderate-intensity activities:\n\n <0>{{list}}</0>",
+					"list": [
+						"Walking briskly (3 miles per hour or faster, but not race-walking)",
+						"Riding a bike on level ground or with few hills (10 to 12 miles per hour)",
+						"Water aerobics",
+						"Doubles tennis",
+						"Dancing",
+						"General gardening."
+					]
+				}
+			},
+			"vigorousPhysicalActivity": {
+				"ctaText": "What is vigorous physical activity?",
+				"modal": {
+					"title": "Vigorous physical activity",
+					"body": "Vigorous activity makes you breathe hard and fast. If you're working at this level, you won't be able to say more than a few words without pausing for breath. \n\nIn general, 75 minutes of vigorous activity can give similar health benefits to 150 minutes of moderate activity.\n\nExamples of vigorous-intensity activities include:\n\n <0>{{list}}</0>",
+					"list": [
+						"Jogging or running",
+						"Riding a bike fast (14 miles per hour or faster) or on hills",
+						"Swimming lapses",
+						"Singles tennis",
+						"Football, basketball or rugby",
+						"Martial arts."
+					]
+				}
+			},
+			"peopleWithADisability": {
+				"ctaText": "People with a disability",
+				"modal": {
+					"title": "People with a disability",
+					"body": "NHS recommendations are no different for people with learning or physical disabilities. \n\nYet, some people may feel it is harder for them to meet these recommendations. Here are ways you can increase your physical activity if you face such obstacles.\n\n <0>{{list}}</0> \n\n Find accessible sports and classes close to your home on <1>Activity Alliance</1>.",
+					"list": [
+						"If you can walk, there's no easier way to increase your activity levels. Try to include walking in your daily routine. Find a friend to walk with or join a walking group for some extra motivation.",
+						"Adapted cycles make cycling accessible to all. Special bikes such as tricycles, quadcycles, hand-powered bikes called handcycles, and power-assisted bicycles that suit a variety of learning or physical needs. Find out more on <a href=\"https://www.cyclinguk.org/article/cycling-guide/guide-to-adapted-cycles\" rel=\"noreferrer noopener\" target=\"_blank\">Cycling UK</a> or <a href=\"https://wheelsforwellbeing.org.uk/\" rel=\"noreferrer noopener\" target=\"_blank\">Wheels for Wellbeing</a>.",
+						"If you can run, try the popular <a href=\"https://www.nhs.uk/live-well/exercise/couch-to-5k-week-by-week/\" rel=\"noreferrer noopener\" target=\"_blank\">NHS Couch to 5K</a> running plan.",
+						"Low-impact exercises such as yoga, pilates and tai chi have been adapted to suit the needs of people with different types of disabilities. Get advice first, however, especially if you have a physical impairment – exercises not suited to your impairment may be harmful."
+					]
+				}
+			},
+			"olderFallRisk": {
+				"ctaText": "Older adults with a limiting condition or a risk of fall",
+				"modal": {
+					"title": "Older adults with a limiting condition or a risk of fall",
+					"body": "Older adults at risk of falls, such as people with weak legs, poor balance and some medical conditions, should do exercises to improve balance and co-ordination on at least two days a week. \n\nExamples include yoga, tai chi and dancing."
+				}
+			},
+			"youngPeople": {
+				"ctaText": "Young people (5 to 18 years old)",
+				"modal": {
+					"title": "Young people (5 to 18 years old)",
+					"body": "To stay healthy, the NHS recommends that children and young people do: \n\n <0>{{list}}</0> \n\n Children and young people should reduce the time they spend sitting watching TV, playing computer games and travelling by car when they could walk or cycle instead.",
+					"list": [
+						"At least 60 minutes of physical activity every day, whether moderate or vigorous",
+						"On three days a week, these activities should involve exercises for strong muscles, such as push-ups, and exercises for strong bones, such as jumping and running"
+					]
+				}
+			}
+		},
+		"topTips": {
+			"title": "Top Tips",
+			"body": "Struggling to cut down or think you might have a problem with drinking? There’s lots of help out there and a good place to start is with a visit to your GP. \n\nYou can call Drinkline free on 0300 123 1110 or find local services on NHS Choices. You can also visit Soberistas to speak to others who are stopping drinking.",
+			"benefitsListTitle": "There are many benefits of reducing your alcohol intake, for example:\n\n <0>{{list}}</0>",
+			"benefitsList": [
+				"feel healthier",
+				"save some cash",
+				"have more energy."
+			],
+			"tipsListHeading": "Tips to keep your alcohol intake down",
+			"makeAPlan": {
+				"ctaText": "Make a plan",
+				"modal": {
+					"title": "Make a plan",
+					"body": "<0>{{list}}</0>",
+					"list": [
+						"Give yourself goals, for instance, keeping a number of days free of alcohol every week or not drinking more than a certain number of units of alcohol on any occasion you might drink alcohol.",
+						"Give yourself a realistic timeframe to cut down.",
+						"Many people find it helpful to write down goals and keep a diary of how much they drink. It keeps them motivated and helps them measure their success. Try using an app or a diary template."
+					],
+					"externalLink": "Try the NHS Drinks Tracker app",
+					"externalLinkTwo": "Download a diary template"
+				}
+			},
+			"changeDrink": {
+				"ctaText": "Change your drink",
+				"modal": {
+					"title": "Change your drink",
+					"body": "Cut down the alcohol by swapping strong beers or wines for ones with a lower strength (e.g. 5% to 4%) or go for smaller sizes - try bottled beer instead of pints, or a small glass of wine instead of a large one.",
+					"list": [],
+					"externalLink": "See how your drinks measure up"
+				}
+			},
+			"getOthersInvolved": {
+				"ctaText": "Get others involved",
+				"modal": {
+					"title": "Get others involved",
+					"body": "<0>{{list}}</0>",
+					"list": [
+						"If you let your friends and family know you're cutting down and it's important to you, you could get support from them.",
+						"You could even join in on events like Dry January.",
+						"If you regularly drink at home, you can also decide to limit your drinking to social occasions, or outside your home."
+					]
+				}
+			},
+			"setBudget": {
+				"ctaText": "Set a budget",
+				"modal": {
+					"title": "Set a budget",
+					"body": "Only take a fixed amount of money to spend on alcohol, and avoid drinking in rounds with other people."
+				}
+			},
+			"takeABreak": {
+				"ctaText": "Take a Break",
+				"modal": {
+					"title": "Take a Break",
+					"body": "Have several drink-free days each week. \n\nThe Department of Health recommends that you drink no more than 14 units a week, and keep several alcohol-free days every week.",
+					"list": []
+				}
+			},
+			"stayHydrated": {
+				"ctaText": "Stay hydrated",
+				"modal": {
+					"title": "Stay hydrated",
+					"body": "Have a glass of water before you have alcohol and alternate alcoholic drinks with water or a soft drink.\n\n You can try experimenting with some tasty non-alcoholic drinks or mocktails. \n\nFor some inspiration visit <1>www.joinclubsoda.co.uk<1>."
+				}
+			}
+		},
+		"unitKey": {
+			"title": "This is one unit of alcohol...",
+			"singleUnits": {
+				"halfPint": {
+					"title": "Half Pint",
+					"description": "Regular beer, lager or cider"
+				},
+				"halfGlass": {
+					"title": "Half Glass",
+					"description": "Half a 175ml glass of wine"
+				},
+				"singleSpirit": {
+					"title": "Single Spirit",
+					"description": "1 single measure of spirit"
+				},
+				"smallGlass": {
+					"title": "Small Glass",
+					"description": "1 small glass of sherry"
+				},
+				"singleAperitifs": {
+					"title": "Single Aperitifs",
+					"description": "1 single measure of aperitifs"
+				}
+			}
+		},
+		"weight": {
+			"title": "Weight",
+			"body": "Being overweight or obese generally increases risks of breast cancer.  Even a 5% reduction in body weight cuts risks of cancer. Take action to be a healthy body weight: <0>{{list}}</0>",
+			"list": [
+				"Weigh yourself weekly – keep an eye on clothes that are starting to feel tight",
+				"Adjust your diet and physical activity to keep a healthy weight."
+			],
+			"mainLinksTitle": "The main links between weight and increased risk of breast cancer are: <0>{{mainLinksList}}</0>",
+			"mainLinksList": [
+				"Putting on weight in adulthood increases your risk of developing breast cancer after the menopause. The more weight a woman gains over the course of her adult life, the higher the risk of developing breast cancer will be after she has gone through the menopause.",
+				"Being overweight or obese after the menopause increases your risk of breast cancer. This is likely to be because fat tissue becomes your main source of the female hormones oestrogen after you have been through the menopause. The more body fat you have, the higher your levels of oestrogen are likely to be and this, in turn, may increase your risk of breast cancer."
+			]
+		},
+		"wellbeing": {
+			"title": "Wellbeing",
+			"body": "Tap on a number to learn more.",
+			"moreInfo": "For helpful tips and apps to improve your health and wellbeing visit <0>{{link}}</0>",
+			"moreInfoLink": "www.nhs.uk/oneyou",
+			"imageCredit": "Infographic vector created by Freepik",
+			"infoCtas": {
+				"moodAndAnxiety": {
+					"ctaText": "{{number}}: Improve your mood and reduce anxiety",
+					"modal": {
+						"title": "Improve your mood and reduce anxiety",
+						"body": "Many people drink alcohol to relax and combat feelings of stress, but alcohol’s effect on the brain actually increases feelings of depression and anxiety over time, and reduces the likelihood of you using other ways (e.g walks, chatting with friends, reading) that help keep stress levels under control and built up your resilience to stress. \n\nWhy not make a list of 10 things, not involving alcohol you could do to reduce stress? Commit to trying at least one a week."
+					}
+				},
+				"dementia": {
+					"ctaText": "{{number}}: Better focus and lower risks of dementia",
+					"modal": {
+						"title": "Better focus and lower risks of dementia",
+						"body": "Under construction"
+					}
+				},
+				"liver": {
+					"ctaText": "{{number}}: A healthy liver",
+					"modal": {
+						"title": "A healthy liver",
+						"body": "Under construction"
+					}
+				},
+				"hairSkinNails": {
+					"ctaText": "{{number}}: Healthy skin, hair and nails",
+					"modal": {
+						"title": "Healthy skin, hair and nails",
+						"body": "Healthy skin, hair and nails can really improve how healthy you look. \n\nAlcohol dehydrates the skin making it look dull and tired. It also dilates the facial blood vessels, the cause of spidery red thread veins. Many alcoholic drinks are also high in sugar, which can cause inflammation and insulin spikes, which lead to puffy skin. \n\n Your hair and nails will also benefit from good levels of hydration, as regular alcohol can leave them dry and brittle. \n\nIf you are feeling thirsty, why not replace drinks containing alcohol with ones that hydrate the body instead?"
+					}
+				},
+				"sleep": {
+					"ctaText": "{{number}}: Improve Your Sleep",
+					"modal": {
+						"title": "Improve Your Sleep",
+						"body": "People often think that drinking alcohol helps them get to sleep. It may help make you sleepy, but research shows it stops you from sleeping deeply by disrupting your natural sleep cycle, leaving you tired the next day. \n\nMany people find that by reducing their alcohol consumption they sleep more deeply, and feel refreshed in the morning."
+					}
+				},
+				"nutrition": {
+					"ctaText": "{{number}}: Improved nutrition",
+					"modal": {
+						"title": "Improved nutrition",
+						"body": "Alcohol is packed with calories that contain no nutritional value and can lower blood sugar levels making you feel hungry and more likely to overeat food that is high in sugar and fat. \n\nSee how many calories you can save by reducing the amount you drink."
+					}
+				},
+				"heart": {
+					"ctaText": "{{number}}: Protect your heart and circulation",
+					"modal": {
+						"title": "Protect your heart and circulation",
+						"body": "Under construction"
+					}
+				},
+				"digestion": {
+					"ctaText": "{{number}}: Healthy digestion and low risks of cancer",
+					"modal": {
+						"title": "Improved digestion",
+						"body": "Under construction"
+					}
+				},
+				"staySafe": {
+					"ctaText": "{{number}}: Staying safe",
+					"modal": {
+						"title": "Stay safe",
+						"body": "Drinking too much, too quickly, on any single occasion can increase your risk of accidents (including falls), impair your judgment so you may think something is safe when it isn’t, and result in you doing things (driving, having unsafe sex, starting an argument) which you know you would not choose to do if you were fully in control. \n\nPerhaps you could set yourself a limit on how much you will drink to stay safe and in control of what you do and say?"
+					}
+				}
+			}
+		},
+		"whatsInYourDrink": {
+			"addDrink": "Add drink: {{drink}}",
+			"addMore": "Add More",
+			"calculate": "Calculate",
+			"choose": "Choose from a range of {{number}} drinks",
+			"clearTotal": "Clear Total",
+			"kcal": "{{number}} kcal",
+			"removeDrink": "Remove drink: {{drink}}",
+			"title": "What’s In Your Drink",
+			"tooltip": "Add a drink to get started",
+			"steps": {
+				"one": {
+					"title": "Step 1: Select a drink"
+				},
+				"two": {
+					"title": "Step 2: Enter quantity"
+				},
+				"three": {
+					"title": "Step 3: Check the total"
+				}
+			},
+			"ukUnitInfo": {
+				"title": "Units of alcohol",
+				"body": "A UK unit is worth: <0>{{list}}</0>",
+				"list": [
+					"10 millilitres",
+					"8 grams of pure alcohol"
+				],
+				"additionalContent": "It is also sometimes called a 'standard drink'."
+			},
+			"deptOfHealth": {
+				"title": "The doctors' recommendation",
+				"body": "The Department of Health recommends that you: <0>{{list}}</0>",
+				"list": [
+					"Drink under 14 units a week",
+					"Keep at least 2 days free of alcohol each week",
+					"Never drink more than 6 units in a single session"
+				]
+			},
+			"reset": "Reset",
+			"results": {
+				"title": "Results"
+			},
+			"spoonsOfSugar": "{{number}} teaspoons of sugar",
+			"total": "+{{total}}",
+			"units": "<value>{{value}}</value> Total Units",
+			"viewTotal": "View Items",
+			"calories": "<value>{{value}}</value> Total Calories",
+			"food": "<value>{{value}}</value> Food equivalent"
+		}
+	}
+}

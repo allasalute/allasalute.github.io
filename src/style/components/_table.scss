@@ -1,0 +1,77 @@
+.c-table {
+  width: 100%;
+  color: $darker-pink;
+  thead {
+     text-align: left;
+     background-color: $tint;
+
+     th {
+      padding: 12px 6px;
+      @include font-size(18px, 1.5);
+     }
+  }
+  tbody {
+    td {
+      padding: 12px 6px;
+      max-width: 300px;
+    }
+  }
+  @media screen and (max-width: $sm) {
+    > thead,
+    > tfoot {
+      @include visually-hidden();
+    }
+
+    > tbody {
+      display: block;
+
+      > tr {
+        display: block;
+        border-radius: 2px;
+        padding: 68px 16px 16px 16px;
+        position: relative;
+
+        > td {
+          display: block;
+          border: none;
+          padding: 0 0 12px 0;
+          white-space: pre-wrap;
+          overflow: auto;
+          max-width: unset;
+
+          &[data-title] {
+            &:before {
+              content: attr(data-title);
+              display: block;
+              font-size: inherit;
+              font-weight: bold;
+              @include font-size(18px, 1.5);
+            }
+          }
+
+          &:first-of-type {
+            position: absolute;
+            top: 0px;
+            font-weight: bold;
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            left: 0;
+            right: 0;
+            padding: 16px 16px 12px 16px;
+            background-color: $tint;
+            @include font-size(18px, 1.5);
+
+            @media screen and (min-width: $sm) {
+              @include font-size(18px);
+            }
+
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

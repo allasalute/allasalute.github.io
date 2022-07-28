@@ -1,0 +1,55 @@
+.c-home {
+    &__coloured-row {
+        background-color: $tint;
+        padding-bottom: $global-padding-xlarge;
+    }
+
+    &__row {
+        margin-left: -$global-padding-xsmall;
+        margin-right: -$global-padding-xsmall;
+        
+        @media screen and (max-width: $md) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+    }
+    &__card {
+        padding: 0;
+        margin-left: $global-padding-xsmall;
+        margin-right: $global-padding-xsmall;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        @media screen and (max-width: $md) {
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: $global-padding-large;
+        }
+    }
+
+    &__card-inner {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 0%;
+        min-height: 170px;
+        padding: $global-padding-xlarge $global-padding-large $global-padding-large;
+    }
+
+    &__card-title {
+        @include font-size(24px, 1.58);
+    }
+
+    &__card-body {
+        margin-top: $global-padding-xsmall;
+    }
+
+    &__card-cta {
+        margin-top: $global-padding-large;
+        min-width: 0;
+        height: auto;
+        padding-left: $global-padding-xsmall;
+        padding-right: $global-padding-xsmall;
+    }
+}

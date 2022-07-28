@@ -1,0 +1,45 @@
+.c-drink-card {
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 208px;
+  width: 15%;
+  background-color: $white;
+  border-radius: $global-radius-large;
+  padding: $global-padding-xxsmall $global-padding-small $global-padding-small;
+  position: relative;
+  justify-content: space-between;
+
+  &__title {
+    @include font-size(20px, 1.5);
+  }
+
+  &__subtitle {
+    padding-left: $global-padding-xxsmall;
+    padding-right: $global-padding-xxsmall;
+  }
+
+  &__btn {
+    background-position: 50% 50%;
+    min-height: 60px;
+    padding: 0;
+    min-width: 60px;
+    width: 60px;
+    border-radius: 60px;
+    background-repeat: no-repeat;
+    margin-bottom: -46px;
+
+    &:hover,
+    &:focus {
+      background-color: $dark-pink;
+    }
+
+    &--add {
+      background-image: url("../../assets/images/icons/button/plus.svg");
+    }
+
+    &--remove {
+      background-color: $darker-pink;
+      background-image: url("../../assets/images/icons/button/white_remove.svg");
+    }
+  }
+}

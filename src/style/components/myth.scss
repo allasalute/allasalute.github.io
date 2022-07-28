@@ -1,0 +1,39 @@
+.c-myth {
+    &__radio {
+        width: 31%;
+        margin-right: $global-padding-large;
+        @media screen and (max-width: $sm) {
+            width: 48%;
+            margin-right: 0;
+        }
+
+        &.is-incorrect {
+            .c-form__checkbox-label--checked:before,
+            .c-form__radio-label--checked:before {
+                background-image: url("../../assets/images/icons/error-icon.svg");
+            }
+        }
+    }
+
+    &__btn {
+        width: 31%;
+        @media screen and (max-width: $sm) {
+            width: 100%;
+            margin-bottom: $global-padding-small;
+        }
+    }
+
+    &__radio-wrapper {
+        margin-top: auto;
+        margin-bottom: $global-padding-small;
+
+        &--is-active {
+            .c-questionnaire__radio {
+                opacity: 0.5;
+            }
+            .c-form__group--checked {
+                opacity: 1;
+            }
+        } 
+    }
+}
