@@ -24,7 +24,7 @@ const UnitKey = props => {
       title: t("unitKey.singleUnits.halfGlass.title"),
       description: t("unitKey.singleUnits.halfGlass.description"),
       image: wineImage
-      },
+    },
     {
       id: "singleAperitifs",
       title: t("unitKey.singleUnits.singleAperitifs.title"),

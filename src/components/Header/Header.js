@@ -29,14 +29,8 @@ type Props = {
 };
 
 const Header = (props: Props): Element<any> => {
-  const {
-    isResultsBtnVisible,
-    isHomeBtnVisible,
-    isShareVisible,
-    isEndSessionBtnVisible,
-    endSession,
-    className
-  } = props;
+  const { isResultsBtnVisible, isHomeBtnVisible, isShareVisible, isEndSessionBtnVisible, endSession, className } =
+    props;
   const isMobile = useMediaQuery({ maxWidth: responsiveBreakpoint.md });
   const [copySuccess, setCopySuccess] = useState(false);
   const history = useHistory();

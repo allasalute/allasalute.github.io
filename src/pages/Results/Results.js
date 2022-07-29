@@ -182,44 +182,43 @@ function Results(props: Props): Element<any> {
           </section>
         </div>
         <div className={wrapperClasses} data-testid="drinker-comparison">
-            <aside className="c-sidebar">
-              <div className="c-sidebar__inner">
-                <img
-                  className="u-responsive-image"
-                  src={images.units}
-                  srcSet={`${images.units} 1x, ${images.units2x} 2x, ${images.units3x} 3x`}
-                  alt=""
-                  role="presentation"
-                />
-              </div>
-            </aside>
-            <section className={classes}>
-              <h2 className="u-margin-top-none u-margin-bottom">{t("questionnaireResults.comparedToOthers.title")}</h2>
-                          <div className="c-info u-flex--column">
-                              <p className="c-info__heading u-margin-vertical-none">
-                                  {t("questionnaireResults.comparedToOthers.percentageBar.england.ctaText")}
-                              </p>
-                              <p className="u-margin-vertical-none">
-                                  {t("questionnaireResults.comparedToOthers.percentageBar.england.caption", {
-                                      percentage: getEngPercentile(audit1, audit2, audit3)
-                                  })}
-                              </p>
-                              <p className="u-margin-none">
-                                  <Trans
-                                      i18nKey="questionnaireResults.deptOfHealthRecommendations.title"
-                                      values={{ list: t("questionnaireResults.deptOfHealthRecommendations.list") }}
-                                      components={[
-                                          <List
-                                              items={t("questionnaireResults.deptOfHealthRecommendations.list", { returnObjects: true })}
-                                          ></List>
-                                      ]}
-                                  ></Trans>
-                              </p>
-                          </div>
-            </section>
+          <aside className="c-sidebar">
+            <div className="c-sidebar__inner">
+              <img
+                className="u-responsive-image"
+                src={images.units}
+                srcSet={`${images.units} 1x, ${images.units2x} 2x, ${images.units3x} 3x`}
+                alt=""
+                role="presentation"
+              />
+            </div>
+          </aside>
+          <section className={classes}>
+            <h2 className="u-margin-top-none u-margin-bottom">{t("questionnaireResults.comparedToOthers.title")}</h2>
+            <div className="c-info u-flex--column">
+              <p className="c-info__heading u-margin-vertical-none">
+                {t("questionnaireResults.comparedToOthers.percentageBar.england.ctaText")}
+              </p>
+              <p className="u-margin-vertical-none">
+                {t("questionnaireResults.comparedToOthers.percentageBar.england.caption", {
+                  percentage: getEngPercentile(audit1, audit2, audit3)
+                })}
+              </p>
+              <p className="u-margin-none">
+                <Trans
+                  i18nKey="questionnaireResults.deptOfHealthRecommendations.title"
+                  values={{ list: t("questionnaireResults.deptOfHealthRecommendations.list") }}
+                  components={[
+                    <List
+                      items={t("questionnaireResults.deptOfHealthRecommendations.list", { returnObjects: true })}
+                    ></List>
+                  ]}
+                ></Trans>
+              </p>
+            </div>
+          </section>
         </div>
         )
-
         <div className={wrapperClasses}>
           <aside className="c-sidebar">
             <div className="c-sidebar__inner">
