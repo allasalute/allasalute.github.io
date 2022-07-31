@@ -14,7 +14,6 @@ import Button from "components/Elements/Button/Button";
 import Modal from "components/Elements/Modal/Modal";
 import ProgressBar from "components/Elements/ProgressBar/ProgressBar";
 import { type QuestionList, type Question, type Response, type Option, type UnitTypeEnum } from "constants/types";
-
 import TabHeader from "components/Elements/TabHeader/TabHeader";
 
 type Props = {
@@ -61,7 +60,7 @@ const Questions = (props: Props): Element<any> => {
     responseSelected && "c-questionnaire__radio-wrapper--is-active"
   );
 
-  const useMountEffect = fuctionToRun => useEffect(fuctionToRun, []);
+  const useMountEffect = props => useEffect();
 
   useEffect(() => {
     if (responses?.length >= questionCount && responses?.[questionCount]?.value) {

@@ -1,4 +1,4 @@
-export default () => {
+const AppErr = props => {
   return next => action => {
     // If not a promise, continue on
     if (!action?.payload?.promise) {
@@ -13,3 +13,4 @@ export default () => {
     });
   };
 };
+export default AppErr;
