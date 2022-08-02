@@ -22,8 +22,8 @@ it("List Renders Correctly", async () => {
   act(() => {
     createRoot(container);
   });
-  //const button = container.querySelector("[data-testid='list'");
+  const button = container.querySelector("[data-testid='list'");
 
-  //expect(button.nodeName).toBe("SPAN");
-  //expect(button.className).toContain("c-list");
+  expect(button.nodeName).toBe("SPAN");
+  expect(button.className).toContain("c-list");
 });

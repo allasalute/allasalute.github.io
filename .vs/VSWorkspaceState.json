@@ -1,16 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\src",
-    "\\src\\components",
-    "\\src\\components\\Elements",
-    "\\src\\components\\Elements\\List",
-    "\\src\\components\\Elements\\List\\__tests__",
-    "\\src\\components\\Questions",
-    "\\src\\pages",
-    "\\src\\pages\\Results",
-    "\\src\\pages\\Results\\__tests__"
+    "\\src"
   ],
-  "SelectedNode": "\\src\\components\\Elements\\List\\__tests__\\List-test.js",
   "PreviewInSolutionExplorer": false
 }
