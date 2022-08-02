@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.github",
-    "\\.github\\workflows",
-    "\\.yarn",
     "\\src",
-    "\\src\\assets",
-    "\\src\\assets\\images",
-    "\\src\\assets\\images\\charts",
     "\\src\\components",
-    "\\src\\hoc"
+    "\\src\\components\\Elements",
+    "\\src\\components\\Elements\\List",
+    "\\src\\components\\Elements\\List\\__tests__",
+    "\\src\\components\\Questions",
+    "\\src\\pages",
+    "\\src\\pages\\Results",
+    "\\src\\pages\\Results\\__tests__"
   ],
-  "SelectedNode": "\\src\\hoc\\withTracker.js",
+  "SelectedNode": "\\src\\components\\Elements\\List\\__tests__\\List-test.js",
   "PreviewInSolutionExplorer": false
 }
