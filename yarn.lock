@@ -5252,10 +5252,10 @@
     "flatted" "^3.1.0"
     "rimraf" "^3.0.2"
 
-"flatted@^3.1.0":
-  "integrity" "sha512-WIWGi2L3DyTUvUrwRKgGi9TwxQMUEqPOPQBVi71R96jZXJdFskXEmf54BoZaS1kknGODoIGASGEzBUYdyMCBJg=="
-  "resolved" "https://registry.npmjs.org/flatted/-/flatted-3.2.5.tgz"
-  "version" "3.2.5"
+"flatted@*", "flatted@^3.1.0":
+  "integrity" "sha512-0sQoMh9s0BYsm+12Huy/rkKxVu4R1+r96YX5cG44rHV0pQ6iC3Q+mkoMFaGWObMFYQxCVT+ssG1ksneA2MI9KQ=="
+  "resolved" "https://registry.npmjs.org/flatted/-/flatted-3.2.6.tgz"
+  "version" "3.2.6"
 
 "flow-bin@0.181.0":
   "integrity" "sha512-JVuD0GN9IhAj0WgS3e2BDstTOpx4KmYMTdiVSjeeLud49gs8EN5Ah/Jw59d7rdSXn1fTodoepPe1cKwleDoEag=="

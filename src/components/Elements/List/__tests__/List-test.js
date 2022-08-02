@@ -1,8 +1,7 @@
-import React from "react";
+//import React from "react";
 import { createRoot } from "react-dom/client";
-import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
-import List from "../List";
+//import List from "../List";
 
 let container = null;
 beforeEach(() => {
@@ -23,7 +22,7 @@ it("List Renders Correctly", async () => {
   act(() => {
     createRoot(container);
   });
-  const button = container.querySelector("[data-testid='list'");
+  //const button = container.querySelector("[data-testid='list'");
 
   //expect(button.nodeName).toBe("SPAN");
   //expect(button.className).toContain("c-list");
