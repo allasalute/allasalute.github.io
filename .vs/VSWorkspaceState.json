@@ -1,15 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\public",
     "\\src",
-    "\\src\\components",
-    "\\src\\components\\Elements",
-    "\\src\\components\\Elements\\List",
-    "\\src\\components\\Elements\\List\\__tests__",
-    "\\src\\pages",
-    "\\src\\pages\\Results",
-    "\\src\\pages\\Results\\__tests__"
+    "\\src\\assets",
+    "\\src\\assets\\images",
+    "\\src\\assets\\images\\charts",
+    "\\src\\assets\\images\\charts\\units",
+    "\\src\\assets\\images\\navbar",
+    "\\src\\hoc",
+    "\\src\\routes"
   ],
-  "SelectedNode": "\\src\\pages\\Results\\__tests__\\Results-test.js",
+  "SelectedNode": "\\src\\hoc\\withTracker.js",
   "PreviewInSolutionExplorer": false
 }
