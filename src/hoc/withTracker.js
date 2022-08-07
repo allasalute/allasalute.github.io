@@ -3,7 +3,7 @@ import ReactGA from "react-ga";
 import { cookieNames } from "constants/cookies";
 import { useCookies } from "react-cookie";
 
-export default (WrappedComponent, options = {}) => {
+const Tracker (WrappedComponent, options = {}) => {
   const hasGaCookie = cookies => {
     let found = false;
     cookieNames.ga.forEach(name => (found = cookies[name] !== undefined));
@@ -52,3 +52,5 @@ export default (WrappedComponent, options = {}) => {
 
   return HOC;
 };
+
+export default Tracker
