@@ -1,7 +1,7 @@
-//import React from "react";
-import { createRoot } from "react-dom/client";
+import React from "react";
+import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
-//import List from "../List";
+import List from "../List";
 
 let container = null;
 beforeEach(() => {
@@ -12,18 +12,17 @@ beforeEach(() => {
 
 afterEach(() => {
   // cleanup on exiting
-  const root = createRoot(container);
-  root.unmount();
+  unmountComponentAtNode(container);
   container.remove();
   container = null;
 });
 
 it("List Renders Correctly", async () => {
   act(() => {
-    createRoot(container);
+    render(<List items={["one", "two"]} />, container);
   });
   const button = container.querySelector("[data-testid='list'");
 
-  //expect(button.nodeName).toBe("SPAN");
-  //expect(button.className).toContain("c-list");
+  expect(button.nodeName).toBe("SPAN");
+  expect(button.className).toContain("c-list");
 });

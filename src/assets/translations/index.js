@@ -1,6 +1,5 @@
 import en from "./ita.json";
 
-const CostantEn = {
+export default {
   en: en
 };
-export default CostantEn;

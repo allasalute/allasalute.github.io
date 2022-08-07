@@ -16,7 +16,7 @@ import Wellbeing from "pages/Wellbeing/Wellbeing";
 import TopTips from "pages/TopTips/TopTips";
 import StayingActive from "pages/StayingActive/StayingActive";
 
-const AppRoutes = props => {
+export default props => {
   return (
     <Switch>
       <Route exact path="/" component={Landing} />
@@ -39,4 +39,3 @@ const AppRoutes = props => {
     </Switch>
   );
 };
-export default AppRoutes;

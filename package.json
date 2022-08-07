@@ -10,7 +10,6 @@
         "@testing-library/user-event": "14.2.1",
         "classnames": "2.3.1",
         "core-js": "3.23.2",
-        "flatted": "^3.2.6",
         "flow-bin": "0.181.0",
         "flow-typed": "^2.1.2",
         "gh-pages": "^4.0.0",
