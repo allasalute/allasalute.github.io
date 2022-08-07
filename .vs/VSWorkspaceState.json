@@ -1,6 +1,15 @@
 {
   "ExpandedNodes": [
-    "\\src"
+    "",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\Elements",
+    "\\src\\components\\Elements\\List",
+    "\\src\\components\\Elements\\List\\__tests__",
+    "\\src\\pages",
+    "\\src\\pages\\Results",
+    "\\src\\pages\\Results\\__tests__"
   ],
+  "SelectedNode": "\\src\\pages\\Results\\__tests__\\Results-test.js",
   "PreviewInSolutionExplorer": false
 }
