@@ -8,7 +8,7 @@ const initialState = {
 };
 
 // Reducer
-export default (state = initialState, action = {}) => {
+export default function SetState(state = initialState, action = {}) {
   switch (action.type) {
     case SET_SEARCH_QUERY:
     case SET_REDIRECT:
@@ -16,7 +16,7 @@ export default (state = initialState, action = {}) => {
     default:
       return state;
   }
-};
+}
 
 // Action Creators
 export const setSearchQuery = query => {

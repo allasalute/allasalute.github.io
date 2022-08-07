@@ -1,6 +1,8 @@
 import { useLocation } from "react-router-dom";
 import "url-search-params-polyfill";
 
-export default () => {
-  return new URLSearchParams(useLocation().search);
+const App = props => {
+  new URLSearchParams(useLocation().search);
 };
+
+export default App;

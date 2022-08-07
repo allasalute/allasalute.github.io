@@ -37,7 +37,7 @@ export const initialState = {
   hasStarted: false
 };
 
-export default (state = initialState, action = {}) => {
+export default function QuestState(state = initialState, action = {}) {
   switch (action.type) {
     case GET_QUESTIONNAIRE:
       return { ...state, getQuestionnaire: action.payload };
@@ -55,7 +55,7 @@ export default (state = initialState, action = {}) => {
     default:
       return state;
   }
-};
+}
 
 export const updateResponse = payload => {
   return {
