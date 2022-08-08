@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
     "\\src",
-    "\\src\\assets",
-    "\\src\\assets\\images",
-    "\\src\\assets\\images\\charts",
-    "\\src\\assets\\images\\charts\\units",
-    "\\src\\assets\\images\\navbar",
+    "\\src\\components",
+    "\\src\\components\\Elements",
+    "\\src\\components\\Elements\\List",
+    "\\src\\components\\Elements\\List\\__tests__",
     "\\src\\hoc",
-    "\\src\\routes"
+    "\\src\\hooks",
+    "\\src\\pages",
+    "\\src\\pages\\Questionnaire"
   ],
-  "SelectedNode": "\\src\\hoc\\withTracker.js",
+  "SelectedNode": "\\src\\hooks\\useQuery.js",
   "PreviewInSolutionExplorer": false
 }

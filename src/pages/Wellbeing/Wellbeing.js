@@ -1,7 +1,7 @@
 // @flow
 
 import React, { useState, type Element } from "react";
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import classnames from "classnames";
@@ -138,25 +138,8 @@ function Wellbeing(props: Props): Element<any> {
             <h3 className="u-h4 u-margin-top-none u-margin-bottom">
               {t(`wellbeing.infoCtas.${selectedOption}.modal.title`)}
             </h3>
-            <p className="u-margin-top-none u-margin-bottom">
-              {t(`wellbeing.infoCtas.${selectedOption}.modal.body`)}
-              <Trans
-                i18nKey={`wellbeing.moreInfo`}
-                values={{ link: t(`wellbeing.moreInfoLink`) }}
-                components={[
-                  <a
-                    href="https://www.salute.gov.it/portale/alcol/dettaglioContenutiAlcol.jsp?lingua=italiano&id=5526&area=alcol&menu=vuoto"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="u-styled-link u-styled-link--inherit"
-                  >
-                    {t(`wellbeing.moreInfoLink`)}
-                  </a>
-                ]}
-              ></Trans>
-            </p>
+            <p className="u-margin-top-none u-margin-bottom">{t(`wellbeing.infoCtas.${selectedOption}.modal.body`)}</p>
           </div>
-
           <Link
             to="/home"
             className="c-button c-button--primary c-button--md u-margin-top-huge u-text-center u-flex--align-self-end"
