@@ -4,7 +4,7 @@ import React, { useEffect, useState, type Element } from "react";
 import ReactGA from "react-ga";
 import { type Location } from "react-router-dom";
 import { type QuestionList, type Response } from "constants/types";
-import CartaBevande from "assets/images/drinks/result.svg";
+import CartaBevande from "assets/images/drinks/CartaBevandeUfficiale.svg";
 import drinkingImage from "assets/images/illustrations/drinking.svg";
 import smokerImage from "assets/images/illustrations/smoker.svg";
 import heightImage from "assets/images/illustrations/height.svg";
@@ -46,8 +46,6 @@ function Questionnaire(props: Props): Element<any> {
     switch (questionNumber) {
       case 0:
       case 1:
-        setImage(CartaBevande);
-        break;
       case 2:
         setImage(CartaBevande);
         break;
