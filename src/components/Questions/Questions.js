@@ -61,25 +61,24 @@ const Questions = (props: Props): Element<any> => {
     responseSelected && "c-questionnaire__radio-wrapper--is-active"
   );
 
-  const useMountEffect = props =>
-    useEffect(() => {
-      if (responses?.length >= questionCount && responses?.[questionCount]?.value) {
-        if (questionCount < 4) {
-          setRadio(responses[questionCount].value);
-        } else {
-          setResponseSelected(responses[questionCount].value);
-        }
+  useEffect(() => {
+    if (responses?.length >= questionCount && responses?.[questionCount]?.value) {
+      if (questionCount < 4) {
+        setRadio(responses[questionCount].value);
       } else {
-        setRadio(null);
-        setResponseSelected(false);
+        setResponseSelected(responses[questionCount].value);
       }
-    }, []);
+    } else {
+      setRadio(null);
+      setResponseSelected(false);
+    }
+  }, [questionCount, responses]);
 
-  useMountEffect(() => {
+  useEffect(() => {
     if (questionNumberProp) {
       setQuestionCount(Number(questionNumberProp));
     }
-  });
+  }, [questionNumberProp]);
 
   const isUserTeetotal = responses.some(item => item.question === "one" && item.value === "0");
   const totalSteps = isUserTeetotal ? 4 : questionsList?.length ?? 0;

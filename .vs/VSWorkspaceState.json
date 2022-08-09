@@ -2,15 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\src",
+    "\\src\\assets",
+    "\\src\\assets\\translations",
     "\\src\\components",
     "\\src\\components\\Elements",
     "\\src\\components\\Elements\\List",
-    "\\src\\components\\Elements\\List\\__tests__",
+    "\\src\\components\\Elements\\Tag",
     "\\src\\hoc",
-    "\\src\\hooks",
     "\\src\\pages",
     "\\src\\pages\\Questionnaire"
   ],
-  "SelectedNode": "\\src\\hooks\\useQuery.js",
+  "SelectedNode": "\\src\\components\\Elements\\List\\__tests__\\List-test.js",
   "PreviewInSolutionExplorer": false
 }
