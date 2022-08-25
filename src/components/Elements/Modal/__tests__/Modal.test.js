@@ -13,7 +13,7 @@ it("Close Function fires once on button click", () => {
 
   const { getByText } = render(<Modal onClose={mockFn}>Some modal content</Modal>);
 
-  fireEvent.click(getByText("Close"));
+  fireEvent.click(getByText("Chiudi"));
 
   expect(mockFn.mock.calls.length).toBe(1);
 });

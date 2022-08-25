@@ -27,11 +27,11 @@ const Modal = props => {
               {onClose && (
                 <div className="c-modal__cta-wrapper">
                   <Button
-                    aria-label="close"
+                    aria-label="chiudi"
                     onClick={onClose}
                     className="c-modal__close c-button c-button--primary u-margin-top-auto"
                   >
-                    Close
+                    Chiudi
                   </Button>
                 </div>
               )}

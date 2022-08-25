@@ -719,7 +719,7 @@
 			}
 		},
 		"unitKey": {
-			"title": "Una Bevanda Alcolica (o Unità Alcolica) contiene 12 g di alcol e corrisponde a:",
+			"title": "Una Bevanda Alcolica (Unità Alcolica) contiene 12 g di alcol e corrisponde a:",
 			"singleUnits": {
 				"halfPint": {
 					"title": "Birra",
