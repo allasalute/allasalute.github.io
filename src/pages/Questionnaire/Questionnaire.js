@@ -4,12 +4,11 @@ import React, { useEffect, useState, type Element } from "react";
 import ReactGA from "react-ga";
 import { type Location } from "react-router-dom";
 import { type QuestionList, type Response } from "constants/types";
-import CartaBevande from "assets/images/drinks/elencobevande.png";
+import CartaBevande from "assets/images/drinks/elencobevande.svg";
 import drinkingImage from "assets/images/illustrations/drinking.svg";
 import smokerImage from "assets/images/illustrations/smoker.svg";
 import heightImage from "assets/images/illustrations/height.svg";
 import weightImage from "assets/images/illustrations/weight.svg";
-
 import Questions from "components/Questions/Questions";
 import ContentWithSidebar from "components/ContentWithSidebar/ContentWithSidebar";
 
