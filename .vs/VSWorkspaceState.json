@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
+    "\\src\\assets",
+    "\\src\\assets\\images",
+    "\\src\\assets\\images\\drinks",
     "\\src\\components",
     "\\src\\components\\Elements",
-    "\\src\\components\\Elements\\Tag",
-    "\\src\\components\\Questions",
-    "\\src\\hoc",
+    "\\src\\components\\Elements\\Button",
     "\\src\\pages",
-    "\\src\\pages\\Questionnaire",
-    "\\src\\style"
+    "\\src\\pages\\Questionnaire"
   ],
-  "SelectedNode": "\\src\\pages\\Questionnaire\\Questionnaire.js",
+  "SelectedNode": "\\src\\assets\\images\\drinks\\fortified-wine.svg",
   "PreviewInSolutionExplorer": false
 }
