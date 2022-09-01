@@ -288,7 +288,7 @@ function Results(props: Props): Element<any> {
               </Link>
 
               <Link to="/home" className="c-button c-button--primary c-button--md u-text-center u-margin-bottom-small">
-                {t("common.home")}
+                {t("common.homeresults")}
               </Link>
             </div>
           </section>

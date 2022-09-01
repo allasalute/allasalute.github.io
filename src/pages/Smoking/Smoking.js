@@ -29,7 +29,7 @@ function Smoking(props: Props): Element<any> {
 
       <div className="u-margin-top-auto u-flex--align-self-end ">
         <Link to="/home" className="c-button c-button--primary c-button--md u-margin-top-huge u-text-center">
-          {t("common.home")}
+          {t("common.homeresults")}
         </Link>
       </div>
     </ContentWithSidebar>
