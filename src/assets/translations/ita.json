@@ -219,13 +219,13 @@
 		},
 		"intro": {
 			"title": "Come posso migliorare la salute del mio seno?",
-			"body": "Questa app è stata progettata per fornirti informazioni sui rischi per la salute e su alcuni modi semplici per rimanere in buona salute. In particolare, riguarda:",
+			"body": "Il consumo di alcol, l’elevato peso corporeo, la ridotta attività fisica e il fumo aumentano il rischio di sviluppare il cancro al seno. Questa app è stata progettata per fornirti informazioni sui rischi per la salute e su alcuni modi semplici per rimanere in buona salute. In particolare, riguarda:",
 			"list": {
 				"one": "Alcol e fumo",
 				"two": "Peso corporeo",
 				"three": "Esercizio fisico"
 			},
-			"subtext": "Ci vogliono solo 5 minuti ed è completamente anonimo" 
+			"subtext": "Ci vogliono solo 5 minuti ed è completamente anonimo"
 		},
 		"myths": {
 			"title": "Falsi miti sulla salute del seno",
@@ -269,7 +269,7 @@
 		},
 		"onboarding": {
 			"title": "Come posso migliorare \nla salute del mio seno?",
-			"body": "Questa app è stata progettata per fornirti informazioni sui rischi per la salute e su alcuni modi semplici per rimanere in buona salute. In particolare, riguarda: \n\n <0>{{list}}</0>",
+			"body": "Il consumo di alcol, l’elevato peso corporeo, la ridotta attività fisica e il fumo aumentano il rischio di sviluppare il cancro al seno. Questa app è stata progettata per fornirti informazioni sui rischi per la salute e su alcuni modi semplici per rimanere in buona salute. In particolare, riguarda: \n\n <0>{{list}}</0>",
 			"list": [
 				"Alcol e fumo",
 				"Peso corporeo",
