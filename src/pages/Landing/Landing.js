@@ -53,6 +53,9 @@ function Landing(props) {
       >
         {t("common.next")}
       </Link>
+      <p className="u-margin-none">
+        <Trans i18nKey="onboarding.infoThanksTo.Fondazione"></Trans>
+      </p>
       {showEndSessionModal && (
         <Modal onClose={() => setEndSessionModal(false)} className="c-modal--small">
           <div className="o-container u-width-100 u-padding-horizontal-none">

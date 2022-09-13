@@ -9,8 +9,10 @@
     "\\src\\components\\Elements",
     "\\src\\components\\Elements\\Button",
     "\\src\\pages",
-    "\\src\\pages\\Questionnaire"
+    "\\src\\pages\\Questionnaire",
+    "\\src\\pages\\Results",
+    "\\src\\pages\\Smoking"
   ],
-  "SelectedNode": "\\src\\assets\\images\\drinks\\fortified-wine.svg",
+  "SelectedNode": "\\src\\pages\\Results\\Results.js",
   "PreviewInSolutionExplorer": false
 }

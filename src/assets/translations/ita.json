@@ -270,16 +270,19 @@
 		},
 		"onboarding": {
 			"title": "Come posso migliorare \nla salute del mio seno?",
-			"body": "Il consumo di alcol, l’elevato peso corporeo, la ridotta attività fisica e il fumo aumentano il rischio di sviluppare il cancro al seno. Questa app è stata progettata per fornirti informazioni sui rischi per la salute e su alcuni modi semplici per rimanere in buona salute. In particolare, riguarda: \n\n <0>{{list}}</0>",
+			"body": "Il consumo di alcol, il peso corporeo, l’attività fisica e il fumo influenzano il rischio di sviluppare il cancro al seno. Questa app è stata progettata per fornirti informazioni su alcuni modi semplici per rimanere in buona salute: \n\n <0>{{list}}</0>",
 			"list": [
 				"Alcol e fumo",
 				"Peso corporeo",
-				"Esercizio fisico"
+				"Attività fisica"
 			],
 			"infoCard": {
 				"time": "Circa 1 minuto",
 				"questions": "6 Domande",
 				"data": "Dati Anonimi"
+			},
+			"infoThanksTo": {
+				"Fondazione": "Questa app è stata realizzata grazie al finanziamento della Fondazione Banco di Sardegna"
 			}
 		},
 		"progressBar": "{{current}} / {{max}} - {{category}}",
@@ -538,8 +541,8 @@
 					],
 					"four": [
 						"In base alle tue risposte, il tuo indice di massa corporea è superiore alla norma.",
-						"I medici raccomandano di mantenere un peso ideale per contenere i rischi di malattia.",
-						"Per le donne della tua altezza, è inferiore a {{kilos}}kg.",
+						"È importante mantenere un peso ideale per contenere i rischi di malattia.",
+						"Per le donne della tua altezza è inferiore a {{kilos}} kg.",
 						"Nella home page puoi trovare semplici consigli su un'alimentazione sana e su come mantenerti attiva."
 					]
 				}
@@ -576,7 +579,7 @@
 				"Fino al 30% in meno di rischio di depressione o demenza",
 				"Fino all'80% in meno di rischio di artrosi"
 			],
-			"nhsRecommendationListTitle": "Per rimanere in buona salute, L’OMS (Organizzazione Mondiale della Sanità) consiglia di: <0>{{list}}</0>",
+			"nhsRecommendationListTitle": "Per rimanere in buona salute, l’OMS (Organizzazione Mondiale della Sanità) consiglia di: <0>{{list}}</0>",
 			"nhsRecommendationList": [
 				"Svolgere attività fisica ogni giorno",
 				"Svolgere almeno 2 ore e 30 minuti di attività fisica moderata ogni settimana (camminata veloce) o almeno 1 ora e 15 minuti di attività fisica intensa (jogging)",
