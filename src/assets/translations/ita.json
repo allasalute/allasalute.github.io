@@ -282,7 +282,7 @@
 				"data": "Dati Anonimi"
 			},
 			"infoThanksTo": {
-				"Fondazione": "Questa app è stata realizzata grazie al finanziamento della Fondazione Banco di Sardegna"
+				"Fondazione": "La versione italiana della app è stata realizzata dall'Università di Cagliari, grazie alla collaborazione tra il Dipartimento di Scienze Biomediche, il Dipartimento di Scienze Mediche e Sanità Pubblica e il Dipartimento di Ingegneria Elettrica ed Elettronica, ed al contributo della Fondazione di Sardegna."
 			}
 		},
 		"progressBar": "{{current}} / {{max}} - {{category}}",

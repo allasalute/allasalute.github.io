@@ -53,7 +53,7 @@ function Landing(props) {
       >
         {t("common.next")}
       </Link>
-      <p className="u-margin-none">
+      <p className="c-button c-button--secondary c-button--sm u-margin-horizontal-tiny u-text-center">
         <Trans i18nKey="onboarding.infoThanksTo.Fondazione"></Trans>
       </p>
       {showEndSessionModal && (
