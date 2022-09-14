@@ -4,9 +4,11 @@
     "\\src",
     "\\src\\components",
     "\\src\\components\\Elements",
-    "\\src\\components\\Elements\\CookieBanner",
     "\\src\\components\\Elements\\Tag",
-    "\\src\\constants",
+    "\\src\\pages",
+    "\\src\\pages\\Landing",
+    "\\src\\pages\\Questionnaire",
+    "\\src\\pages\\Results",
     "\\src\\style",
     "\\src\\style\\components",
     "\\src\\style\\elements"

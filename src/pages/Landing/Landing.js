@@ -11,6 +11,8 @@ import illustratedImage from "assets/images/illustrations/nurse.svg";
 import timeIcon from "assets/images/icons/time.svg";
 import questionIcon from "assets/images/icons/question.svg";
 import tickIcon from "assets/images/icons/tick.svg";
+import LogoUnico from "assets/images/icons/LogoUnico.svg";
+//import LogoImageUniCa from "assets/images/icons/LogoUnica&Dipartimenti.png";
 
 import List from "components/Elements/List/List";
 import InfoCard from "components/Elements/InfoCard/InfoCard";
@@ -56,6 +58,12 @@ function Landing(props) {
       <p className="c-button c-button--secondary c-button--sm u-margin-horizontal-tiny u-text-center">
         <Trans i18nKey="onboarding.infoThanksTo.Fondazione"></Trans>
       </p>
+      <p>
+        <div className="c-info u-flex--column">
+          <img className="u-responsive-image" src={LogoUnico} alt="" role="presentation" />
+        </div>
+      </p>
+
       {showEndSessionModal && (
         <Modal onClose={() => setEndSessionModal(false)} className="c-modal--small">
           <div className="o-container u-width-100 u-padding-horizontal-none">
