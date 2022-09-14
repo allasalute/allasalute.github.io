@@ -2,17 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\assets",
-    "\\src\\assets\\images",
-    "\\src\\assets\\images\\drinks",
     "\\src\\components",
     "\\src\\components\\Elements",
-    "\\src\\components\\Elements\\Button",
-    "\\src\\pages",
-    "\\src\\pages\\Questionnaire",
-    "\\src\\pages\\Results",
-    "\\src\\pages\\Smoking"
+    "\\src\\components\\Elements\\CookieBanner",
+    "\\src\\components\\Elements\\Tag",
+    "\\src\\constants",
+    "\\src\\style",
+    "\\src\\style\\components",
+    "\\src\\style\\elements"
   ],
-  "SelectedNode": "\\src\\pages\\Results\\Results.js",
+  "SelectedNode": "\\src\\pages\\Landing\\Landing.js",
   "PreviewInSolutionExplorer": false
 }

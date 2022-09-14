@@ -270,7 +270,7 @@
 		},
 		"onboarding": {
 			"title": "Come posso migliorare \nla salute del mio seno?",
-			"body": "Il consumo di alcol, il peso corporeo, l’attività fisica e il fumo influenzano il rischio di sviluppare il cancro al seno. Questa app è stata progettata per fornirti informazioni su alcuni modi semplici per rimanere in buona salute: \n\n <0>{{list}}</0>",
+			"body": "Il consumo di alcol, il peso corporeo, l’attività fisica e il fumo influenzano il rischio di sviluppare il cancro al seno. Questa app è stata progettata per fornirti informazioni su alcuni modi semplici per rimanere in buona salute. In particolare, riguarda: \n\n <0>{{list}}</0>",
 			"list": [
 				"Alcol e fumo",
 				"Peso corporeo",
@@ -727,7 +727,7 @@
 			"singleUnits": {
 				"halfPint": {
 					"title": "Birra",
-					"description": "Gradazione 4,5% (bicchiere di birra da 330 ml)"
+					"description": "Gradazione 4,5% (lattina di birra da 330 ml)"
 				},
 				"halfGlass": {
 					"title": "Vino",
@@ -853,7 +853,7 @@
 				"title": "Bevanda Alcolica",
 				"body": "Una Bevanda Alcolica (o Unità Alcolica) contiene 12 g di alcol e corrisponde a: <0>{{list}}</0>",
 				"list": [
-					"un bicchiere di birra (330 ml)",
+					"una lattina di birra (330 ml)",
 					"un bicchiere di vino (125 ml)",
 					"un bicchiere di aperitivo (80 ml)",
 					"un bicchierino di superalcolico (40 ml)"
