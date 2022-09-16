@@ -1,4 +1,4 @@
-import pint_a from "assets/images/drinks/beer2.svg";
+import pint_a from "assets/images/drinks/BeerCan.png";
 import wine_175ml from "assets/images/drinks/wine-250ml.svg";
 import spirit_double from "assets/images/drinks/spirit-double.svg";
 import pimms from "assets/images/drinks/single-aperitifs.svg";
@@ -7,7 +7,7 @@ export const drinksList = [
   {
     id: "lowStrengthPint",
     image: pint_a,
-    container: "Pint",
+    container: "Lattina",
     ml: 330,
     abv: 4.5,
     units: 1,
@@ -16,7 +16,7 @@ export const drinksList = [
   {
     id: "regularWine",
     image: wine_175ml,
-    container: "Standard glass",
+    container: "Bicchiere",
     ml: 125,
     abv: 12,
     units: 1,
@@ -25,7 +25,7 @@ export const drinksList = [
   {
     id: "pimms",
     image: pimms,
-    container: "Glass",
+    container: "Bicchiere",
     ml: 80,
     abv: 18,
     units: 1,
@@ -34,7 +34,7 @@ export const drinksList = [
   {
     id: "doubleSprit",
     image: spirit_double,
-    container: "Glass",
+    container: "Bicchiere",
     ml: 40,
     abv: 40,
     units: 1,

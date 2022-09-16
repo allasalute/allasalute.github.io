@@ -202,7 +202,12 @@ function DrinkCalculator(props: Props): Element<any> {
                           {t(`drinks.${drink.id}.name`)}
                         </h3>
                         <p className="c-drink-card__subtitle u-margin-top-none u-margin-bottom-small">
-                          {t("drinks.common.drinkInfo", { abv: drink.abv, ml: drink.ml, count: drink.units })}
+                          {t("drinks.common.drinkInfo", {
+                            abv: drink.abv,
+                            container: drink.container,
+                            ml: drink.ml,
+                            count: drink.units
+                          })}
                         </p>
                       </div>
                     </DrinkCard>
@@ -222,6 +227,7 @@ function DrinkCalculator(props: Props): Element<any> {
                           text={t("drinks.tag", {
                             name: readableDrinkName,
                             abv: drink.abv,
+                            container: drink.container,
                             ml: drink.ml,
                             unit: drink.units
                           })}
@@ -305,7 +311,12 @@ function DrinkCalculator(props: Props): Element<any> {
                             {t(`drinks.${drink.id}.name`)}
                           </h3>
                           <p className="c-drink-card__subtitle u-margin-top-none u-margin-bottom-small">
-                            {t("drinks.common.drinkInfo", { abv: drink.abv, ml: drink.ml, count: drink.units })}
+                            {t("drinks.common.drinkInfo", {
+                              abv: drink.abv,
+                              container: drink.container,
+                              ml: drink.ml,
+                              count: drink.units
+                            })}
                           </p>
                         </div>
                       </DrinkCard>

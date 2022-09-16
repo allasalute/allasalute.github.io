@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
+    "\\src\\assets",
+    "\\src\\assets\\translations",
     "\\src\\components",
-    "\\src\\components\\ContentWithSidebar",
+    "\\src\\components\\Elements",
+    "\\src\\components\\Elements\\DrinkCard",
+    "\\src\\components\\Elements\\InfoCard",
     "\\src\\pages",
-    "\\src\\pages\\Results",
-    "\\src\\pages\\Wellbeing",
-    "\\src\\style",
-    "\\src\\style\\components",
-    "\\src\\style\\elements"
+    "\\src\\pages\\DrinkCalculator"
   ],
-  "SelectedNode": "\\src\\pages\\Landing\\Landing.js",
+  "SelectedNode": "\\src\\assets\\translations\\en.json",
   "PreviewInSolutionExplorer": false
 }

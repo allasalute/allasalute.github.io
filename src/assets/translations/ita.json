@@ -131,7 +131,7 @@
 			"common": {
 				"alcoholContent": "Contenuto Alcolico : {{unit}} unità",
 				"ABV": "(ABV {{percentage}}%",
-				"drinkInfo": "Gradazione {{abv}}% Bicchiere da {{ml}} ml Corrisponde a 12g di alcol ({{count}} unità alcolica)",
+				"drinkInfo": "Gradazione {{abv}}% {{container}} da {{ml}} ml Corrisponde a 12g di alcol ({{count}} unità alcolica)",
 				"drinkInfo_plural": "{{count}} unità - {{abv}}%",
 				"half": "Metà",
 				"equivalentTo": "Equivalente alimentare: {{number}} cucchiaini",
