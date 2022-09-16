@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\assets",
-    "\\src\\assets\\translations",
     "\\src\\components",
     "\\src\\components\\Elements",
-    "\\src\\components\\Elements\\DrinkCard",
     "\\src\\components\\Elements\\InfoCard",
+    "\\src\\components\\Elements\\List",
+    "\\src\\components\\UnitKey",
+    "\\src\\constants",
     "\\src\\pages",
     "\\src\\pages\\DrinkCalculator"
   ],
-  "SelectedNode": "\\src\\assets\\translations\\en.json",
+  "SelectedNode": "\\src\\constants\\drinks.js",
   "PreviewInSolutionExplorer": false
 }

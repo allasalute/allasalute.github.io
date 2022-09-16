@@ -44,6 +44,8 @@ function Questionnaire(props: Props): Element<any> {
   const updateImage = (questionNumber: number) => {
     switch (questionNumber) {
       case 0:
+        setImage(drinkingImage);
+        break;
       case 1:
       case 2:
         setImage(CartaBevande);
