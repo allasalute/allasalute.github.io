@@ -1,16 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\public",
     "\\src",
+    "\\src\\assets",
+    "\\src\\assets\\images",
+    "\\src\\assets\\images\\charts",
     "\\src\\components",
-    "\\src\\components\\Elements",
-    "\\src\\components\\Elements\\InfoCard",
-    "\\src\\components\\Elements\\List",
-    "\\src\\components\\UnitKey",
-    "\\src\\constants",
+    "\\src\\components\\App",
+    "\\src\\components\\ContentWithSidebar",
     "\\src\\pages",
-    "\\src\\pages\\DrinkCalculator"
+    "\\src\\pages\\Questionnaire"
   ],
-  "SelectedNode": "\\src\\constants\\drinks.js",
+  "SelectedNode": "\\public\\browserconfig.xml",
   "PreviewInSolutionExplorer": false
 }

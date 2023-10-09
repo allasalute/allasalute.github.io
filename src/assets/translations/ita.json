@@ -22,8 +22,8 @@
 		},
 		"common": {
 			"add": "Add one {{measurement}}",
-			"appName": "Abreast of health",
-			"appDescription": "Come posso migliorare la salute del mio seno?",
+			"appName": "Alla salute!",
+			"appDescription": "Segreti per un seno sano",
 			"cancel": "Cancella",
 			"close": "Chiudi",
 			"endSession": "Fine Sessione",
@@ -162,7 +162,7 @@
 			"privacy": "Politica sulla riservatezza"
 		},
 		"header": {
-			"logoAlt": "Abreast Of Health"
+			"logoAlt": "Alla Salute!"
 		},
 		"homeTiles": {
 			"improveBreastHealth": {
@@ -219,7 +219,7 @@
 			"thanks": "Grazie per il tuo feedback."
 		},
 		"intro": {
-			"title": "Come posso migliorare la salute del mio seno?",
+			"title": "Segreti per un seno sano",
 			"body": "Il consumo di alcol, l’elevato peso corporeo, la ridotta attività fisica e il fumo aumentano il rischio di sviluppare il cancro al seno. Questa app è stata progettata per fornirti informazioni sui rischi per la salute e su alcuni modi semplici per rimanere in buona salute. In particolare, riguarda:",
 			"list": {
 				"one": "Alcol e fumo",
@@ -269,7 +269,7 @@
 			"subtitle": "Hai perso la connessione a Internet. Potresti riscontrare alcuni problemi nell'utilizzo del sito offline, quindi riconnettiti per continuare."
 		},
 		"onboarding": {
-			"title": "Come posso migliorare \nla salute del mio seno?",
+			"title": "Segreti per un seno sano",
 			"body": "Il consumo di alcol, il peso corporeo, l’attività fisica e il fumo influenzano il rischio di sviluppare il cancro al seno. Questa app è stata progettata per fornirti informazioni su alcuni modi semplici per rimanere in buona salute. In particolare, riguarda: \n\n <0>{{list}}</0>",
 			"list": [
 				"Alcol e fumo",
@@ -282,7 +282,7 @@
 				"data": "Dati Anonimi"
 			},
 			"infoThanksTo": {
-				"Fondazione": "La versione italiana della app è stata realizzata dall'Università di Cagliari, grazie alla collaborazione tra il Dipartimento di Scienze Biomediche, il Dipartimento di Scienze Mediche e Sanità Pubblica e il Dipartimento di Ingegneria Elettrica ed Elettronica, ed al contributo della Fondazione di Sardegna."
+				"Fondazione": "Progetto realizzato in collaborazione con la Prof.ssa Jiulia Sinclair della University of Southampton e con il contributo della Fondazione di Sardegna Prot.U685.2022/AI.670.BE"
 			}
 		},
 		"progressBar": "{{current}} / {{max}} - {{category}}",
