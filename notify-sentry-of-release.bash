@@ -25,7 +25,7 @@ ENVIRONMENT=$1
 
 if [ $1 = "test" ]
 then
-  URL="https://uos-abreast-of-health-test.cube-sites.com/"
+  URL="https://ssannino.github.io/"
 fi
 
 if [ $1 = "staging" ]
