@@ -1,6 +1,6 @@
-# University Of Southampton - Abreast of Health
+# Università degli Studi di Cagliari - Alla salute!
 
-This is the web frontend for University Of Southampton - Abreast of Health web app.
+This is the web frontend for University of Cagliari web app.
 
 ### Built with:
 - [React](https://reactjs.org/) (create-react-app)

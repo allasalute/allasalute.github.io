@@ -30,12 +30,12 @@ fi
 
 if [ $1 = "staging" ]
 then
-  URL="https://uos-abreast-of-health-staging.cube-sites.com/"
+  URL="https://ssannino.github.io/"
 fi
 
 if [ $1 = "production" ]
 then
-  URL="https://uos-abreast-of-health-production.cube-sites.com/"
+  URL="https://ssannino.github.io/"
 fi
 
 curl https://sentry.io/api/0/organizations/${SENTRY_ORGANIZATION}/releases/ \
