@@ -23,7 +23,7 @@
 		"common": {
 			"add": "Add one {{measurement}}",
 			"appName": "Alla salute!",
-			"appDescription": "Segreti per un seno sano",
+			"appDescription": "<0>{{link}}</0>",
 			"cancel": "Cancella",
 			"close": "Chiudi",
 			"endSession": "Fine Sessione",
