@@ -2,16 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\public",
-    "\\src",
-    "\\src\\assets",
-    "\\src\\assets\\images",
-    "\\src\\assets\\images\\charts",
-    "\\src\\components",
-    "\\src\\components\\App",
-    "\\src\\components\\ContentWithSidebar",
-    "\\src\\pages",
-    "\\src\\pages\\Questionnaire"
+    "\\src"
   ],
-  "SelectedNode": "\\public\\browserconfig.xml",
   "PreviewInSolutionExplorer": false
 }

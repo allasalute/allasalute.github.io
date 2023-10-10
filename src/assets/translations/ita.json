@@ -282,7 +282,7 @@
 				"data": "Dati Anonimi"
 			},
 			"infoThanksTo": {
-				"Fondazione": "Progetto realizzato in collaborazione con la Prof.ssa Jiulia Sinclair della University of Southampton e con il contributo della Fondazione di Sardegna Prot.U685.2022/AI.670.BE"
+				"Fondazione": "Progetto realizzato in collaborazione con la University of Southampton e con il contributo della Fondazione di Sardegna Prot.U685.2022/AI.670.BE"
 			}
 		},
 		"progressBar": "{{current}} / {{max}} - {{category}}",
