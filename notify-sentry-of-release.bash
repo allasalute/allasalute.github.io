@@ -25,17 +25,17 @@ ENVIRONMENT=$1
 
 if [ $1 = "test" ]
 then
-  URL="https://ssannino.github.io/"
+  URL="https://allasalute.github.io/"
 fi
 
 if [ $1 = "staging" ]
 then
-  URL="https://ssannino.github.io/"
+  URL="https://allasalute.github.io/"
 fi
 
 if [ $1 = "production" ]
 then
-  URL="https://ssannino.github.io/"
+  URL="https://allasalute.github.io/"
 fi
 
 curl https://sentry.io/api/0/organizations/${SENTRY_ORGANIZATION}/releases/ \
