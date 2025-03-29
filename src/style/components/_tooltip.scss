@@ -1,0 +1,17 @@
+.c-tooltip {
+  border-radius: $global-radius-large;
+  background-color: $white;
+  color: $darker-pink;
+  padding: $global-padding-xxsmall $global-padding-large;
+  border: 2px solid $global-border-color;
+  @include font-size(16px, 1.5);
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 24px 0 $black12;
+  margin-top: $global-padding-xsmall;
+
+  &__text {
+    font-weight: bold;
+    @include font-size(18px, 1.5);
+  }
+}

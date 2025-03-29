@@ -1,0 +1,159 @@
+.c-modal {
+  z-index: 500;
+  position: fixed;
+  left: 38px;
+  top: 38px;
+  right: 38px;
+  bottom: 38px;
+  font-family: $fontFamily;
+  text-align: center;
+  overflow: auto;
+  overflow: overlay;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__inner-wrapper {
+    padding: 42px $global-padding-xlarge;
+    max-height: 95vh;
+    max-width: 1204px;
+    background-color: $tint;
+    height: 100%;
+    width: 100%;
+    border-radius: $global-radius-large;
+  }
+
+  &__cta-wrapper {
+    display: flex;
+    flex: 1 1 0%;
+
+  @media screen and (max-width: $md) {
+    flex-direction: column;
+  }
+  }
+
+  @media screen and (max-width: $sm) {
+    left: 18px;
+    top: 18px;
+    right: 18px;
+    bottom: 18px;
+    padding: $global-padding-small;
+  }
+
+  &__spinner {
+    height: 200px;
+    width: 200px;
+    margin: auto;
+  }
+
+  &__children {
+    position: relative;
+    overflow-y: auto;
+    overflow-y: overlay; // Overlay only works on certain browsers, prefer this if possible
+    height: 100%;
+    position: unset;
+  }
+
+  &__fixed-height {
+    max-height: 610px;
+    height: 100%;
+    .c-modal__children {
+      padding: 60px 136px 0px 136px;
+    }
+  }
+
+  &__fixed-height--has-action {
+    .c-modal__children {
+      height: calc(100% - 127px);
+    }
+  }
+
+  &__action-area {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px 136px 50px 136px;
+    border-top: 1px solid #eae8ea;
+    background-color: #faf7f8;
+  }
+
+  p {
+    @include font-size(18px);
+  }
+
+  &--visible {
+    animation: fadeIn 0.3s ease-in;
+  }
+
+  &--hidden {
+    @include visually-hidden();
+  }
+
+  &--small {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    bottom: initial;
+    transform: translateY(-50%);
+  }
+
+  &__title {
+    font-weight: bold;
+    @include font-size(48px, 1.5);
+    margin-bottom: $global-padding-large;
+  }
+
+  &__close {
+    margin-left: auto;
+  }
+  .c-form__input-container {
+    input,
+    select {
+      background-color: transparent;
+    }
+  }
+
+  @media screen and (max-width: $md) {
+    &__fixed-height {
+      .c-modal__children {
+        padding: 18px;
+      }
+      .c-modal__action-area {
+        padding: 10px 15px;
+        button {
+          min-width: 40%;
+        }
+      }
+    }
+    &__title {
+      @include font-size(30px);
+    }
+    p {
+      @include font-size(16px);
+    }
+  }
+
+  @media screen and (max-width: $sm) {
+    &__title {
+      @include font-size(28px);
+    }
+
+    &__fixed-height {
+      .c-modal__action-area {
+        .c-button {
+          @include font-size(12px);
+          min-width: 40%;
+          padding: 4px 8px;
+        }
+      }
+    }
+  }
+
+  &__pre-title {
+    color: #787878;
+    margin: 0px;
+  }
+}

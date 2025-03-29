@@ -1,0 +1,42 @@
+.u-scrollbar-dark {
+     scrollbar-width: thin;
+     scrollbar-color: $white $darker-pink;
+
+     &:after {
+         content: "";
+         min-width: 1px;
+     }
+
+     &::-webkit-scrollbar {
+         width: 6px;
+     }
+
+     &::-webkit-scrollbar-track {
+         background: $white;
+     }
+
+     &::-webkit-scrollbar-thumb {
+         background-color: $darker-pink;
+         border-radius: 6px;
+         border: 4px solid $white;
+     }
+}
+
+.u-scrollbar-light {
+    scrollbar-width: thin;
+    scrollbar-color: $tint $global-brand-color;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $tint;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $global-brand-color;
+        border-radius: 6px;
+        border: 4px solid $tint;
+    }
+}

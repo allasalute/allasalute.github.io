@@ -1,0 +1,8 @@
+html {
+  font-family: $fontFamily;
+}
+
+p {
+  color: $darker-pink;
+  @include font-size(18px, 1.5);
+}

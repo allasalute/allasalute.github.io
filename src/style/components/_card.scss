@@ -1,0 +1,49 @@
+.c-card {
+  width: 100%;
+  box-shadow: 0 8px 24px 0 $black12;
+  background-color: $white;
+  padding: $global-padding-large;
+  border-radius: $global-radius-large;
+  position: relative;
+  &--slim {
+    padding: 20px 28px;
+    @media screen and (max-width: 650px) {
+      padding: $global-padding-small;
+    }
+  }
+
+  &--light-shadow {
+    box-shadow: 0 2px 5px 0 rgba(187, 187, 187, 0.5);
+  }
+
+  &__border {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 4px;
+    background-image: $global-brand-color;
+  }
+
+  &__border + &__actions {
+    top: 4px;
+  }
+
+  &__actions {
+    background-color: rgba($global-brand-color, 0.08);
+    min-height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: -36px -60px;
+  }
+
+  @media screen and (max-width: $sm) {
+    padding: 25px 16px;
+    &__actions {
+      margin: -25px -16px;
+    }
+  }
+}

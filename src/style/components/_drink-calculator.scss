@@ -1,0 +1,53 @@
+.c-drink-calculator {
+    
+    &__drink-card {
+         box-shadow: 0 8px 24px 0 $black12;
+    }
+
+    &__strapline {
+        font-family: $fontFamilyBold;
+        @include font-size(16px, 1.5);
+    }
+
+    &__total {
+        margin-right: $global-padding-large;
+
+        @media screen and (max-width: $md) {
+            margin-right: 0;
+            margin-bottom: $global-padding-small;
+        }
+    }
+
+        &__info {
+            width: 31%;
+
+            @media screen and (max-width: $md) {
+                width: 100%;
+                margin-bottom: $global-padding-small;
+            }
+        }
+
+    &__drink-card-wrapper {
+        overflow-x: auto;
+        padding-bottom: $global-padding-medium;
+        margin-left: -$global-padding-small;
+        margin-right: -$global-padding-small;
+        padding: 0;
+
+        &:after {
+            content: "";
+            min-width: 1px;
+        }
+
+        .c-drink-card:first-child {
+            margin-left: 20px;
+        }
+             .c-drink-card:last-child {
+                 margin-right: 20px;
+             }
+
+        .c-drink-card:not(:last-child) {
+            margin-right: $global-padding-large;
+        }
+    }
+}

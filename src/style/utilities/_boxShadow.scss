@@ -1,0 +1,10 @@
+.u-box-shadow {
+  box-shadow: 0px 2px 3px 0 $midGrey;
+  &--light {
+    box-shadow: 0px 2px 3px 0 $lightGrey;
+  }
+
+  &--heavy {
+    box-shadow: 0px 2px 3px 0 $darkGrey;
+  }
+}

@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'Cabin';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/Cabin-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cabin-medium';
+  font-style: normal;
+  src: url('../fonts/Cabin-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cabin-bold';
+  font-style: normal;
+  src: url('../fonts/Cabin-Bold.ttf') format('truetype');
+}
+
+$fontFamily: 'Cabin', sans-serif;
+$fontFamilyBold: 'Cabin-bold', sans-serif;
+$fontFamilyMedium: 'Cabin-medium', sans-serif;

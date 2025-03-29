@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="108" height="178" viewBox="0 0 108 178">
+    <g fill="none" fill-rule="evenodd">
+        <g fill-rule="nonzero">
+			<style>
+				.small { font: italic 13px sans-serif; }
+			</style>
+			<text x="30" y="40" class="small">Birra</text>
+            <g>
+				
+				<path fill="#D1E7F8" d="M42.716 3.56H4.682C3.366 3.56 0 9.192 0 10.582V115.48c0 1.888 3.072 7.548 4.682 7.548h38.034c1.318 0 4.682-6.054 4.682-7.548V10.582c0-1.756-3.072-7.022-4.682-7.022" transform="translate(30 38)"/>
+                <path fill="#B9D8F4" d="M23.7 123.028h19.016c1.318 0 4.682-6.054 4.682-7.548V10.582c0-1.756-3.072-7.022-4.682-7.022H23.7v119.468" transform="translate(30 38)"/>
+                <path fill="#D1E7F8" d="M42.138 4.096H5.262c-.962 0-1.75-.786-1.75-1.75V1.75C3.512.788 4.3 0 5.262 0h36.876c.962 0 1.75.788 1.75 1.75v.596c0 .964-.788 1.75-1.75 1.75" transform="translate(30 38)"/>
+                <path fill="#B9D8F4" d="M23.7 4.096h18.14c1.126 0 2.048-.922 2.048-2.048S42.966 0 41.84 0H23.7v4.096" transform="translate(30 38)"/>
+                <path fill="#4E901E" d="M0 114.622L47.398 114.622 47.398 11.696 0 11.696z" transform="translate(30 38)"/>
+                <path fill="#47821C" d="M23.7 114.622L47.398 114.622 47.398 11.696 23.7 11.696z" transform="translate(30 38)"/>
+            </g>
+        </g>
+    </g>
+</svg>

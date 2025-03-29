@@ -1,0 +1,16 @@
+.c-info {
+    background-color: $tint;
+    border-radius: $global-radius-large;
+    padding: $global-padding-small $global-padding-xxlarge;
+    text-align: center;
+    margin-bottom: $global-padding-xlarge;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100px;
+
+    &__heading {
+        @include font-size(24px, 1.58);
+        font-weight: bold;
+    }
+}

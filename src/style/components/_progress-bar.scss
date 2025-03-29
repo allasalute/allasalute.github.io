@@ -1,0 +1,58 @@
+.c-progress-bar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 222px;
+  border-radius: 9px;
+
+  &__text {
+    @include font-size(16px, 1.5);
+    font-weight: bold;
+    color: $darker-pink;
+  }
+
+  &__wrapper {
+    border-radius: 9px;
+    overflow: hidden;
+
+    .c-progress-bar__step:first-child {
+      border-bottom-left-radius: 9px;
+      border-top-left-radius: 9px;
+    }
+
+    .c-progress-bar__step--active {
+      border-bottom-right-radius: 9px;
+      border-top-right-radius: 9px;
+    }
+
+  }
+
+  &__step {
+    height: 4px;
+    width: 100%;
+    background-color: $tint;
+    overflow: hidden;
+    margin-left: -1px;
+    .c-progress-bar__step-inner {
+      background: linear-gradient(90deg, $global-brand-color 0%, $global-brand-color 25%, $global-brand-color 25%, $global-brand-color 50%, transparent 50%);
+      width: 400%;
+      height: 100%;
+      transform: translateX(-50%);
+      display: block;
+      transition: 0.5s ease-in-out transform;
+    }
+
+    &--complete {
+      .c-progress-bar__step-inner {
+        transform: translateX(0%)
+      }
+    }
+    &--active {
+      .c-progress-bar__step-inner {
+        transform: translateX(-25%);
+        transition: 0.5s ease-in-out transform 0.2s;
+      }
+    }
+  }
+
+}

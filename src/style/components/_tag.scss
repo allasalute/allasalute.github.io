@@ -1,0 +1,57 @@
+.c-tag {
+  border-radius: $global-radius-large;
+  background-color: $white;
+  color: $darker-pink;
+  padding: $global-padding-xxsmall $global-padding-xsmall;
+  border: 2px solid $global-border-color;
+  @include font-size(16px, 1.5);
+  display: inline-flex;
+  align-items: center;
+  margin-right: $global-padding-xxsmall;
+  margin-bottom: $global-padding-xxxsmall;
+  margin-top: $global-padding-xxxsmall;
+  min-width: 48px;
+  min-height: 50px;
+  justify-content: center;
+  
+  &--max-width {
+    max-width: 124px;
+    height: 24px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    width: fit-content;
+  }
+
+  &__cta {
+    background-color: $tint;
+    border-color: $tint;
+    margin-left: $global-padding-small;
+    min-width: 32px;
+    height: 32px;
+    width: 32px;
+    padding: $global-padding-xxsmall;
+    background-position: 50% 50%;
+    border-radius: $global-radius-small;
+    background-image: url("../../assets/images/icons/button/cross.svg");
+
+    &:hover,
+    &:focus {
+      border-color: $tint;
+      background-color: $tint;
+      background-image: url("../../assets/images/icons/button/cross-hover.svg");
+    }
+
+  }
+
+  &__text {
+    font-weight: bold;
+    @include font-size(16px, 1.5);
+  }
+}
+
+.c-tag-select {
+  min-height: 100px;
+}

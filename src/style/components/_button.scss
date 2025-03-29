@@ -1,0 +1,241 @@
+.c-button {
+  font-family: $fontFamilyMedium;
+  background-color: $global-brand-color;
+  color: $white;
+  padding: 16px 24px;
+  cursor: pointer;
+  border: none;
+  border-radius: $global-radius-large;
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid transparent;
+  min-width: 260px;
+  @include font-size(24px, 1.58);
+  transition: $global-transition;
+
+  @media screen and (max-width: $sm) {
+    width: 100%;
+  }
+
+  &--is-light {
+    background-color: $white;
+    color: $darkGrey;
+  }
+
+  &--sm {
+    min-height: 34px;
+    min-width: 34px;
+    @include font-size(16px);
+    line-height: 2;
+    padding: 0px 12px;
+    border-radius: $global-radius;
+  }
+
+  &--md {
+    height: 60px;
+    min-width: 200px;
+    @include font-size(24px, 1);
+  }
+
+  &--lg {
+    width: 312px;
+    height: 60px;
+    @include font-size(16px, 1);
+  }
+
+  &--modal {
+    max-width: 312px;
+    width: 100%;
+    line-height: 1;
+  }
+
+  &--wide {
+    max-width: 410px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $global-brand-secondary-color;
+    color: $white;
+    outline: none;
+  }
+
+  &:active {
+    background-color: $global-brand-color;
+    outline: none;
+  }
+
+  .is-disabled,
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $global-brand-color;
+    opacity: 0.44;
+  }
+
+  &.has-icon {
+    &:before {
+      content: "";
+      height: 25px;
+      width: 25px;
+      display: inline-block;
+      vertical-align: middle;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &--upload:before {
+      // this is where icon specific styling can go
+      background-image: url("https://img.icons8.com/windows/32/000000/upload.png");
+    }
+  }
+}
+
+/* Style variants
+========================================================================== */
+
+.c-button--primary {
+  background-color: $global-brand-color;
+}
+
+.c-button--secondary {
+  background-color: transparent;
+  color: $global-brand-color;
+  border-color: $global-brand-color;
+
+  &:hover,
+  &:focus {
+    background-color: $white;
+    color: $global-brand-secondary-color;
+    border-color: $global-brand-secondary-color;
+    outline: none;
+  }
+
+   &:active {
+    background-color: $white;
+    color: $global-brand-color;
+    border-color: $global-brand-color;
+    outline: none;
+   }
+}
+
+.c-button--tertiary {
+  background-color: $white;
+  color: $dark-pink;
+  border-color: $global-border-color;
+  @include font-size(16px, 1.5);
+  padding: $global-padding-xsmall $global-padding-large;
+  min-height: 54px;
+
+  &.is-active,
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $white;
+    color: $pink;
+    border-color: $global-brand-color;
+    outline: none;
+  }
+}
+
+.c-button--tab {
+  background-color: $white;
+  color: $darker-pink;
+  border-color: $white;
+
+  &.is-active,
+  &:hover,
+  &:focus {
+    background-color: $darker-pink;
+    color: $white;
+    border-color: $darker-pink;
+    outline: none;
+  }
+
+  &:active {
+    background-color: $white;
+    color: $darker-pink;
+    border-color: $white;
+    outline: none;
+  }
+}
+
+.c-button--small {
+  padding: 0px 15px;
+  @include font-size(14px);
+}
+
+.c-button--circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 52px;
+  @include font-size(24px, 1.58);
+  padding: $global-padding-xxxsmall $global-padding-small;
+  box-shadow: 0 8px 24px 0 $black12;
+  background-color: $white;
+  color: $global-brand-color;
+  border: none;
+
+  &.is-active,
+  &:focus,
+  &:hover {
+    background-color: $global-brand-color;
+    color: $white;
+  }
+}
+
+.c-button--text {
+  background-color: $white;
+  border-color: $global-border-color;
+  padding: 0;
+  @include font-size(16px, 1.5);
+  color: $global-brand-secondary-color;
+  &:hover,
+  &:focus {
+    background-color: $white;
+    color: $global-brand-color;
+  }
+
+  .is-disabled,
+  &:disabled {
+    background-color: transparent;
+    color: $darkGrey;
+  }
+
+   &:active {
+    color: $global-brand-secondary-color;
+    background-color: $white;
+    border-color: $global-border-color;
+     outline: none;
+   }
+}
+
+.c-button-empty {
+  background-color: transparent;
+  border: 0px;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+    opacity: 0.5;
+  }
+  .is-disabled,
+  &:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+  @media screen and (max-width: $xs) {
+    min-width: initial;
+  }
+
+  &--pink-hover {
+    &:hover, &:focus {
+      color: $primary-colour;
+      opacity: 1;
+      svg {
+        fill: $primary-colour;
+        path {
+          fill: $primary-colour;
+        }
+      }
+    }
+  }
+}

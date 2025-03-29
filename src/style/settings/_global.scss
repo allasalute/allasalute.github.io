@@ -1,0 +1,104 @@
+///* ========================================================================
+//   #GLOBAL
+//   ======================================================================== */
+
+// The global settings file contains any project-wide variables; things that
+// need to be made available to the entire codebase.
+// makes use of !default for potential theming: https://thoughtbot.com/blog/sass-default
+
+$global-radius-small: 6px !default;
+$global-radius: 8px !default;
+$global-radius-large: 12px !default;
+
+$global-border-color: $black04 !default;
+
+$global-transition: all 300ms ease-in-out !default;
+$global-brand-color: $primary-colour !default;
+$global-brand-secondary-color: $secondary-colour !default;
+
+$global-padding-xxxsmall: 4px !default;
+$global-padding-xxsmall: 8px !default;
+$global-padding-xsmall: 12px !default;
+$global-padding-small: 16px !default;
+$global-padding-medium: 20px !default;
+$global-padding-large: 24px !default;
+$global-padding-xlarge: 32px !default;
+$global-padding-xxlarge: 48px !default;
+$global-padding-xxxlarge: 72px !default;
+
+// Baseline grid lines height.
+// Every spacing metric should be based on this.
+
+$global-font-baseline: 6px !default;
+$global-spacing-baseline: 4px !default;
+
+// How many grid lines should our spacing unit variants span?
+// Each value should be an unitless integer.
+
+$global-spacing-unit-factor-tiny:   1 !default;   // 4x
+$global-spacing-unit-factor-small:  2 !default;   // 8px
+$global-spacing-unit-factor:        4 !default;   // 16px
+$global-spacing-unit-factor-large:  8 !default; // 32px
+$global-spacing-unit-factor-huge:   12 !default; // 48px
+
+// Spacing values are determined based on your project’s global baseline grid.
+// It is not recommended that you modify these following variables
+// (it can break your vertical rhythm), but if you need to, you can.
+
+$global-spacing-unit:       $global-spacing-baseline * $global-spacing-unit-factor !default;
+$global-spacing-unit-tiny:  $global-spacing-baseline * $global-spacing-unit-factor-tiny !default;
+$global-spacing-unit-small: $global-spacing-baseline * $global-spacing-unit-factor-small !default;
+$global-spacing-unit-large: $global-spacing-baseline * $global-spacing-unit-factor-large !default;
+$global-spacing-unit-huge:  $global-spacing-baseline * $global-spacing-unit-factor-huge !default;
+
+// Base typographical styles.
+
+$global-font-size:    16px !default;
+$global-line-height:  $global-spacing-unit !default;
+
+// Check that the chosen font rules are pixel numbers.
+
+@each $_font-globals in
+      $global-font-size
+      $global-line-height {
+
+  @if (type-of($_font-globals) == number) {
+
+    @if (unit($_font-globals) != "px") {
+      @error "`#{$_font-globals}` needs to be a pixel value.";
+    }
+
+  } @else {
+    @error "`#{$_font-globals}` needs to be a number.";
+  }
+
+}
+
+
+
+// Check that the chosen size factors are unitless, integer numbers.
+
+@each $_spacing-unit in
+      $global-spacing-unit-factor-tiny
+      $global-spacing-unit-factor-small
+      $global-spacing-unit-factor-large
+      $global-spacing-unit-factor-huge {
+
+  @if (type-of($_spacing-unit) == number) {
+
+    @if (unitless($_spacing-unit) == false) {
+      @error "`#{$_spacing-unit}` needs to be unitless.";
+    }
+
+    @if ($_spacing-unit != ceil($_spacing-unit)) {
+      @error "`#{$_spacing-unit}` needs to be an integer.";
+    }
+
+  } @else {
+    @error "`#{$_spacing-unit}` needs to be a number.";
+  }
+
+}
+
+// Nav Bar specific variables
+$global-nav-bar-height: 88px !default;

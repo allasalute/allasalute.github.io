@@ -1,0 +1,49 @@
+.c-number {
+    padding: $global-padding-xsmall;
+    background-color: $tint;
+    border-radius: $global-radius-large;
+   
+    &__input::-webkit-outer-spin-button,
+    &__input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    &__input {
+        height: 32px;
+        -moz-appearance: textfield;
+    }
+
+    &__inner {
+        background-color: $white;
+        border-radius: $global-radius;
+        border: 5px solid $white;
+        display: flex;
+        align-items: center;
+    }
+
+    &__label {
+        @include font-size(16px, 1.5);
+        font-weight: bold;
+        color: $darker-pink;
+        text-align: center;
+        display: block;
+        font-family: $fontFamilyBold;
+    }
+
+    &__btn {
+        background-position: 50% 50%;
+        min-height: 32px;
+        padding: 0;
+        min-width: 32px;
+        border-radius: 4px;
+        background-repeat: no-repeat;
+        
+        &--add {
+            background-image: url("../../assets/images/icons/button/plus.svg");
+        }
+
+        &--subtract {
+            background-image: url("../../assets/images/icons/button/minus.svg");
+        }
+    }
+}  

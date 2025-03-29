@@ -1,0 +1,656 @@
+$form-input-error: #d50000;
+$form-input: #787878;
+$form-input-disabled: #b9b7b8;
+$form-input-active: $darker-pink;
+$grey: $midGrey;
+
+.c-form {
+  width: 100%;
+
+  &__input-copy {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    input {
+      background-color: $white;
+      padding: 15px 20px;
+      border-bottom-right-radius: 0px;
+      border-top-right-radius: 0px;
+    }
+    button {
+      height: 50px;
+      position: relative;
+      top: -12px;
+      left: -4px;
+      margin-right: -4px;
+      box-shadow: 0 2px 10px 0 rgba(216, 35, 95, 0.25);
+      min-width: 161px;
+      max-width: unset;
+      @include font-size(14px, 0);
+    }
+    label {
+      @include font-size(16px);
+      font-family: $fontFamily;
+    }
+    @media screen and (max-width: $md) {
+      text-align: center;
+      display: block;
+      button {
+        top: 0px;
+      }
+    }
+  }
+}
+
+.c-form__label {
+  box-sizing: border-box;
+  color: $black;
+  font-weight: bold;
+  line-height: 2.2;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  &--outlined {
+    @include font-size(21px);
+    font-weight: bold;
+    font-family: $fontFamily;
+    color: $darkGrey;
+    margin: 20px 0 10px 0px;
+  }
+}
+
+.c-form__button-wrapper {
+  position: relative;
+  .c-form__button-field {
+    position: absolute;
+    right: 0;
+    top: 14px;
+  }
+}
+
+.c-form__hidden-input {
+  @include visually-hidden();
+  bottom: 0;
+}
+
+.c-form__submit-rule {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border: 1px solid #eae8ea;
+}
+
+.c-form__error-message {
+  color: $form-input-error;
+  display: block;
+  padding-right: 18px;
+  position: relative;
+  margin-top: 5px;
+  text-align: left;
+  list-style: none;
+  padding-left: 0;
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    background-image: url("../../assets/images/icons/text-warning-icon.svg");
+  }
+}
+
+.c-form__input-container {
+  position: relative;
+  width: 100%;
+  .svg-icon {
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    transform: translateY(calc(-50% - 2px));
+    z-index: 10;
+    width: 24px;
+    max-height: 23px;
+    path {
+      fill: $darkGrey;
+    }
+  }
+
+  select {
+    appearance: none;
+    position: relative;
+    background-image: url("../../assets/images/icons/dropdown-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    &.c-form__input--simple {
+      @include font-size(16px);
+      border-bottom: none;
+      padding: 0px 25px;
+      text-decoration: underline;
+      text-align-last: right;
+      background-image: url("../../assets/images/icons/dropdown-arrow-simple.svg");
+      background-repeat: no-repeat;
+      background-position: right;
+      position: relative;
+      &:focus,
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.c-form__input {
+  border-style: solid;
+  border-width: 0px;
+  border-bottom-width: 2px;
+  border-color: $darkGrey;
+  transition: border 300ms ease-in-out;
+  font-family: inherit;
+  padding: 12px 8px;
+  color: inherit;
+  box-sizing: border-box;
+  background: $white;
+  position: relative;
+  width: 100%;
+  color: $darkGrey;
+
+  &--has-icon {
+    padding-left: 38px;
+  }
+
+    &--has-no-border {
+      border: none;
+    }
+
+  &--large {
+    padding: 24px 24px;
+    @include font-size(30px);
+    font-family: $fontFamily;
+    @media screen and (max-width: $sm) {
+      @include font-size(24px);
+    }
+  }
+
+  &::placeholder,
+  &--empty {
+    color: $form-input;
+    opacity: 1;
+  }
+
+  &:placeholder-shown,
+  &--empty {
+    border-color: $form-input;
+    + .svg-icon path {
+      fill: $form-input;
+      stroke: $form-input;
+    }
+
+    + .svg-icon g {
+      stroke: $form-input;
+    }
+  }
+
+  &--outlined {
+    border-width: 1px;
+    border-color: #dadada;
+    border-radius: 5px;
+    padding: 24px;
+    @media screen and (max-width: $sm) {
+      padding: 12px;
+    }
+    &:placeholder-shown {
+      border-color: #dadada;
+    }
+  }
+
+  &:disabled {
+    border-color: $form-input-disabled;
+    border-style: solid;
+    color: $form-input-disabled;
+    background: $white;
+    -webkit-text-fill-color: $form-input-disabled;
+    opacity: 1; /* required on iOS */
+    &::placeholder {
+      color: $form-input-disabled;
+    }
+
+    + .svg-icon {
+      path {
+        fill: $form-input-disabled;
+        stroke: $form-input-disabled;
+      }
+    }
+  }
+
+  &:active,
+  &:focus {
+    border-color: $form-input-active;
+    outline: none;
+    + .svg-icon path {
+      fill: $form-input-active;
+      stroke: $form-input-active;
+    }
+
+    + .svg-icon g {
+      stroke: $form-input-active;
+    }
+  }
+
+  &--primary {
+    &:focus {
+      border-color: $global-brand-color;
+    }
+  }
+
+  &--has-error {
+    border-color: $form-input-error;
+    &:active,
+    &:focus {
+      border-color: $form-input-error;
+    }
+  }
+}
+
+.u-form__upload-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  border: solid 2px rgba(0, 0, 0, 0.12);
+  min-width: 200px;
+  height: 125px;
+  position: relative;
+  margin: 0 12px;
+  cursor: pointer;
+  .u-form__upload-icon,
+  .u-form__upload-text {
+    display: inline;
+  }
+  .u-form__upload-icon {
+    width: 35px;
+  }
+  .u-form__upload-text {
+    font-family: $fontFamily;
+  }
+  &--square {
+    flex-wrap: wrap;
+    width: 125px;
+    min-width: inherit;
+    height: 125px;
+    margin: 0 auto;
+    .u-form__upload-icon {
+      position: relative;
+      top: 24px;
+    }
+  }
+}
+
+.u-form__upload-image-preview {
+  height: 100px;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+textarea.c-form__input {
+  border-width: 1px;
+  border-style: solid;
+  max-width: 100%;
+  &--tall {
+    height: 180px;
+  }
+}
+
+.c-form__toggle-button {
+  display: inline-block;
+  position: relative;
+  width: 51px;
+  height: 26px;
+  padding: 3px;
+  border: 0;
+  border-radius: 16px;
+  background-color: $grey;
+  transition: $global-transition;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid transparent;
+  span {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    height: 22px;
+    width: 22px;
+    top: 0px;
+    left: 0px;
+    background-color: $white;
+    transition: $global-transition;
+    &:before {
+      content: "";
+      display: block;
+      position: relative;
+      top: 2px;
+      left: -15px;
+      width: 12px;
+      height: 9px;
+    }
+  }
+  &[aria-checked="true"] {
+    background-color: $global-brand-color;
+    span {
+      left: 25px;
+    }
+  }
+  &:focus {
+    outline: none;
+    border: 2px solid $secondary-colour;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.c-form__checkbox-group,
+.c-form__radio-group {
+  .c-form__group {
+    border-bottom: 1px solid $midGrey;
+  }
+}
+
+.c-form__checkbox-group--is-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .c-form__group {
+    border-bottom: none;
+  }
+
+  .c-form__checkbox-label,
+  .c-form__radio-label {
+    display: block;
+    text-align: center;
+    width: 97px;
+    margin: 5px;
+    text-transform: capitalize;
+    .c-label-image {
+      display: block !important;
+      text-align: center;
+      width: 89px;
+      height: 89px;
+      background-size: cover;
+      cursor: pointer;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 4px solid #333333;
+      transition: $global-transition;
+    }
+
+    &:after {
+      content: none;
+    }
+  }
+
+  .c-form__checkbox-input:focus + .c-form__checkbox-label,
+  .c-form__radio-input:focus + .c-form__radio-label {
+    .c-label-image {
+      box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  .c-form__checkbox-input:checked + .c-form__checkbox-label,
+  .c-form__radio-input:checked + .c-form__radio-label {
+    .c-label-image {
+      border: 4px solid $global-brand-color;
+    }
+  }
+}
+
+.c-form__checkbox-label,
+.c-form__radio-label {
+  background-color: $tint;
+  border: 2px solid $tint;
+  color: $darker-pink;
+  font-weight: bold;
+  display: flex;
+  flex: 1 1 0;
+  font-weight: bold;
+  flex-direction: column;
+  justify-content: center;
+  padding: $global-padding-small;
+  border-radius: $global-radius-large;
+  transition: $global-transition;
+
+  span {
+    margin-left: 5px;
+    @include font-size(24px, 1.58);
+  }
+  &:before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75%;
+    display: inline-block;
+    top: 3px;
+    position: relative;
+  }
+
+  &--checked {
+    background-color: $white;
+    &:before {
+      background-image: url("../../assets/images/icons/check-icon.svg");
+    }
+  }
+
+  &:hover,
+  &--focused {
+    border-color: $global-brand-color;
+    &:before {
+    }
+  }
+}
+
+.c-form__radio-label {
+  &:before {
+    border-radius: 50%;
+  }
+  &--checked {
+    &:before {
+    }
+  }
+  &--focused {
+    &:before {
+    }
+  }
+}
+
+.c-form__radio-group {
+  .c-form__radio-label {
+    font-weight: normal;
+  }
+}
+
+.c-form__seperator {
+  border-style: solid;
+  border-width: 0px;
+  border-bottom-width: 2px;
+  border-color: $form-input;
+  margin-bottom: 25px;
+  .c-form__seperator-label {
+    background-color: white;
+    padding: 0 25px;
+    position: relative;
+    top: 14px;
+  }
+}
+
+.c-form__group {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+
+  &--empty {
+    border-color: $form-input;
+    .svg-icon path {
+      fill: $form-input;
+      stroke: $form-input;
+    }
+
+    .svg-icon g {
+      stroke: $form-input;
+    }
+  }
+
+  &--focused {
+    border-color: $form-input-active;
+    outline: none;
+    .svg-icon path {
+      fill: $form-input-active;
+      stroke: $form-input-active;
+    }
+
+    .svg-icon g {
+      stroke: $form-input-active;
+    }
+  }
+
+  &--is-pill {
+    .c-form__input {
+      border-radius: 15px;
+      background-color: transparent;
+      color: $darkGrey;
+      border-color: $grey;
+      border-width: 1px;
+      text-transform: capitalize;
+      z-index: 50;
+      min-height: 28px;
+      max-width: 120px;
+      text-align: left;
+      padding: 0px 24px 0px 24px;
+      @include font-size(12px);
+      font-family: $fontFamilyBold;
+      transition: padding 0.1s ease-in;
+      &:hover,
+      &:focus {
+        border-color: $darker-pink;
+      }
+      &::placeholder {
+        color: $darkGrey;
+      }
+    }
+    &.c-form__group--no-icon {
+      .c-form__input {
+        padding-left: 12px;
+      }
+    }
+    .svg-icon {
+      width: 12px;
+      height: 12px;
+      left: 8px;
+      top: 53%;
+      g, path {
+        fill: $darkGrey !important;
+        stroke: $darkGrey !important;
+      }
+    }
+  }
+
+  +.c-form__input-dismiss-button {
+    position: absolute;
+    top: 19px;
+    right: 16px;
+    font-size: 12px;
+    z-index: 999;
+  }
+}
+
+.c-form__card {
+  min-height: 100px;
+  background-color: $tint;
+  border-radius: $global-radius-large;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+
+  .c-form__radio-label,
+  .c-form__label-subtitle {
+    width: 100%;
+    @include font-size(16px, 1.5);
+      font-weight: bold;
+
+  }
+
+  .c-form__radio-label {
+    width: 100%;
+    cursor: pointer;
+    span {
+      margin-left: 0px;
+    }
+
+    &:before {
+      position: absolute;
+      right: $global-padding-xsmall;
+      top: $global-padding-xsmall;
+      width: 26px;
+      height: 26px;
+    }
+  }
+  &.c-form__group--checked {
+    box-shadow: 0 8px 24px 0 $black12;
+    background-color: $white;
+  }
+}
+
+.react-datepicker__input-container {
+  input {
+    width: 100%;
+  }
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker-popper {
+  z-index: 999;
+}
+
+.react-datepicker-time__header {
+  @include font-size(12px);
+}
+
+@media screen and (max-width: $sm) {
+  .react-datepicker__month-container,
+  .react-datepicker__time-container {
+    float: none;
+    width: 100%;
+    border-left: 0px;
+  }
+
+  .react-datepicker__time-container {
+    border-top: 1px solid #aeaeae;
+  }
+
+  .react-datepicker__time-container,
+  .react-datepicker__time {
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+  }
+
+  .react-datepicker__time-box {
+    width: 100% !important;
+  }
+
+  .react-datepicker__navigation--next {
+    right: 10px !important;
+  }
+}

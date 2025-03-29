@@ -1,0 +1,236 @@
+pipelines:
+
+  pull-requests:
+    feature/*:
+      - step:
+          name: Test and Build
+          image: node:12.8.0
+          caches:
+            - node
+          artifacts:
+            - build/**
+          script:
+            - yarn install
+            - yarn test
+            - yarn build
+
+    fix/*:
+      - step:
+          name: Test and Build
+          image: node:12.8.0
+          caches:
+            - node
+          artifacts:
+            - build/**
+          script:
+            - yarn install
+            - yarn test
+            - yarn build
+
+  custom:
+    deploy-to-test:
+      - step:
+          name: Test and Build
+          image: node:12.8.0
+          deployment: test
+          caches:
+            - node
+          artifacts:
+            - build/**
+          script:
+            - yarn install
+            - yarn test
+            - yarn build
+      - step:
+          name: Deploy to test
+          image: atlassian/pipelines-awscli
+          artifacts:
+            - build/**
+          script:
+            - cd build
+            - aws s3 sync . s3://uos-abreast-of-health-website-test
+      - step:
+          name: Deployment tidy
+          image: atlassian/default-image:2
+          script:
+            - git push origin :refs/tags/test
+            - git tag -f -a test -m "Test release"
+            - git push -f --tags
+            - ./notify-sentry-of-release.bash test
+    deploy-to-staging:
+      - step:
+          name: Test and Build
+          image: node:12.8.0
+          deployment: staging
+          caches:
+            - node
+          artifacts:
+            - build/**
+          script:
+            - yarn install
+            - yarn test
+            - yarn build
+      - step:
+          name: Deploy to staging
+          image: atlassian/pipelines-awscli
+          artifacts:
+            - build/**
+          script:
+            - cd build
+            - aws s3 sync . s3://uos-abreast-of-health-website-staging
+      - step:
+          name: Deployment tidy
+          image: atlassian/default-image:2
+          script:
+            - git push origin :refs/tags/staging
+            - git tag -f -a staging -m "Staging release"
+            - git push -f --tags
+            - ./notify-sentry-of-release.bash staging
+    deploy-to-production:
+      - step:
+          name: Test and Build
+          image: node:12.8.0
+          deployment: production
+          caches:
+            - node
+          artifacts:
+            - build/**
+          script:
+            - yarn install
+            - yarn test
+            - yarn build
+      - step:
+          name: Deploy to production
+          image: atlassian/pipelines-awscli
+          artifacts:
+            - build/**
+          script:
+            - cd build
+            - aws s3 sync . s3://uos-abreast-of-health-website-production
+      - step:
+          name: Deployment tidy
+          image: atlassian/default-image:2
+          script:
+            - git push origin :refs/tags/production
+            - git tag -f -a production -m "Staging release"
+            - git push -f --tags
+            - ./notify-sentry-of-release.bash production
+  branches:
+    master:
+      - step:
+          name: Test and Build for Staging
+          image: node:12.8.0
+          deployment: staging
+          caches:
+            - node
+          artifacts:
+            - build/**
+          script:
+            - yarn install
+            - yarn test
+            - yarn build
+      - step:
+          name: Deploy to staging
+          trigger: manual
+          image: atlassian/pipelines-awscli
+          artifacts:
+            - build/**
+          script:
+            - cd build
+            - aws s3 sync . s3://uos-abreast-of-health-website-staging
+      - step:
+          name: Deployment tidy
+          image: atlassian/default-image:2
+          script:
+            - git push origin :refs/tags/staging
+            - git tag -f -a staging -m "Staging release"
+            - git push -f --tags
+            - ./notify-sentry-of-release.bash staging
+      - step:
+          name: Test and Build for Production
+          image: node:12.8.0
+          deployment: production
+          caches:
+            - node
+          artifacts:
+            - build/**
+          script:
+            - yarn install
+            - yarn test
+            - yarn build
+      - step:
+          name: Deploy to production
+          trigger: manual
+          image: atlassian/pipelines-awscli
+          artifacts:
+            - build/**
+          script:
+            - cd build
+            - aws s3 sync . s3://uos-abreast-of-health-website-production
+      - step:
+          name: Deployment tidy
+          image: atlassian/default-image:2
+          script:
+            - git push origin :refs/tags/production
+            - git tag -f -a production -m "Production release"
+            - git push -f --tags
+            - ./notify-sentry-of-release.bash production
+    develop:
+      - step:
+          name: Test and Build test
+          image: node:12.8.0
+          deployment: test
+          caches:
+            - node
+          artifacts:
+            - build/**
+          script:
+            - yarn install
+            - yarn test
+            - yarn build
+      - step:
+          name: Deploy to Test
+          trigger: manual
+          image: atlassian/pipelines-awscli
+          artifacts:
+            - build/**
+          script:
+            - cd build
+            - aws s3 sync . s3://uos-abreast-of-health-website-test
+      - step:
+          name: Deployment tidy
+          image: atlassian/default-image:2
+          script:
+            - git push origin :refs/tags/test
+            - git tag -f -a test -m "Test release"
+            - git push -f --tags
+            - ./notify-sentry-of-release.bash test
+      - step:
+          name: Test and Build
+          image: node:12.8.0
+          deployment: staging
+          caches:
+            - node
+          artifacts:
+            - build/**
+          script:
+            - yarn install
+            - yarn test
+            - yarn build
+      - step:
+          name: Deploy to staging
+          trigger: manual
+          image: atlassian/pipelines-awscli
+          artifacts:
+            - build/**
+          script:
+            - cd build
+            - aws s3 sync . s3://uos-abreast-of-health-website-staging
+      - step:
+          name: Deployment tidy
+          image: atlassian/default-image:2
+          script:
+            - git push origin :refs/tags/staging
+            - git tag -f -a staging -m "Staging release"
+            - git push -f --tags
+            - ./notify-sentry-of-release.bash staging

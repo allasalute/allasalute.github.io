@@ -1,0 +1,12 @@
+.c-info-card {
+    background-color: $tint;
+    border-radius: $global-radius-large;
+    padding: $global-padding-small;
+    display: block;
+    margin-bottom: $global-padding-large;
+
+    &__text {
+        @include font-size(16px, 1.5);
+        font-weight: bold;
+    }
+}
