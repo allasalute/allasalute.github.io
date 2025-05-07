@@ -11,8 +11,6 @@ import classnames from "classnames";
 import { responsiveBreakpoint } from "constants/responsiveBreakpoint";
 import { type Response } from "constants/types";
 
-import { getEngPercentile } from "helpers/unitCalculations";
-
 import List from "components/Elements/List/List";
 import Header from "components/Header/HeaderContainer";
 import PersonalisedAdvice from "components/PersonalisedAdvice/PersonalisedAdvice";

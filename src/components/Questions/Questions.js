@@ -87,20 +87,23 @@ const Questions = (props: Props): Element<any> => {
   const currentQuestion = questionsList?.[questionCount];
   console.log("currentQuestion:", currentQuestion);
   const currentResponse = responses?.[questionCount];
+  const previousQuestionKey = useRef(null);
+
   useEffect(() => {
-    if (currentQuestion?.questionType === "time") {
+    if (currentQuestion?.questionType === "time" && currentQuestion?.key !== previousQuestionKey.current) {
+      previousQuestionKey.current = currentQuestion?.key;
+
       const value = currentResponse?.value;
       if (typeof value === "string" && value.includes(",")) {
         const [days, minutes] = value.split(",").map(Number);
         setNumberOfDays(days ?? null);
         setNumberOfMinutes(minutes ?? null);
       } else {
-        console.log("Resetting values, no valid currentResponse:", value);
         setNumberOfDays(null);
         setNumberOfMinutes(null);
       }
     }
-  }, [currentQuestion?.key]);
+  }, [currentQuestion, currentResponse]);
 
   const isUserTeetotal = responses.some(item => item.question === "one" && item.value === "0");
   const totalSteps = isUserTeetotal ? 7 : questionsList?.length ?? 0;
@@ -536,6 +539,8 @@ const Questions = (props: Props): Element<any> => {
                                 break;
                               case "minutes":
                                 setNumberOfMinutes(val);
+                                break;
+                              default:
                                 break;
                             }
                             updateTimeResponse(item, val);

@@ -2,7 +2,7 @@
 
 import React, { type Element, useMemo } from "react";
 import PropTypes from "prop-types";
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import List from "components/Elements/List/List";
 import { drinkResultsCategories as drinkCategories } from "constants/questionnaire";
 
