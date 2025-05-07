@@ -7,12 +7,14 @@ import classnames from "classnames";
 
 import { responsiveBreakpoint } from "constants/responsiveBreakpoint";
 
-import illustratedImage from "assets/images/illustrations/2donne.jpg";
+import illustratedImage from "assets/images/illustrations/2donne.png";
 import timeIcon from "assets/images/icons/time.svg";
 import questionIcon from "assets/images/icons/question.svg";
 import tickIcon from "assets/images/icons/tick.svg";
-import LogoUnico from "assets/images/icons/LogoUnico.svg";
-import UosLogo_LogoOrdineMediciCagliari from "assets/images/icons/UosLogo_LogoOrdineMediciCagliari.png";
+import LogoUnica from "assets/images/icons/UnicaLogoDipNew.svg";
+import LogoFondazioneSardegna from "assets/images/icons/LogoFondazioneSardegna.png";
+import LogoOrdineMediciCagliari from "assets/images/icons/OrdineMediciCagliariLogoReview.png";
+import LogoUOS from "assets/images/icons/UosLogo.png";
 
 import List from "components/Elements/List/List";
 import InfoCard from "components/Elements/InfoCard/InfoCard";
@@ -55,14 +57,17 @@ function Landing(props) {
       >
         {t("common.next")}
       </Link>
-      <p>
-        <div className="c-info u-flex--column">
-          <Trans i18nKey="onboarding.infoThanksTo.Fondazione"></Trans>
-          <img className="u-responsive-image" src={LogoUnico} alt="" role="presentation" />
-          <img className="u-responsive-image" src={UosLogo_LogoOrdineMediciCagliari} alt="" role="presentation" />
+      <div className="info__logos-wrapper">
+        <p className="u-text-center u-margin-bottom-small logos-text">
+          <Trans i18nKey="onboarding.infoThanksTo.Fondazione" />
+        </p>
+        <div className="info__logos-grid">
+          <img className="u-responsive-image" src={LogoUnica} alt="" role="presentation" />
+          <img className="u-responsive-image" src={LogoFondazioneSardegna} alt="" role="presentation" />
+          <img className="u-responsive-image" src={LogoOrdineMediciCagliari} alt="" role="presentation" />
+          <img className="u-responsive-image" src={LogoUOS} alt="" role="presentation" />
         </div>
-      </p>
-
+      </div>
       {showEndSessionModal && (
         <Modal onClose={() => setEndSessionModal(false)} className="c-modal--small">
           <div className="o-container u-width-100 u-padding-horizontal-none">

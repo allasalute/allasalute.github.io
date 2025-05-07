@@ -36,13 +36,27 @@
     &__number {
          width: 31%;
          margin-right: $global-padding-large;
+         display: flex;
+         flex-direction: column;
 
          @media screen and (max-width: $sm) {
              width: 100%;
              margin-bottom: $global-padding-small;
              margin-right: 0;
          }
+         &.has-error input {
+          border-color: $color-error; // oppure: red;
+         }
+
+        .c-input-error {
+          color: $color-error; // oppure: red;
+          margin-top: $global-padding-small;
+        }
     }
+
+    &__c-input-number {
+        width:100%
+        }
 
     &__drink-card-wrapper {
         overflow-x: scroll;

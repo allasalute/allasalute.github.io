@@ -6,7 +6,7 @@ import { Link, Redirect } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import classnames from "classnames";
 
-import images from "assets/images/charts/units";
+//import images from "assets/images/charts/units";
 
 import { responsiveBreakpoint } from "constants/responsiveBreakpoint";
 import { type Response } from "constants/types";
@@ -19,6 +19,7 @@ import PersonalisedAdvice from "components/PersonalisedAdvice/PersonalisedAdvice
 
 import drinkingImage from "assets/images/illustrations/drinking.svg";
 import smokerImage from "assets/images/illustrations/smoker.svg";
+import activityImage from "assets/images/illustrations/physical-activity.svg";
 
 type Props = {
   +response: Array<Response>
@@ -26,6 +27,25 @@ type Props = {
 
 function Results(props: Props): Element<any> {
   const { response } = props;
+
+  const getTimeFromResponse = key => {
+    const entry = response.find(r => r.question === key);
+    if (!entry || !entry.value) return { days: 0, hours: 0, minutes: 0 };
+    const [days, minutes] = entry.value.split(",").map(Number);
+    return {
+      days: days || 0,
+      minutes: minutes || 0
+    };
+  };
+
+  const calculateMET = ({ days, minutes }, factor) => {
+    return minutes * days * factor;
+  };
+
+  const metIntense = calculateMET(getTimeFromResponse("seven"), 8);
+  const metModerate = calculateMET(getTimeFromResponse("eight"), 4);
+  const metWalking = calculateMET(getTimeFromResponse("nine"), 3);
+  const totalMET = metIntense + metModerate + metWalking;
 
   const { t } = useTranslation();
 
@@ -164,6 +184,14 @@ function Results(props: Props): Element<any> {
 
   console.log("ewac: ", ewacUk, "auditC: ", auditC);
 
+  const getPhysicalActivityLevel = met => {
+    if (met >= 2520) return "high";
+    if (met >= 700) return "moderate";
+    return "low";
+  };
+
+  const activityLevel = getPhysicalActivityLevel(totalMET);
+
   return isResponsesAvailable ? (
     <>
       <Header isHomeBtnVisible isShareVisible isEndSessionBtnVisible />
@@ -176,52 +204,43 @@ function Results(props: Props): Element<any> {
           </aside>
           <section className={classes}>
             <h2 className="u-margin-top-none u-margin-bottom" data-testid="title">
+              {t("questionnaireResults.title")}
+            </h2>
+            <h2 className="u-margin-top-none u-margin-bottom" data-testid="title">
               {t("questionnaireResults.alcoholIntake.title")}
             </h2>
             <PersonalisedAdvice isUserADrinker={isUserADrinker} ewac={ewacUk} audit1={audit1} auditC={auditC} />
-          </section>
-        </div>
-        <div className={wrapperClasses} data-testid="drinker-comparison">
-          <aside className="c-sidebar">
-            <div className="c-sidebar__inner">
-              <img
-                className="u-responsive-image"
-                src={images.units}
-                srcSet={`${images.units} 1x, ${images.units2x} 2x, ${images.units3x} 3x`}
-                alt=""
-                role="presentation"
-              />
-            </div>
-          </aside>
-          <section className={classes}>
-            <h2 className="u-margin-top-none u-margin-bottom">{t("questionnaireResults.comparedToOthers.title")}</h2>
-            <p className="c-info__heading u-margin-vertical-none">
-              {t("questionnaireResults.comparedToOthers.percentageBar.england.ctaText")}
-            </p>
-            <div className="c-info u-flex--column">
-              <p className="u-margin-vertical-none">
-                {t("questionnaireResults.comparedToOthers.percentageBar.england.caption", {
-                  percentage: getEngPercentile(audit1, audit2, audit3)
-                })}
-              </p>
-              <b className="u-margin-none">
-                <Trans i18nKey="questionnaireResults.deptOfHealthRecommendations.title">
-                  values=
-                  {{ list: t("questionnaireResults.deptOfHealthRecommendations.list") }}
-                  components=
-                  {[
-                    <List
-                      items={t("questionnaireResults.deptOfHealthRecommendations.list", { returnObjects: true })}
-                    ></List>
+            <div data-testid="drinker-comparison" style={{ display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "block", marginTop: "1rem" }}>
+                <div className="u-flex u-flex--wrap">
+                  {t("questionnaireResults.deptOfHealthRecommendations.list", { returnObjects: true }).map(
+                    (item, idx) => {
+                      return (
+                        <button key={idx} className="c-highlight-box-alt u-margin-bottom">
+                          {item}
+                        </button>
+                      );
+                    }
+                  )}
+                </div>
+              </div>
+              <p className="u-margin-top u-margin-bottom">
+                <Trans
+                  i18nKey="questionnaireResults.deptOfHealthRecommendations.support"
+                  values={{
+                    link: t(`questionnaireResults.deptOfHealthRecommendations.supportLink`)
+                  }}
+                  components={[
+                    <a
+                      href="/drinkcalculator"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="u-styled-link u-styled-link--inherit u-font-bold"
+                    >
+                      {t("questionnaireResults.deptOfHealthRecommendations.supportLink")}
+                    </a>
                   ]}
-                </Trans>
-              </b>
-              <p className="u-margin-none">
-                <Trans i18nKey="questionnaireResults.deptOfHealthRecommendations.cta">
-                  <List
-                    items={t("questionnaireResults.deptOfHealthRecommendations.list", { returnObjects: true })}
-                  ></List>
-                </Trans>
+                />
               </p>
             </div>
           </section>
@@ -242,24 +261,24 @@ function Results(props: Props): Element<any> {
                   returnObjects: true
                 })}
                 link={
-                  isSmoker ? (
-                    <span className="u-padding-top u-margin-none">
-                      <Trans
-                        i18nKey={`questionnaireResults.smoking.smoker.support`}
-                        values={{ link: t(`questionnaireResults.smoking.smoker.supportLink`) }}
-                        components={[
-                          <a
-                            href="/smoking"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="u-styled-link u-styled-link--inherit u-font-bold"
-                          >
-                            {t(`questionnaireResults.smoking.smoker.supportLink`)}
-                          </a>
-                        ]}
-                      ></Trans>
-                    </span>
-                  ) : null
+                  <span className="u-padding-top u-margin-none">
+                    <Trans
+                      i18nKey={`questionnaireResults.smoking.${isSmoker ? "smoker" : "nonSmoker"}.support`}
+                      values={{
+                        link: t(`questionnaireResults.smoking.${isSmoker ? "smoker" : "nonSmoker"}.supportLink`)
+                      }}
+                      components={[
+                        <a
+                          href="/smoking"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="u-styled-link u-styled-link--inherit u-font-bold"
+                        >
+                          {t(`questionnaireResults.smoking.smoker.supportLink`)}
+                        </a>
+                      ]}
+                    ></Trans>
+                  </span>
                 }
               ></List>
             </p>
@@ -275,9 +294,65 @@ function Results(props: Props): Element<any> {
                   lbs: healthyWeightInLbs,
                   returnObjects: true
                 })}
+                link={
+                  <span className="u-padding-top u-margin-none">
+                    <Trans
+                      i18nKey={`questionnaireResults.activityLevel.support`}
+                      values={{
+                        link: t(`questionnaireResults.activityLevel.supportLink`)
+                      }}
+                      components={[
+                        <a
+                          href="/weight"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="u-styled-link u-styled-link--inherit u-font-bold"
+                        >
+                          {t(`questionnaireResults.activityLevel.supportLink`)}
+                        </a>
+                      ]}
+                    ></Trans>
+                  </span>
+                }
               ></List>
             </p>
-
+          </section>
+        </div>
+        <div className={wrapperClasses}>
+          <aside className="c-sidebar">
+            <div className="c-sidebar__inner">
+              <img className="u-responsive-image" src={activityImage} alt="" role="presentation" />
+            </div>
+          </aside>
+          <section className={classes}>
+            <h2 className="u-margin-top u-margin-bottom-small">{t("questionnaireResults.activityLevel.title")}</h2>
+            <p className="u-margin-vertical-none" data-testid="activity-data">
+              <List
+                items={t(`questionnaireResults.activityLevel.${activityLevel}.list`, {
+                  returnObjects: true
+                })}
+                link={
+                  <span className="u-padding-top u-margin-none">
+                    <Trans
+                      i18nKey={`questionnaireResults.activityLevel.support`}
+                      values={{
+                        link: t(`questionnaireResults.activityLevel.supportLink`)
+                      }}
+                      components={[
+                        <a
+                          href="/stayingactive"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="u-styled-link u-styled-link--inherit u-font-bold"
+                        >
+                          {t(`questionnaireResults.activityLevel.supportLink`)}
+                        </a>
+                      ]}
+                    ></Trans>
+                  </span>
+                }
+              />
+            </p>
             <div className={buttonWrapperClasses}>
               <Link
                 to={{ pathname: "/questionnaire", id: 5 }}

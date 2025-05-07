@@ -1,4 +1,4 @@
-// @flow
+﻿// @flow
 
 import React, { useEffect, useState, useRef, type Element } from "react";
 import classnames from "classnames";
@@ -38,6 +38,8 @@ const Questions = (props: Props): Element<any> => {
   const [questionCount, setQuestionCount] = useState(0);
   const [numberOfCm, setNumberOfCm] = useState(0);
   const [numberOfKg, setNumberOfKg] = useState(0);
+  const [numberOfDays, setNumberOfDays] = useState(null);
+  const [numberOfMinutes, setNumberOfMinutes] = useState(null);
   const [numberOfFeet, setNumberOfFeet] = useState(null);
   const [numberOfInches, setNumberOfInches] = useState(null);
   const [numberOfStone, setNumberOfStone] = useState(null);
@@ -45,6 +47,8 @@ const Questions = (props: Props): Element<any> => {
 
   const numberInputRef = useRef(null);
   const numberInputTwoRef = useRef(null);
+  const dropdownRef = useRef(null);
+  const inputRefs = { days: useRef(null), minutes: useRef(null) };
 
   const buttonWrapperClasses = classnames(
     !isMobile && "u-flex",
@@ -80,8 +84,26 @@ const Questions = (props: Props): Element<any> => {
     }
   }, [questionNumberProp]);
 
+  const currentQuestion = questionsList?.[questionCount];
+  console.log("currentQuestion:", currentQuestion);
+  const currentResponse = responses?.[questionCount];
+  useEffect(() => {
+    if (currentQuestion?.questionType === "time") {
+      const value = currentResponse?.value;
+      if (typeof value === "string" && value.includes(",")) {
+        const [days, minutes] = value.split(",").map(Number);
+        setNumberOfDays(days ?? null);
+        setNumberOfMinutes(minutes ?? null);
+      } else {
+        console.log("Resetting values, no valid currentResponse:", value);
+        setNumberOfDays(null);
+        setNumberOfMinutes(null);
+      }
+    }
+  }, [currentQuestion?.key]);
+
   const isUserTeetotal = responses.some(item => item.question === "one" && item.value === "0");
-  const totalSteps = isUserTeetotal ? 4 : questionsList?.length ?? 0;
+  const totalSteps = isUserTeetotal ? 7 : questionsList?.length ?? 0;
 
   const incrementQuestion = (questionCount: number, isUserTeetotal: boolean) => {
     const isFirstQuestion = questionsList?.[questionCount].key === "one";
@@ -137,6 +159,33 @@ const Questions = (props: Props): Element<any> => {
     }
   };
 
+  const getHeartsForQuestion = key => {
+    switch (key) {
+      case "seven": // intensa
+        return "❤️❤️❤️";
+      case "eight": // moderata
+        return "❤️❤️";
+      case "nine": // camminata
+        return "❤️";
+      default:
+        return "";
+    }
+  };
+
+  const updateTimeResponse = (unit, value) => {
+    const days = unit === "days" ? value : numberOfDays;
+    const minutes = unit === "minutes" ? value : numberOfMinutes;
+
+    const finalValue = `${days || 0},${minutes || 0}`;
+
+    onAnswer({
+      question: currentQuestion.key,
+      value: finalValue
+    });
+
+    setResponseSelected(true);
+  };
+
   const convertValue = (type: UnitTypeEnum, value: string) => {
     const convertValueToNumber = Number(value);
     const convertCmToFeet = convertValueToNumber / 30.48; // Formula: divide the cm height value by 30.48
@@ -167,6 +216,10 @@ const Questions = (props: Props): Element<any> => {
         return formattedValueInLbs;
       case "kg":
         return Math.round(convertValueToNumber * 10) / 10;
+      case "days":
+        return Math.round(convertValueToNumber);
+      case "minutes":
+        return Math.round(convertValueToNumber);
       default:
         return 0;
     }
@@ -231,6 +284,22 @@ const Questions = (props: Props): Element<any> => {
         } else {
           return responses[questionCount].value;
         }
+      case "days":
+        if (numberOfDays) {
+          return numberOfDays !== null && numberOfDays !== undefined
+            ? numberOfDays
+            : responses[questionCount].value?.split(",")[0] ?? "";
+        } else {
+          return responses[questionCount].value;
+        }
+      case "minutes":
+        if (numberOfMinutes) {
+          return numberOfMinutes !== null && numberOfMinutes !== undefined
+            ? numberOfMinutes
+            : responses[questionCount].value?.split(",")[1] ?? "";
+        } else {
+          return responses[questionCount].value;
+        }
       default:
         return 0;
     }
@@ -247,6 +316,12 @@ const Questions = (props: Props): Element<any> => {
           return 2;
         case 5:
           return 3;
+        case 6:
+          return 4;
+        case 7:
+          return 5;
+        case 8:
+          return 6;
         default:
           return questionCount;
       }
@@ -265,6 +340,10 @@ const Questions = (props: Props): Element<any> => {
       } else {
         setNumberOfKg(responses[questionCount].value ?? "0");
       }
+    } else if (unitType === "days") {
+      setNumberOfDays(responses[questionCount].value ?? "");
+    } else if (unitType === "minutes") {
+      setNumberOfMinutes(responses[questionCount].value ?? "");
     } else if (unitType === "cm") {
       const totalInCm = convertFeetAndInchesToCm();
       setNumberOfCm(Math.round(totalInCm));
@@ -282,34 +361,56 @@ const Questions = (props: Props): Element<any> => {
     setSelectedUnit(unitLabel);
   };
 
-  const currentQuestion = questionsList?.[questionCount];
-  const currentResponse = responses?.[questionCount];
   const isQuestionRequired = questionsList?.[questionCount]?.key !== "five";
   const isQuestionAnswered = responses?.[questionCount]?.value ? false : true;
-  const isFinalQuestion = questionsList?.[questionCount]?.key === "six" && currentResponse?.question === "six";
-  const isViewResultsButtonEnabled = parseFloat(currentResponse?.value) > 0;
+  const isFinalQuestion = questionsList?.[questionCount]?.key === "nine" && currentResponse?.question === "nine";
+  const isViewResultsButtonEnabled = Boolean(currentResponse?.value);
+  //const isViewResultsButtonEnabled = parseFloat(currentResponse?.value) > 0;
 
   const viewResultsButtonClasses = classnames(
     "c-button c-button--primary c-button--md u-margin-top-auto u-flex--align-self-end u-text-center c-questionnaire__btn",
     isViewResultsButtonEnabled && "is-disabled"
   );
 
+  const maxValues = {
+    days: 7,
+    minutes: 60
+  };
+  const [errors, setErrors] = useState({
+    days: null,
+    minutes: null
+  });
+  const isTimeQuestion = currentQuestion?.questionType === "time";
+
+  const isValidTime = () =>
+    numberOfDays !== null &&
+    numberOfMinutes !== null &&
+    numberOfDays >= 0 &&
+    numberOfDays <= 7 &&
+    numberOfMinutes >= 0 &&
+    numberOfMinutes <= 300;
+
   const formattedCurrentStepCount = renderCurrentStepCount(isUserTeetotal, questionCount);
   const isNextButtonEnabled = isQuestionRequired ? isQuestionAnswered : false;
   const isUnitKeyVisible = currentQuestion?.key === "two" || currentQuestion?.key === "three";
   const hasPreviousQuestion = questionCount >= 1;
+  console.log("currentQuestion:", currentQuestion);
+  console.log("questionCount:", questionCount);
+  console.log("questionsList:", questionsList);
   return currentQuestion ? (
     <>
       <ProgressBar
         max={totalSteps}
         min={0}
         value={formattedCurrentStepCount}
-        category={t(`questionnaire.${currentQuestion.key}.category`)}
+        category={`${t(`questionnaire.${currentQuestion.key}.category`)}\n${getHeartsForQuestion(currentQuestion.key)}`}
       />
-
       <h2 className="u-margin-top-none u-margin-bottom" data-testid="title">
         {t(`questionnaire.${currentQuestion.key}.title`)}
       </h2>
+      {t(`questionnaire.${currentQuestion.key}.subtitle`, { defaultValue: "" }) && (
+        <h3 className="u-margin-top-none u-margin-bottom-xs">{t(`questionnaire.${currentQuestion.key}.subtitle`)}</h3>
+      )}
 
       {currentQuestion?.questionType === "radio" ? (
         <div className={radioWrapperClasses} data-testid="questionnaire-radio">
@@ -339,6 +440,120 @@ const Questions = (props: Props): Element<any> => {
             />
           ))}
         </div>
+      ) : currentQuestion?.questionType === "select" ? (
+        <div ref={dropdownRef} className="u-flex u-flex--wrap u-margin-top-auto u-margin-bottom-huge">
+          {currentQuestion.questions.map((question, index) => {
+            const response = currentResponse?.value?.split(",") || ["0", "0"];
+            const selectedValue = response[index] || "";
+            const option = question.options?.[0];
+            return (
+              <div key={question.key} className="custom-select u-margin-right u-margin-bottom">
+                <label className="c-questionnaire__label u-margin-bottom-xs">
+                  {t(`questionnaire.${currentQuestion.key}.questions.${question.key}.label.${option.label}`)}
+                </label>
+                <select
+                  className="c-questionnaire__dropdown-select"
+                  style={{ marginBottom: "2rem" }}
+                  size="1"
+                  value={selectedValue}
+                  onChange={e => {
+                    const updated = [...response];
+                    updated[index] = e.target.value;
+                    const finalValue = updated.join(",");
+
+                    onAnswer({
+                      question: currentQuestion.key,
+                      value: finalValue
+                    });
+                    setResponseSelected(true);
+                  }}
+                >
+                  <option value="" disabled hidden>
+                    {t(`questionnaire.${currentQuestion.key}.questions.${question.key}.placeholder`)}
+                  </option>
+                  {option.items.map(item => (
+                    <option key={item} value={item}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            );
+          })}
+        </div>
+      ) : currentQuestion?.questionType === "time" ? (
+        <>
+          <div className="u-flex u-margin-top-auto u-margin-bottom-huge">
+            {currentQuestion.questions.map(question => {
+              return (question?.options ?? []).map((option, index) => {
+                return (option.items ?? []).map((item, index) => {
+                  let formattedValue = "";
+                  switch (item) {
+                    case "days":
+                      formattedValue = numberOfDays;
+                      break;
+                    case "minutes":
+                      formattedValue = numberOfMinutes;
+                      break;
+                    default:
+                      formattedValue = "";
+                  }
+
+                  return (
+                    <div className={`c-questionnaire__number ${errors[item] ? "has-error" : ""}`}>
+                      <Input
+                        className="c-input-number"
+                        label={t(`questionnaire.${currentQuestion.key}.questions.${question.key}.label.${item}`)}
+                        id={`question.key-${item}`}
+                        key={`${currentQuestion.key}-${item}`}
+                        type="number"
+                        showLabel
+                        ref={inputRefs[item]}
+                        value={formattedValue !== null ? Number(formattedValue) : ""}
+                        min={0}
+                        max={maxValues[item]}
+                        step={1}
+                        name={`number-input-${item}`}
+                        data-unit={item}
+                        data-measurement={t(`questionnaire.measurements.${item}`)}
+                        onChange={e => {
+                          const val = Number(e.target.value);
+                          const unit = e.target.dataset.unit;
+                          let isValid = true;
+                          if (unit === "days" && (val < 0 || val > 7)) {
+                            isValid = false;
+                            setErrors(prev => ({ ...prev, days: "Inserisci un valore tra 0 e 7" }));
+                          } else if (unit === "minutes" && (val < 0 || val > 300)) {
+                            isValid = false;
+                            setErrors(prev => ({ ...prev, minutes: "Inserisci un valore tra 0 e 300" }));
+                          } else {
+                            setErrors(prev => ({ ...prev, [unit]: null }));
+                          }
+                          if (isValid) {
+                            switch (unit) {
+                              case "days":
+                                setNumberOfDays(val);
+                                break;
+                              case "minutes":
+                                setNumberOfMinutes(val);
+                                break;
+                            }
+                            updateTimeResponse(item, val);
+                          }
+                        }}
+                        increaseDecreaseValue={1}
+                        tabIndex="0"
+                      />
+                      {errors[item] && (
+                        <p className="c-input-error u-color-error u-font-xs u-margin-top-xs"> {errors[item]}</p>
+                      )}
+                    </div>
+                  );
+                });
+              });
+            })}
+          </div>
+        </>
       ) : (
         <>
           <TabHeader>
@@ -406,6 +621,12 @@ const Questions = (props: Props): Element<any> => {
                             case "lbs":
                               setNumberOfLbs(e.target.value);
                               break;
+                            case "days":
+                              setNumberOfDays(e.target.value);
+                              break;
+                            case "minutes":
+                              setNumberOfMinutes(e.target.value);
+                              break;
                             default:
                               selectResponse({ ...question, value: e.target.value });
                           }
@@ -434,7 +655,6 @@ const Questions = (props: Props): Element<any> => {
           </div>
         </>
       )}
-
       <div className={buttonWrapperClasses}>
         {hasPreviousQuestion && (
           <Button
@@ -465,7 +685,9 @@ const Questions = (props: Props): Element<any> => {
         ) : (
           <Button
             className="c-button c-button--primary u-margin-top-auto u-flex--align-self-end c-questionnaire__btn"
-            disabled={isFinalQuestion ? !isViewResultsButtonEnabled : isNextButtonEnabled}
+            disabled={
+              isFinalQuestion ? !isViewResultsButtonEnabled : isTimeQuestion ? !isValidTime() : isNextButtonEnabled
+            }
             onClick={() => incrementQuestion(questionCount, isUserTeetotal)}
             data-testid="next-button"
           >

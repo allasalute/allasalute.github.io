@@ -9,6 +9,9 @@ import drinkingImage from "assets/images/illustrations/drinking.svg";
 import smokerImage from "assets/images/illustrations/smoker.svg";
 import heightImage from "assets/images/illustrations/height.svg";
 import weightImage from "assets/images/illustrations/weight.svg";
+import walkImage from "assets/images/illustrations/walk.svg";
+import runImage from "assets/images/illustrations/running.svg";
+import bikeImage from "assets/images/illustrations/bike.svg";
 import Questions from "components/Questions/Questions";
 import ContentWithSidebar from "components/ContentWithSidebar/ContentWithSidebar";
 
@@ -58,6 +61,15 @@ function Questionnaire(props: Props): Element<any> {
         break;
       case 5:
         setImage(weightImage);
+        break;
+      case 6:
+        setImage(runImage);
+        break;
+      case 7:
+        setImage(bikeImage);
+        break;
+      case 8:
+        setImage(walkImage);
         break;
       default:
         setImage(drinkingImage);

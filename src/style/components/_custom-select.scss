@@ -1,0 +1,85 @@
+.custom-select {
+  padding: $global-padding-xsmall;
+  background-color: $tint;
+  border-radius: $global-radius-large;
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 1rem;
+
+  label {
+    font-weight: bold;
+    display: block;
+    font-weight: 600;
+    margin-bottom: $global-padding-xsmall;
+    color: $darker-pink; // colore coerente con le etichette numeriche
+    font-size: 1rem;
+    font-family: $fontFamilyBold;
+  }
+
+  select {
+    width: 100%;
+    height: 48px;
+    appearance: none;
+    background-color: $white;
+    border: 2px solid $dark-pink;
+    border-radius: $global-radius-large;
+    padding: 0.75rem 1rem;
+    padding-right: 3rem;
+    color: $black;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease;
+
+    // Freccia moderna, colore dark-pink
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23a72253' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.06z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.25rem;
+
+    &:hover,
+    &:focus {
+      border-color: $dark-pink;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba($dark-pink, 0.2);
+    }
+
+    option {
+      background-color: $white; // colore durante hover
+      color: $black;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+    
+    option:checked {
+      background-color: $tint !important; // colore rosa chiaro
+      color: $darker-pink;
+    }
+    option:hover {
+      background-color: $tint !important; // colore rosa chiaro
+      color: $darker-pink;
+      border: 1px solid $dark-pink;
+      font-weight: 600;
+    }
+    option:focus {
+      background-color: $tint !important; // colore rosa chiaro
+      color: $darker-pink;
+    }
+  }
+}
+
+.c-questionnaire__hearts {
+  font-size: 1.5rem;
+  color: $dark-pink;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.u-hearts {
+  font-size: 1.2rem;
+  display: block;
+  margin-top: 0.25rem;
+  color: #a72253; // oppure usa la variabile $dark-pink se definita
+  text-align: center;
+}

@@ -10,3 +10,48 @@
         font-weight: bold;
     }
 }
+
+.c-highlight-box {
+  background-color: $tint; // Colore di sfondo chiaro coerente con l'app
+  color: $darker-pink;     // Colore del testo coerente con il brand
+  padding: $global-padding-small;
+  border-radius: $global-radius-large;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  max-width: 480px;
+  margin: 0 auto; // Per centrare
+}
+
+.c-highlight-box-alt {
+  border: 2px solid $dark-pink;
+  border-left: 6px solid $dark-pink;
+  background-color: $white;
+  color: $darker-pink;
+  padding: 1.2rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: left;
+  max-width: 540px;
+  margin: 0 auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    background-color: $tint;
+  }
+
+  &:active {
+    transform: scale(0.97);
+    background-color: lighten($tint, 8%);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+  }
+}

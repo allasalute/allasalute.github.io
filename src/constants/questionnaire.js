@@ -136,6 +136,75 @@ const questionSix = [
   }
 ];
 
+const questionSeven = [
+  {
+    key: "question-seven-days",
+    options: [
+      {
+        label: "one",
+        items: ["days"]
+      }
+    ],
+    value: ""
+  },
+  {
+    key: "question-seven-minutes",
+    options: [
+      {
+        label: "two",
+        items: ["minutes"]
+      }
+    ],
+    value: ""
+  }
+];
+
+const questionEight = [
+  {
+    key: "question-eight-days",
+    options: [
+      {
+        label: "one",
+        items: ["days"]
+      }
+    ],
+    value: ""
+  },
+  {
+    key: "question-eight-minutes",
+    options: [
+      {
+        label: "two",
+        items: ["minutes"]
+      }
+    ],
+    value: ""
+  }
+];
+
+const questionNine = [
+  {
+    key: "question-nine-days",
+    options: [
+      {
+        label: "one",
+        items: ["days"]
+      }
+    ],
+    value: ""
+  },
+  {
+    key: "question-nine-minutes",
+    options: [
+      {
+        label: "two",
+        items: ["minutes"]
+      }
+    ],
+    value: ""
+  }
+];
+
 export const questionsList = [
   {
     questions: questionOne,
@@ -172,21 +241,39 @@ export const questionsList = [
     questionType: "number",
     key: "six",
     analyticsPageView: "questionnaire_weight"
+  },
+  {
+    questions: questionSeven,
+    questionType: "time",
+    key: "seven",
+    analyticsPageView: "questionnaire_intence_fisical_activity_days_and_minutes" // Nome della pagina per la visualizzazione analytics
+  },
+  {
+    questions: questionEight,
+    questionType: "time",
+    key: "eight",
+    analyticsPageView: "questionnaire_moderate_fisical_activity_days_and_minutes" // Nome della pagina per la visualizzazione analytics
+  },
+  {
+    questions: questionNine,
+    questionType: "time",
+    key: "nine",
+    analyticsPageView: "questionnaire_walk_fisical_activity_days_and_minutes" // Nome della pagina per la visualizzazione analytics
   }
 ];
 
 export const drinkResultsCategories = {
   ONE_TWO: {
     category: "one-two",
-    listTranslationKey: null,
+    listTranslationKey: "questionnaireResults.alcoholIntake.intro.drinkCategoryOne.list",
     titleTranslationKey: null,
-    bodyTranslationKey: "questionnaireResults.alcoholIntake.intro.drinkCategoryOne.body"
+    bodyTranslationKey: null
   },
   THREE: {
     category: "three",
     titleTranslationKey: "questionnaireResults.alcoholIntake.intro.drinkCategoryThree.title",
-    listTranslationKey: null,
-    bodyTranslationKey: "questionnaireResults.alcoholIntake.intro.drinkCategoryThree.body"
+    listTranslationKey: "questionnaireResults.alcoholIntake.intro.drinkCategoryThree.list",
+    bodyTranslationKey: null
   },
   FOUR: {
     category: "four",
@@ -209,11 +296,23 @@ export const drinkResultsCategories = {
   SIX: {
     category: "six",
     titleTranslationKey: null,
-    listTranslationKey: null,
+    listTranslationKey: "questionnaireResults.alcoholIntake.intro.drinkCategorySix.list",
     bodyTranslationKey: "questionnaireResults.alcoholIntake.intro.drinkCategorySix.body"
   },
   SEVEN: {
     category: "seven",
+    titleTranslationKey: null,
+    listTranslationKey: "questionnaireResults.alcoholIntake.intro.drinkCategorySeven.list",
+    bodyTranslationKey: null
+  },
+  EIGHT: {
+    category: "eight",
+    titleTranslationKey: null,
+    listTranslationKey: null,
+    bodyTranslationKey: "questionnaireResults.alcoholIntake.intro.drinkCategorySeven.body"
+  },
+  NINE: {
+    category: "nine",
     titleTranslationKey: null,
     listTranslationKey: null,
     bodyTranslationKey: "questionnaireResults.alcoholIntake.intro.drinkCategorySeven.body"

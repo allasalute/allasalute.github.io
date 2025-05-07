@@ -270,19 +270,19 @@
 		},
 		"onboarding": {
 			"title": "Segreti per un seno sano",
-			"body": "Questa app fornisce alcune semplici informazioni per rimanere in buona salute. In particolare, riguarda: \n\n <0>{{list}}</0>",
+			"body": "Questa app fornisce semplici informazioni per rimanere in buona salute, prevenire diverse malattie tra cui il tumore al seno. Riguarda: \n\n <0>{{list}}</0>",
 			"list": [
 				"Alcol e fumo",
 				"Peso corporeo",
 				"Attività fisica"
 			],
 			"infoCard": {
-				"time": "Circa 1 minuto",
-				"questions": "6 Domande",
+				"time": "Circa 2 minuti",
+				"questions": "9 Domande",
 				"data": "Dati Anonimi"
 			},
 			"infoThanksTo": {
-				"Fondazione": "Progetto realizzato in collaborazione con la University of Southampton e con il contributo della Fondazione di Sardegna Prot.U685.2022/AI.670.BE"
+				"Fondazione": "Realizzato in collaborazione con University of Southampton e con il contributo della Fondazione di Sardegna."
 			}
 		},
 		"progressBar": "{{current}} / {{max}} - {{category}}",
@@ -423,58 +423,170 @@
 					}
 				}
 			},
+			"seven": {
+				"title": "Negli ultimi sette giorni, per quanto tempo hai svolto attività fisica intensa?",
+				"subtitle": "(attività che ti fa respirare molto più velocemente del normale, come sollevare pesi importanti, corsa veloce, lavori pesanti in giardino etc)",
+				"category": "Attività fisica - intensa",
+				"questions": {
+					"question-seven-days": {
+						"label": {
+							"days": "Giorni"
+						},
+						"tab": {
+							"one": "Giorni"
+						},
+						"tabAltText": {
+							"one": "Seleziona numero di giorni"
+						}
+					},
+					"question-seven-minutes": {
+						"label": {
+							"minutes": "Minuti"
+						},
+						"tab": {
+							"two": "Minuti"
+						},
+						"tabAltText": {
+							"two": "Seleziona numero di minuti"
+						}
+					}
+				}
+			},
+			"eight": {
+				"title": "Negli ultimi sette giorni, per quanto tempo hai svolto attività fisica moderata?",
+				"subtitle": "(attività che ti fanno respirare un po' più velocemente del normale, come corsa o bicicletta ad un ritmo non sostenuto, lavori domestici etc. – non includere le camminate)",
+				"category": "Attività fisica - moderata",
+				"questions": {
+					"question-eight-days": {
+						"label": {
+							"days": "Giorni"
+						},
+						"tab": {
+							"one": "Giorni"
+						},
+						"tabAltText": {
+							"one": "Seleziona numero di giorni"
+						}
+					},
+					"question-eight-minutes": {
+						"label": {
+							"minutes": "Minuti"
+						},
+						"tab": {
+							"two": "Minuti"
+						},
+						"tabAltText": {
+							"two": "Seleziona numero di minuti"
+						}
+					}
+				}
+			},
+			"nine": {
+				"title": "Negli ultimi sette giorni, per quanto tempo hai camminato?",
+				"category": "Attività fisica - Camminata",
+				"questions": {
+					"question-nine-days": {
+						"label": {
+							"days": "Giorni"
+						},
+						"tab": {
+							"one": "Giorni"
+						},
+						"tabAltText": {
+							"one": "Seleziona numero di giorni"
+						}
+					},
+					"question-nine-minutes": {
+						"label": {
+							"minutes": "Minuti"
+						},
+						"tab": {
+							"two": "Minuti"
+						},
+						"tabAltText": {
+							"two": "Seleziona numero di minuti"
+						}
+					}
+				}
+			},
 			"measurements": {
 				"kg": "Kilogrammi",
-				"cm": "Centimetri"
+				"cm": "Centimetri",
+				"days": "Giorni",
+				"minutes": "Minuti"
 			}
 		},
 		"questionnaireResults": {
-			"title": "I tuoi Risultati",
+			"title": "I tuoi Risultati:",
 			"alcoholIntake": {
-				"title": "Il tuo consumo di alcol",
+				"title": "Alcol",
 				"error": "Errore nell'algoritmo drinkcat. Si prega di comunicarlo al personale di ricerca!",
 				"intro": {
 					"drinkCategoryOne": {
-						"body": "Le tue risposte suggeriscono che stai bevendo a livelli di rischio più bassi. \n\n Bere poco o niente alcol porta molti benefici per la salute, tra cui mantenere bassi i rischi di cancro al seno."
+						"list": [
+							"Le tue risposte suggeriscono che stai bevendo a livelli di rischio più bassi.",
+							"Bere poco o niente alcol porta molti benefici per la salute, tra cui mantenere bassi i rischi di cancro al seno.",
+							"Consumo a basso rischio per la donna:"
+						]
 					},
 					"drinkCategoryTwo": {
-						"body": "Le tue risposte suggeriscono che stai bevendo a livelli di rischio più bassi. \n\n Bere poco o niente alcol porta molti benefici per la salute, tra cui mantenere bassi i rischi di cancro al seno."
+						"list": [
+							"Le tue risposte suggeriscono che stai bevendo a livelli di rischio più bassi.",
+						    "Bere poco o niente alcol porta molti benefici per la salute, tra cui mantenere bassi i rischi di cancro al seno.",
+							"Consumo a basso rischio per la donna:"
+						]
 					},
 					"drinkCategoryZero": {
-						"title": "Hai detto che bevi poco o niente alcol.",
-						"subHeading": "Bere poco o niente alcol porta molti benefici per la salute, tra cui mantenere bassi i rischi di cancro al seno."
+						"list": [
+							"Hai detto che bevi poco o niente alcol.",
+							"Bere poco o niente alcol porta molti benefici per la salute, tra cui mantenere bassi i rischi di cancro al seno.",
+							"Consumo a basso rischio per la donna:"
+						]
 					},
 					"drinkCategoryThree": {
-						"title": "Bevi quasi 7 bevande alcoliche a settimana.",
-						"body": "Apportando alcune modifiche al tuo consumo di alcol puoi ridurre il rischio di sviluppare una malattia e migliorare la tua salute futura."
+						"list": [
+							"Bevi quasi 7 bevande alcoliche a settimana.",
+							"Apportando alcune modifiche al tuo consumo di alcol puoi ridurre il rischio di sviluppare una malattia e migliorare la tua salute futura.",
+							"Consumo a basso rischio per la donna:"
+						]
 					},
 					"drinkCategoryFour": {
-						"body": "Bevi, in media, {{averageWeekUnits}} bevande alcoliche a settimana.\n\n Apportando alcune modifiche al tuo consumo di alcol puoi ridurre il rischio di sviluppare una malattia e migliorare la tua salute futura. \n <0>{{list}}</0>",
+						"body":  "Apportando alcune modifiche al tuo consumo di alcol puoi ridurre il rischio di sviluppare una malattia e migliorare la tua salute futura. \n <0>{{list}}</0>",
 						"list": [
+							"Bevi, in media, {{averageWeekUnits}} bevande alcoliche a settimana.",
 							"Riduci l’assunzione di alcol di appena {{unit}} bevande alla settimana per abbassare il rischio a livelli più bassi.",
-							"Bere meno riduce il rischio di sviluppare patologie come il cancro e malattie cardiache o epatiche."
+							"Bere meno riduce il rischio di sviluppare patologie come il cancro e malattie cardiache o epatiche.",
+							"Consumo a basso rischio per la donna:"
 						],
 						"listMultiple": [
 							"Riduci l’assunzione di alcol di appena {{unit}} bevande alla settimana per abbassare il rischio a livelli più bassi.",
-							"Bere meno riduce il rischio di sviluppare patologie come il cancro e malattie cardiache o epatiche."
+							"Bere meno riduce il rischio di sviluppare patologie come il cancro e malattie cardiache o epatiche.",
+							"Consumo a basso rischio per la donna:"
 						]
 					},
 					"drinksCategoryFive": {
-						"body": "Bevi, in media, {{averageWeekUnits}} bevande alcoliche a settimana.\n\n Apportando alcune modifiche al tuo consumo di alcol puoi ridurre il rischio di sviluppare una malattia e migliorare la tua salute futura. \n <0>{{list}}</0>",
+						"body": "Apportando alcune modifiche al tuo consumo di alcol puoi ridurre il rischio di sviluppare una malattia e migliorare la tua salute futura. \n <0>{{list}}</0>",
 						"list": [
+							"Bevi, in media, {{averageWeekUnits}} bevande alcoliche a settimana.",
 							"Riducendo l’assunzione di alcol diminuiranno le possibilità di contrarre patologie quali cancro, malattie cardiache o epatiche o dipendenza da alcol.",
-							"Minore è la quantità di alcol che bevi, minori saranno le probabilità di sviluppare queste patologie."
+							"Minore è la quantità di alcol che bevi, minori saranno le probabilità di sviluppare queste patologie.",
+							"Consumo a basso rischio per la donna:"
 						]
 					},
 					"drinkCategorySix": {
-						"body": "Bevi, in media, {{averageWeekUnits}} bevande alcoliche a settimana.\n\n Le tue risposte suggeriscono che, sebbene tu beva raramente, quando lo fai consumi più di 3 bevande alcoliche (o mezza bottiglia di vino) per volta. \n\n Se nei giorni in cui decidi di bere non superi le 3 bevande alcoliche per volta puoi ridurre significativamente il rischio di malattia.",
+						"body": "Le tue risposte suggeriscono che, sebbene tu beva raramente, quando lo fai consumi più di 3 bevande alcoliche (o mezza bottiglia di vino) per volta. \n\n Se nei giorni in cui decidi di bere non superi le 3 bevande alcoliche per volta puoi ridurre significativamente il rischio di malattia.",
 						"list": [
+							"Bevi, in media, {{averageWeekUnits}} bevande alcoliche a settimana.",
 							"Riducendo l’assunzione di alcol diminuiranno le possibilità di contrarre patologie quali cancro, malattie cardiache o epatiche o dipendenza da alcol.",
-							"Minore è la quantità di alcol che bevi, minori saranno le probabilità di sviluppare queste patologie."
+							"Minore è la quantità di alcol che bevi, minori saranno le probabilità di sviluppare queste patologie.",
+							"Consumo a basso rischio per la donna:"
 						]
 					},
 					"drinkCategorySeven": {
-						"body": "Le tue risposte suggeriscono che stai bevendo a livelli di rischio più bassi: una media di {{averageWeekUnits}} bevande alcoliche a settimana"
+						"list": [
+							"Le tue risposte suggeriscono che stai bevendo a livelli di rischio più bassi: una media di {{averageWeekUnits}} bevande alcoliche a settimana.",
+						    "Consumo a basso rischio per la donna:"
+						]
 					},
 					"other": {
 						"title": "Secondo i dati che hai appena fornito, stai bevendo, in media, {{number}} bevande alcoliche a settimana."
@@ -482,7 +594,7 @@
 				}
 			},
 			"comparedToOthers": {
-				"title": "Come il tuo consumo si colloca rispetto alle linee guida",
+				"title": "Consumo a basso rischio per la donna",
 				"percentageBar": {
 					"clinic": {
 						"ctaText": "In questa clinica",
@@ -495,12 +607,14 @@
 				}
 			},
 			"deptOfHealthRecommendations": {
-				"title": " un “consumo a basso rischio” per la donna ",
+				"title": "Consumo a basso rischio per la donna",
 				"cta": "(non in stato di gravidanza o allattamento, non affetta da una patologia che può essere aggravata dal consumo di alcol, non in terapia con farmaci che possono interagire con l'alcol, che non deve svolgere attività che richiedono particolare attenzione, non affetta da un disturbo da uso di alcol) è: <0>{{list}}</0> ",
 				"list": [
-					"inferiore o uguale 7 bevande alcoliche per settimana",
-					"inferiore o uguale 1 bevanda alcolica al giorno"
-				]
+					"CONSUMO ABITUALE: non più di 1 unità alcolica al giorno",
+					"CONSUMO OCCASIONALE: non più di 3 unità alcoliche per occasione"
+				],
+				"support": "Per maggiori informazioni sul consumo a basso richio per la donna <0>{{link}}</0>.",
+				"supportLink": "clicca qui"
 			},
 			"alcoholRisks": {
 				"title": "Fattori di rishio legati all'alcol"
@@ -519,7 +633,9 @@
 					"list": [
 						"Hai detto che non fumi.",
 						"Non fumare è uno dei modi migliori per mantenersi in salute."
-					]
+					],
+					"support": "Per maggiori informazioni <0>{{link}}</0>.",
+					"supportLink": "clicca qui"
 				}
 			},
 			"weight": {
@@ -545,7 +661,29 @@
 						"Per le donne della tua altezza è inferiore a {{kilos}} kg.",
 						"Nella home page puoi trovare semplici consigli su un'alimentazione sana e su come mantenerti attiva."
 					]
-				}
+				},
+				"support": "Per scoprire quali sono i vantaggi di mantenere un peso sano <0>{{link}}</0>.",
+				"supportLink": "clicca qui"
+			},
+			"activityLevel":{
+				"title": "Attività fisica",
+				"low": {
+			      "list": [
+				    "Il tuo stile di vita potrebbe non essere ancora abbastanza attivo per ottenere vantaggi concreti per la tua salute. Non dimenticarti che ogni passo conta!"
+			      ]
+			    },
+				"moderate": {
+				  "list": [
+					"Bene, hai un buon livello di attività fisica. Continua così e migliora ancora il tuo stile di vita: ogni passo conta!"
+				  ]
+				},
+				"high": {
+				  "list": [
+					"Complimenti, sei molto attiva e svolgi tanta attività fisica: la tua giornata è in pieno movimento!"
+				  ]
+				},
+				"support": "Per scoprire quali sono i vantaggi per la tua salute <0>{{link}}</0>.",
+				"supportLink": "clicca qui"
 			}
 		},
 		"session": {

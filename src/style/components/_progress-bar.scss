@@ -4,6 +4,7 @@
   width: 100%;
   max-width: 222px;
   border-radius: 9px;
+  white-space: pre-line;
 
   &__text {
     @include font-size(16px, 1.5);

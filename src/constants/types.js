@@ -1,8 +1,8 @@
 // @flow
 
-export type QuestionTypeEnum = "radio" | "number";
+export type QuestionTypeEnum = "radio" | "number" | "select" | "time";
 
-export type UnitTypeEnum = "ft" | "cm" | "inch" | "st" | "lbs" | "kg";
+export type UnitTypeEnum = "ft" | "cm" | "inch" | "st" | "lbs" | "kg" | "days" | "hours" | "minutes";
 export type Option = {|
   +label: string,
   +items: Array<UnitTypeEnum>

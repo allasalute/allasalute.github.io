@@ -54,24 +54,16 @@ const PersonalisedDrinkAdvice = (props: Props): Element<any> => {
           {t(transValue.titleTranslationKey)}
         </p>
       )}
-      {transValue.bodyTranslationKey && transValue.listTranslationKey && (
-        <p
-          className="u-margin-none u-margin-bottom-none u-white-space-pre-line"
-          data-testid={`drink-cat-${transValue.category}`}
-        >
-          <Trans
-            i18nKey={transValue.bodyTranslationKey}
-            values={{ list: t(transValue.listTranslationKey), averageWeekUnits: xInterval }}
-            components={[
-              <List
-                items={t(transValue.listTranslationKey, {
-                  unit: xUnit,
-                  number: glassesOfWine,
-                  returnObjects: true
-                })}
-              ></List>
-            ]}
-          ></Trans>
+      {transValue.listTranslationKey && (
+        <p className="u-margin-vertical-none" data-testid={`drink-cat-${transValue.category}`}>
+          <List
+            items={t(transValue.listTranslationKey, { returnObjects: true }).map(item =>
+              item
+                .replace("{{averageWeekUnits}}", xInterval)
+                .replace("{{unit}}", xUnit)
+                .replace("{{number}}", glassesOfWine)
+            )}
+          />
         </p>
       )}
       {transValue.bodyTranslationKey && !transValue.listTranslationKey && (

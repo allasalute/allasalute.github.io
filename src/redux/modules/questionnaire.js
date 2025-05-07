@@ -31,6 +31,18 @@ export const initialState = {
     {
       question: "six",
       value: null
+    },
+    {
+      question: "seven",
+      value: null
+    },
+    {
+      question: "eight",
+      value: null
+    },
+    {
+      question: "nine",
+      value: null
     }
   ],
   currentSection: 0,

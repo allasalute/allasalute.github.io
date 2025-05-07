@@ -1,7 +1,15 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\PersonalisedAdvice",
+    "\\src\\pages",
+    "\\src\\pages\\AlcoholRisks",
+    "\\src\\pages\\DrinkCalculator",
+    "\\src\\pages\\Smoking",
+    "\\src\\pages\\StayingActive"
   ],
-  "SelectedNode": "\\public",
+  "SelectedNode": "\\src\\pages\\DrinkCalculator",
   "PreviewInSolutionExplorer": false
 }

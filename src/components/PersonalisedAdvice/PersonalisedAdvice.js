@@ -4,6 +4,7 @@ import React, { type Element } from "react";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import PersonalisedDrinkAdvice from "./PersonalisedDrinkAdvice";
+import List from "components/Elements/List/List";
 
 type Props = {
   +isUserADrinker: boolean,
@@ -20,11 +21,12 @@ const PersonalisedAdvice = (props: Props): Element<any> => {
     <PersonalisedDrinkAdvice ewac={ewac} auditC={auditC} audit1={audit1} />
   ) : (
     <>
-      <p className="u-margin-top-small u-margin-bottom-none" data-testid="drink-cat-zero">
-        {t("questionnaireResults.alcoholIntake.intro.drinkCategoryZero.title")}
-      </p>
-      <p className="u-margin-top-small u-margin-bottom-none">
-        {t("questionnaireResults.alcoholIntake.intro.drinkCategoryZero.subHeading")}
+      <p className="u-margin-vertical-none" data-testid="activity-data">
+        <List
+          items={t(`questionnaireResults.alcoholIntake.intro.drinkCategoryZero.list`, {
+            returnObjects: true
+          })}
+        />
       </p>
     </>
   );

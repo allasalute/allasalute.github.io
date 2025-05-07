@@ -239,3 +239,22 @@
     }
   }
 }
+
+c-button--graphic {
+  background-color: $tint;
+  color: $dark-pink;
+  border: 2px solid $dark-pink;
+  border-radius: $global-radius;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  width: 100%;
+  max-width: 350px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    background-color: $dark-pink;
+    color: $white;
+  }
+}
