@@ -21,7 +21,7 @@ const PersonalisedAdvice = (props: Props): Element<any> => {
     <PersonalisedDrinkAdvice ewac={ewac} auditC={auditC} audit1={audit1} />
   ) : (
     <>
-      <p className="u-margin-vertical-none" data-testid="activity-data">
+      <p className="u-margin-vertical-none" data-testid="drink-cat-zero">
         <List
           items={t(`questionnaireResults.alcoholIntake.intro.drinkCategoryZero.list`, {
             returnObjects: true
