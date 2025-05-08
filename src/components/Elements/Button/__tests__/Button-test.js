@@ -4,25 +4,27 @@ import { act } from "react-dom/test-utils";
 import Button from "../Button";
 
 let container = null;
+let root = null;
 beforeEach(() => {
   // setup a DOM element as a render target
   container = document.createElement("div");
   document.body.appendChild(container);
+  root = createRoot(container);
 });
 
 afterEach(() => {
   // cleanup on exiting
-  unmountComponentAtNode(container);
+  root.unmount();
   container.remove();
   container = null;
 });
 
 it("Button Renders Correctly", async () => {
   act(() => {
-    render(<Button>Click here</Button>, container);
+    root.render(<Button>Click here</Button>);
   });
   const button = container.querySelector("[data-testid='button'");
-
+  expect(button).not.toBeNull();
   expect(button.nodeName).toBe("BUTTON");
   expect(button.className).toContain("c-button");
   expect(button.innerHTML).toBe("Click here");
@@ -30,10 +32,10 @@ it("Button Renders Correctly", async () => {
 
 it("Light Button Renders Correctly", async () => {
   act(() => {
-    render(<Button isLight>Click here</Button>, container);
+    root.render(<Button isLight>Click here</Button>);
   });
   const button = container.querySelector("[data-testid='button'");
-
+  expect(button).not.toBeNull();
   expect(button.nodeName).toBe("BUTTON");
   expect(button.className).toContain("c-button");
   expect(button.className).toContain("c-button--is-light");
@@ -44,7 +46,7 @@ it("Button Clicks Correctly", async () => {
   const mockFunc = jest.fn();
 
   act(() => {
-    render(<Button onClick={mockFunc}>Click here</Button>, container);
+    root.render(<Button onClick={mockFunc}>Click here</Button>);
   });
   const button = container.querySelector("[data-testid='button'");
 

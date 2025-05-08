@@ -46,16 +46,18 @@ const store = mockStore({
 });
 
 let container = null;
+let root = null;
 
 beforeEach(() => {
   // setup a DOM element as a render target
   container = document.createElement("div");
   document.body.appendChild(container);
+  root = createRoot(container);
 });
 
 afterEach(() => {
   // cleanup on exiting
-  unmountComponentAtNode(container);
+  root.unmount();
   container.remove();
   container = null;
 });
@@ -64,14 +66,12 @@ it("Myths Renders Elements Correctly", async () => {
   const history = createMemoryHistory();
 
   act(() => {
-    render(
+    root.render(
       <Router history={history}>
         <Provider store={store}>
           <Myths questionsList={mythOrRiskQuestions} onChange={() => {}} />
         </Provider>
-      </Router>,
-
-      container
+      </Router>
     );
   });
   const title = container.querySelector("[data-testid='title'");

@@ -182,16 +182,18 @@ const userAverageWeightStore = mockStore({
 });
 
 let container = null;
+let root = null;
 
 beforeEach(() => {
   // setup a DOM element as a render target
   container = document.createElement("div");
   document.body.appendChild(container);
+  root = createRoot(container);
 });
 
 afterEach(() => {
   // cleanup on exiting
-  unmountComponentAtNode(container);
+  root.unmount();
   container.remove();
   container = null;
 });
@@ -200,15 +202,12 @@ it("Results Renders Elements Correctly When User Drinks Alcohol", async () => {
   const history = createMemoryHistory();
 
   act(() => {
-    const root = createRoot(container);
     root.render(
       <Router history={history}>
         <Provider store={userDrinksStore}>
           <Results />
         </Provider>
-      </Router>,
-
-      container
+      </Router>
     );
   });
   const title = container.querySelector("[data-testid='title'");
@@ -222,15 +221,12 @@ it("Results Renders Elements Correctly When User Is Teetotal", async () => {
   const history = createMemoryHistory();
 
   act(() => {
-    const root = createRoot(container);
     root.render(
       <Router history={history}>
         <Provider store={userTeetotalStore}>
           <Results />
         </Provider>
-      </Router>,
-
-      container
+      </Router>
     );
   });
   const title = container.querySelector("[data-testid='title'");
@@ -244,15 +240,12 @@ it("Results Renders Elements Correctly When User Is A Smoker", async () => {
   const history = createMemoryHistory();
 
   act(() => {
-    const root = createRoot(container);
     root.render(
       <Router history={history}>
         <Provider store={userDrinksStore}>
           <Results />
         </Provider>
-      </Router>,
-
-      container
+      </Router>
     );
   });
   const smokerText = container.querySelector("[data-testid='smoker-data'");
@@ -263,15 +256,12 @@ it("Results Renders Elements Correctly When User Is A Non-Smoker", async () => {
   const history = createMemoryHistory();
 
   act(() => {
-    const root = createRoot(container);
     root.render(
       <Router history={history}>
         <Provider store={userTeetotalStore}>
           <Results />
         </Provider>
-      </Router>,
-
-      container
+      </Router>
     );
   });
   //const smokerText = container.querySelector("[data-testid='smoker-data'");
@@ -282,15 +272,12 @@ it("Results Renders Elements Correctly When User Is Underweight", async () => {
   const history = createMemoryHistory();
 
   act(() => {
-    const root = createRoot(container);
     root.render(
       <Router history={history}>
         <Provider store={userUnderweightStore}>
           <Results />
         </Provider>
-      </Router>,
-
-      container
+      </Router>
     );
   });
   //const bmiText = container.querySelector("[data-testid='bmi-data'");
@@ -301,15 +288,12 @@ it("Results Renders Elements Correctly When User Is Average Weight", async () =>
   const history = createMemoryHistory();
 
   act(() => {
-    const root = createRoot(container);
     root.render(
       <Router history={history}>
         <Provider store={userAverageWeightStore}>
           <Results />
         </Provider>
-      </Router>,
-
-      container
+      </Router>
     );
   });
   //const bmiText = container.querySelector("[data-testid='bmi-data'");
@@ -320,15 +304,12 @@ it("Results Renders Elements Correctly When User Is Overweight", async () => {
   const history = createMemoryHistory();
 
   act(() => {
-    const root = createRoot(container);
     root.render(
       <Router history={history}>
         <Provider store={userOverweightStore}>
           <Results />
         </Provider>
-      </Router>,
-
-      container
+      </Router>
     );
   });
   //const bmiText = container.querySelector("[data-testid='bmi-data'");

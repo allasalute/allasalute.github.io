@@ -45,16 +45,18 @@ const store = mockStore({
 });
 
 let container = null;
+let root = null;
 
 beforeEach(() => {
   // setup a DOM element as a render target
   container = document.createElement("div");
   document.body.appendChild(container);
+  root = createRoot(container);
 });
 
 afterEach(() => {
   // cleanup on exiting
-  unmountComponentAtNode(container);
+  root.unmount();
   container.remove();
   container = null;
 });
@@ -63,17 +65,15 @@ it("Smoking Renders Elements Correctly", async () => {
   const history = createMemoryHistory();
 
   act(() => {
-    render(
+    root.render(
       <Router history={history}>
         <Provider store={store}>
           <Smoking />
         </Provider>
-      </Router>,
-
-      container
+      </Router>
     );
   });
   const title = container.querySelector("[data-testid='title'");
-
+  expect(title).not.toBeNull();
   expect(title.nodeName).toBe("H2");
 });

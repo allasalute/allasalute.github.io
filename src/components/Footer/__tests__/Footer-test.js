@@ -5,30 +5,32 @@ import { act } from "react-dom/test-utils";
 import Footer from "../Footer";
 
 let container = null;
+let root = null;
 beforeEach(() => {
   // setup a DOM element as a render target
   container = document.createElement("div");
   document.body.appendChild(container);
+  root = createRoot(container);
 });
 
 afterEach(() => {
   // cleanup on exiting
-  unmountComponentAtNode(container);
+  root.unmount();
   container.remove();
   container = null;
 });
 
 it("Footer Renders Correctly", async () => {
   act(() => {
-    render(
+    root.render(
       <Router>
         <Footer />
-      </Router>,
-      container
+      </Router>
     );
   });
   const button = container.querySelector("[data-testid='footer'");
 
+  expect(button).not.toBeNull();
   expect(button.nodeName).toBe("FOOTER");
   expect(button.className).toContain("c-footer");
 });

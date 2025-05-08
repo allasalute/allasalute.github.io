@@ -9,6 +9,7 @@ import { questionsList } from "constants/questionnaire";
 import "i18n";
 
 let container = null;
+let root = null;
 
 const initialResponse = [
   {
@@ -68,11 +69,12 @@ beforeEach(() => {
   // setup a DOM element as a render target
   container = document.createElement("div");
   document.body.appendChild(container);
+  root = createRoot(container);
 });
 
 afterEach(() => {
   // cleanup on exiting
-  unmountComponentAtNode(container);
+  root.unmount();
   container.remove();
   container = null;
 });
@@ -81,11 +83,10 @@ it("Questions Renders Elements Correctly", async () => {
   const history = createMemoryHistory();
 
   act(() => {
-    render(
+    root.render(
       <Router history={history}>
         <Questions questionsList={questionsList} responses={initialResponse} onChange={() => {}} onAnswer={() => {}} />
-      </Router>,
-      container
+      </Router>
     );
   });
   const title = container.querySelector("[data-testid='title'");
@@ -104,11 +105,10 @@ it("Questions Renders Elements Correctly When Responses Filled In", async () => 
   const history = createMemoryHistory();
 
   act(() => {
-    render(
+    root.render(
       <Router history={history}>
         <Questions questionsList={questionsList} responses={answeredResponse} onChange={() => {}} onAnswer={() => {}} />
-      </Router>,
-      container
+      </Router>
     );
   });
   const title = container.querySelector("[data-testid='title'");
@@ -127,11 +127,10 @@ it("Questions Renders No Elements When QuestionsList Is Empty Array", async () =
   const history = createMemoryHistory();
 
   act(() => {
-    render(
+    root.render(
       <Router history={history}>
         <Questions questionsList={[]} responses={initialResponse} onChange={() => {}} onAnswer={() => {}} />
-      </Router>,
-      container
+      </Router>
     );
   });
   const emptyQuestionState = container.querySelector("[data-testid='blank-questionnaire'");

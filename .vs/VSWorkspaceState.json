@@ -3,13 +3,14 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\PersonalisedAdvice",
-    "\\src\\pages",
-    "\\src\\pages\\AlcoholRisks",
-    "\\src\\pages\\DrinkCalculator",
-    "\\src\\pages\\Smoking",
-    "\\src\\pages\\StayingActive"
+    "\\src\\components\\Elements",
+    "\\src\\components\\Elements\\Backdrop",
+    "\\src\\components\\Elements\\Backdrop\\__tests__",
+    "\\src\\components\\Elements\\Tooltip\\__tests__",
+    "\\src\\components\\Footer\\__tests__",
+    "\\src\\components\\Header\\__tests__",
+    "\\src\\components\\MythQuestions\\__tests__"
   ],
-  "SelectedNode": "\\src\\pages\\DrinkCalculator",
+  "SelectedNode": "\\src\\components\\Elements\\Backdrop\\__tests__\\Backdrop.test.js",
   "PreviewInSolutionExplorer": false
 }

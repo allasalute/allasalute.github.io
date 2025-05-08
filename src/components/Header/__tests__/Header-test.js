@@ -8,16 +8,18 @@ import { createMemoryHistory } from "history";
 import "i18n";
 
 let container = null;
+let root = null;
 
 beforeEach(() => {
   // setup a DOM element as a render target
   container = document.createElement("div");
   document.body.appendChild(container);
+  root = createRoot(container);
 });
 
 afterEach(() => {
   // cleanup on exiting
-  unmountComponentAtNode(container);
+  root.unmount();
   container.remove();
   container = null;
 });
@@ -26,16 +28,16 @@ it("Header Renders Elements Correctly", async () => {
   const history = createMemoryHistory();
 
   act(() => {
-    render(
+    root.render(
       <Router history={history}>
         <Header onNotificationClick={() => {}} />
-      </Router>,
-      container
+      </Router>
     );
   });
   const navbar = container.querySelector("[data-testid='navbar'");
   const logo = container.querySelector("[data-testid='logo'");
 
+  expect(navbar).not.toBeNull();
   expect(navbar.nodeName).toBe("NAV");
   expect(logo.className).toContain("c-header__logo");
 });

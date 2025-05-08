@@ -4,15 +4,16 @@ import { act } from "react-dom/test-utils";
 //import List from "../List";
 
 let container = null;
+let root = null;
 beforeEach(() => {
   // setup a DOM element as a render target
   container = document.createElement("div");
   document.body.appendChild(container);
+  root = createRoot(container);
 });
 
 afterEach(() => {
   // cleanup on exiting
-  const root = createRoot(container);
   root.unmount();
   container.remove();
   container = null;
@@ -20,7 +21,7 @@ afterEach(() => {
 
 it("List Renders Correctly", async () => {
   act(() => {
-    createRoot(container);
+    root.render();
   });
   const button = container.querySelector("[data-testid='list'");
 

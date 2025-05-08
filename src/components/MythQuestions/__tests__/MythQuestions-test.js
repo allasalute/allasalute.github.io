@@ -9,16 +9,18 @@ import { mythOrRiskQuestions } from "constants/mythQuestions";
 import "i18n";
 
 let container = null;
+let root = null;
 
 beforeEach(() => {
   // setup a DOM element as a render target
   container = document.createElement("div");
   document.body.appendChild(container);
+  root = createRoot(container);
 });
 
 afterEach(() => {
   // cleanup on exiting
-  unmountComponentAtNode(container);
+  root.unmount();
   container.remove();
   container = null;
 });
@@ -27,14 +29,14 @@ it("MythQuestions Renders Elements Correctly", async () => {
   const history = createMemoryHistory();
 
   act(() => {
-    render(
+    root.render(
       <Router history={history}>
         <MythQuestions questionsList={mythOrRiskQuestions} onChange={() => {}} />
-      </Router>,
-      container
+      </Router>
     );
   });
   const title = container.querySelector("[data-testid='title'");
 
+  expect(title).not.toBeNull();
   expect(title.nodeName).toBe("H2");
 });
