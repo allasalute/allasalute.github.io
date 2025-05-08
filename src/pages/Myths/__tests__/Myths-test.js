@@ -7,6 +7,7 @@ import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
 import configureMockStore from "redux-mock-store";
 import { mythOrRiskQuestions } from "constants/mythQuestions";
+import { createRoot } from 'react-dom/client';
 
 import "i18n";
 

@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
 import Footer from "../Footer";
+import { createRoot } from 'react-dom/client';
 
 let container = null;
 let root = null;

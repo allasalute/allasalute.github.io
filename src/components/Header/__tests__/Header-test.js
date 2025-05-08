@@ -4,6 +4,7 @@ import { act } from "react-dom/test-utils";
 import Header from "../Header";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
+import { createRoot } from 'react-dom/client';
 
 import "i18n";
 

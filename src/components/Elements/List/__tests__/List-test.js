@@ -20,7 +20,7 @@ afterEach(() => {
 });
 
 it("List Renders Correctly", async () => {
-  act(() => {
+  await act(async () => {
     root.render();
   });
   const button = container.querySelector("[data-testid='list'");

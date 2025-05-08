@@ -3,6 +3,7 @@ import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
 import DrinkCard from "../DrinkCard";
 import pintImage from "assets/images/drinks/pint-b.svg";
+import { createRoot } from 'react-dom/client';
 
 let container = null;
 let root = null;

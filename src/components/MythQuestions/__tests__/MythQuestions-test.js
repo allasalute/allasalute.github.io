@@ -5,6 +5,7 @@ import MythQuestions from "../MythQuestions";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
 import { mythOrRiskQuestions } from "constants/mythQuestions";
+import { createRoot } from 'react-dom/client';
 
 import "i18n";
 

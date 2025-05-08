@@ -5,6 +5,7 @@ import Questions from "../Questions";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
 import { questionsList } from "constants/questionnaire";
+import { createRoot } from 'react-dom/client';
 
 import "i18n";
 

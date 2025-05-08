@@ -6,6 +6,7 @@ import Wellbeing from "../Wellbeing";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
 import configureMockStore from "redux-mock-store";
+import { createRoot } from 'react-dom/client';
 
 import "i18n";
 
