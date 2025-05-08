@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Chiudi</title>
+    <g id="14.-Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/Actions/Remove" transform="translate(-4.000000, -4.000000)">
+            <g id="Close" transform="translate(4.000000, 4.000000)">
+                <rect id="Rectangle" x="4" y="4" width="16" height="16"></rect>
+                <path d="M12,4 C13.1045695,4 14,4.8954305 14,6 L14,10 L18,10 C19.1045695,10 20,10.8954305 20,12 C20,13.1045695 19.1045695,14 18,14 L14,14 L14,18 C14,19.1045695 13.1045695,20 12,20 C10.8954305,20 10,19.1045695 10,18 L10,14 L6,14 C4.8954305,14 4,13.1045695 4,12 C4,10.8954305 4.8954305,10 6,10 L10,10 L10,6 C10,4.8954305 10.8954305,4 12,4 Z" id="Combined-Shape" fill="#EA006C" transform="translate(12.000000, 12.000000) rotate(45.000000) translate(-12.000000, -12.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
