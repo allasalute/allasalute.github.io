@@ -269,14 +269,9 @@ function Results(props: Props): Element<any> {
                     link: t(`questionnaireResults.deptOfHealthRecommendations.supportLink`)
                   }}
                   components={[
-                    <a
-                      href="#/drinkcalculator"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="u-styled-link u-styled-link--inherit u-font-bold"
-                    >
+                    <Link to="/drinkcalculator" className="u-styled-link u-styled-link--inherit u-font-bold">
                       {t("questionnaireResults.deptOfHealthRecommendations.supportLink")}
-                    </a>
+                    </Link>
                   ]}
                 />
               </p>
@@ -305,14 +300,9 @@ function Results(props: Props): Element<any> {
                         link: t(`questionnaireResults.smoking.${isSmoker ? "smoker" : "nonSmoker"}.supportLink`)
                       }}
                       components={[
-                        <a
-                          href="#/smoking"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="u-styled-link u-styled-link--inherit u-font-bold"
-                        >
+                        <Link to="/smoking" className="u-styled-link u-styled-link--inherit u-font-bold">
                           {t(`questionnaireResults.smoking.smoker.supportLink`)}
-                        </a>
+                        </Link>
                       ]}
                     ></Trans>
                   </span>
@@ -339,14 +329,9 @@ function Results(props: Props): Element<any> {
                         link: t(`questionnaireResults.activityLevel.supportLink`)
                       }}
                       components={[
-                        <a
-                          href="#/weight"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="u-styled-link u-styled-link--inherit u-font-bold"
-                        >
+                        <Link to="/weight" className="u-styled-link u-styled-link--inherit u-font-bold">
                           {t(`questionnaireResults.activityLevel.supportLink`)}
-                        </a>
+                        </Link>
                       ]}
                     ></Trans>
                   </span>
@@ -376,14 +361,9 @@ function Results(props: Props): Element<any> {
                         link: t(`questionnaireResults.activityLevel.supportLink`)
                       }}
                       components={[
-                        <a
-                          href="#/stayingactive"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="u-styled-link u-styled-link--inherit u-font-bold"
-                        >
+                        <Link to="/stayingactive" className="u-styled-link u-styled-link--inherit u-font-bold">
                           {t(`questionnaireResults.activityLevel.supportLink`)}
-                        </a>
+                        </Link>
                       ]}
                     ></Trans>
                   </span>
