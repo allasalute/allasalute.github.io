@@ -4,13 +4,13 @@
     "\\src",
     "\\src\\components",
     "\\src\\components\\Elements",
-    "\\src\\components\\Elements\\Backdrop",
-    "\\src\\components\\Elements\\Backdrop\\__tests__",
-    "\\src\\components\\Elements\\Tooltip\\__tests__",
+    "\\src\\components\\Elements\\Card",
     "\\src\\components\\Footer\\__tests__",
-    "\\src\\components\\Header\\__tests__",
-    "\\src\\components\\MythQuestions\\__tests__"
+    "\\src\\pages",
+    "\\src\\pages\\Questionnaire",
+    "\\src\\style",
+    "\\src\\style\\components"
   ],
-  "SelectedNode": "\\src\\components\\Elements\\Backdrop\\__tests__\\Backdrop.test.js",
+  "SelectedNode": "\\src\\components\\Elements\\Card\\Card.js",
   "PreviewInSolutionExplorer": false
 }

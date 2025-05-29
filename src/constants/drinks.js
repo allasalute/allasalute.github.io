@@ -1,7 +1,7 @@
-import pint_a from "assets/images/drinks/BeerCan.png";
-import wine_175ml from "assets/images/drinks/wine-250ml.svg";
-import spirit_double from "assets/images/drinks/spirit-double.svg";
-import pimms from "assets/images/drinks/single-aperitifs.svg";
+import pint_a from "assets/images/drinks/birra330new.svg";
+import wine_175ml from "assets/images/drinks/vino125.svg";
+import spirit_double from "assets/images/drinks/shotrealisticoSmall.svg";
+import pimms from "assets/images/drinks/ape80.svg";
 
 export const drinksList = [
   {

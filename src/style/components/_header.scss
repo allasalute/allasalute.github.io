@@ -25,3 +25,52 @@
     }
   }
 }
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+  padding: 1rem;
+  padding-bottom: 5rem; // spazio per la bottom nav
+}
+
+.app-mobile-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+  z-index: 999;
+
+  .app-mobile-nav__btn {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #880044;
+    padding: 0.25rem;
+
+    &.is-active {
+      color: #d00;
+      font-weight: bold;
+    }
+
+    .app-mobile-nav__icon {
+      font-size: 1.25rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .app-mobile-nav__label {
+      font-size: 0.75rem;
+    }
+  }
+}

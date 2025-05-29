@@ -1,11 +1,11 @@
-// @flow
+﻿// @flow
 
 import React, { type ChildrenArray, type Element } from "react";
 import PropTypes from "prop-types";
 import { useMediaQuery } from "react-responsive";
 import classnames from "classnames";
 
-import Header from "components/Header/HeaderContainer";
+import Header from "components/Header/SmartResponsiveHeader";
 import illustratedImage from "assets/images/illustrations/nurse.svg";
 import { responsiveBreakpoint } from "constants/responsiveBreakpoint";
 
@@ -14,19 +14,36 @@ type Props = {
   +children: ChildrenArray<Element<any>>,
   +className?: string,
   +isHomeBtnVisible?: boolean,
-  +isEndSessionBtnVisible?: boolean
+  +isShareVisible?: boolean,
+  +isEndSessionBtnVisible?: boolean,
+  +onEndSession?: (history: any) => void,
+  +homeButtonType?: "default" | "back" | "learnMore"
 };
 
 const ContentWithSidebar = (props: Props): Element<any> => {
-  const { sidebarImage, isHomeBtnVisible, isEndSessionBtnVisible, className } = props;
+  const {
+    sidebarImage,
+    isHomeBtnVisible,
+    isShareVisible,
+    isEndSessionBtnVisible,
+    className,
+    onEndSession,
+    homeButtonType = "default"
+  } = props;
 
   const isMobile = useMediaQuery({ maxWidth: responsiveBreakpoint.md });
   const classes = classnames("c-section", "u-flex", "u-flex--column", !isMobile && "u-margin-left-huge", className);
-  const wrapperClasses = classnames("o-container", !isMobile && "u-flex");
+  const wrapperClasses = classnames("o-container", "u-padding-top-navbar", !isMobile && "u-flex");
 
   return (
     <>
-      <Header isHomeBtnVisible={isHomeBtnVisible} isShareVisible isEndSessionBtnVisible={isEndSessionBtnVisible} />
+      <Header
+        isHomeBtnVisible={isHomeBtnVisible}
+        isShareVisible={isShareVisible}
+        isEndSessionBtnVisible={isEndSessionBtnVisible}
+        onEndSession={onEndSession}
+        homeButtonType={homeButtonType}
+      />
       <main className={wrapperClasses}>
         <aside className="c-sidebar">
           <div className="c-sidebar__inner">

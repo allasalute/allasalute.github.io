@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState, type Element } from "react";
 import ReactGA from "react-ga";
-import { type Location } from "react-router-dom";
+import { type Location, useHistory } from "react-router-dom";
 import { type QuestionList, type Response } from "constants/types";
-import CartaBevande from "assets/images/drinks/NewDrinksCardCompressed.svg";
+//import CartaBevande from "assets/images/drinks/NewDrinksCardCompressed.svg";
 import drinkingImage from "assets/images/illustrations/drinking.svg";
 import smokerImage from "assets/images/illustrations/smoker.svg";
 import heightImage from "assets/images/illustrations/height.svg";
@@ -17,6 +17,7 @@ import ContentWithSidebar from "components/ContentWithSidebar/ContentWithSidebar
 
 type LocationProp = {
   ...Location,
+  +endSession: (history: any) => void,
   id: string
 };
 type Props = {
@@ -29,8 +30,9 @@ type Props = {
 };
 
 function Questionnaire(props: Props): Element<any> {
-  const { questions, response, getQuestionnaire, setResponse, location } = props;
+  const { questions, response, getQuestionnaire, setResponse, location, endSession } = props;
   const [image, setImage] = useState(drinkingImage);
+  const history = useHistory();
 
   useEffect(() => {
     getQuestionnaire();
@@ -45,13 +47,14 @@ function Questionnaire(props: Props): Element<any> {
   }, [questions]);
 
   const updateImage = (questionNumber: number) => {
+    window.scrollTo(0, 0); // Forza scroll in alto
     switch (questionNumber) {
       case 0:
         setImage(drinkingImage);
         break;
       case 1:
       case 2:
-        setImage(CartaBevande);
+        setImage(drinkingImage);
         break;
       case 3:
         setImage(smokerImage);
@@ -81,15 +84,24 @@ function Questionnaire(props: Props): Element<any> {
   };
 
   return (
-    <ContentWithSidebar sidebarImage={image} isHomeBtnVisible={false} isShareVisible>
-      <Questions
-        questionsList={questions}
-        responses={response}
-        onChange={updateImage}
-        onAnswer={setResponse}
-        questionNumberProp={location?.id}
-      />
-    </ContentWithSidebar>
+    <>
+      <ContentWithSidebar
+        sidebarImage={image}
+        isHomeBtnVisible={false}
+        isResultsBtnVisible={false}
+        isShareVisible={false}
+        isEndSessionBtnVisible={true}
+        onEndSession={() => endSession(history)}
+      >
+        <Questions
+          questionsList={questions}
+          responses={response}
+          onChange={updateImage}
+          onAnswer={setResponse}
+          questionNumberProp={location?.id}
+        />
+      </ContentWithSidebar>
+    </>
   );
 }
 

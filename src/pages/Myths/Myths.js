@@ -43,7 +43,7 @@ function MythsQuestionnaire(props: Props): Element<any> {
   };
 
   return (
-    <ContentWithSidebar sidebarImage={image}>
+    <ContentWithSidebar sidebarImage={image} homeButtonType="back">
       <MythQuestions questionsList={mythOrRiskQuestions} onChange={updateImage} />
     </ContentWithSidebar>
   );

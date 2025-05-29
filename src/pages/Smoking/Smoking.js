@@ -15,7 +15,7 @@ function Smoking(props: Props): Element<any> {
   const { t } = useTranslation();
 
   return (
-    <ContentWithSidebar sidebarImage={illustratedImage}>
+    <ContentWithSidebar sidebarImage={illustratedImage} homeButtonType="back">
       <h2 className="u-margin-top-none u-margin-bottom" data-testid="title">
         {t("smoking.title")}
       </h2>
@@ -29,7 +29,7 @@ function Smoking(props: Props): Element<any> {
 
       <div className="u-margin-top-auto u-flex--align-self-end ">
         <Link to="/home" className="c-button c-button--primary c-button--md u-margin-top-huge u-text-center">
-          {t("common.homeresults")}
+          {t("common.back")}
         </Link>
       </div>
     </ContentWithSidebar>

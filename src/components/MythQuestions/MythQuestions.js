@@ -140,7 +140,7 @@ const MythQuestions = (props: Props): Element<any> => {
             to="/home"
             className="c-button c-button--primary c-button--md u-margin-top-auto u-flex--align-self-end u-text-center c-questionnaire__btn"
           >
-            {t("common.home")}
+            {t("common.back")}
           </Link>
         )}
       </div>

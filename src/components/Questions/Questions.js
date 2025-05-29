@@ -8,10 +8,9 @@ import { Link } from "react-router-dom";
 
 import { responsiveBreakpoint } from "constants/responsiveBreakpoint";
 
-import UnitKey from "components/UnitKey/UnitKey";
+import UnitKeyGrid from "components/UnitKey/UnitKeyGrid";
 import Input from "components/Elements/Input/Input";
 import Button from "components/Elements/Button/Button";
-import Modal from "components/Elements/Modal/Modal";
 import ProgressBar from "components/Elements/ProgressBar/ProgressBar";
 import { type QuestionList, type Question, type Response, type Option, type UnitTypeEnum } from "constants/types";
 
@@ -31,7 +30,6 @@ const Questions = (props: Props): Element<any> => {
   const { t } = useTranslation();
   const isMobile = useMediaQuery({ maxWidth: responsiveBreakpoint.sm });
 
-  const [modalVisible, setModalVisible] = useState(false);
   const [selectedUnit, setSelectedUnit] = useState("one");
   const [radio, setRadio] = useState(null);
   const [responseSelected, setResponseSelected] = useState(false);
@@ -51,10 +49,10 @@ const Questions = (props: Props): Element<any> => {
   const inputRefs = { days: useRef(null), minutes: useRef(null) };
 
   const buttonWrapperClasses = classnames(
+    "c-questionnaire__navigation-buttons",
     !isMobile && "u-flex",
     questionCount >= 1 && "u-flex--space-between",
-    questionCount < 1 && "u-flex--justify-end",
-    isMobile && "u-d-block"
+    questionCount < 1 && "u-flex--justify-end"
   );
 
   const radioWrapperClasses = classnames(
@@ -395,7 +393,6 @@ const Questions = (props: Props): Element<any> => {
 
   const formattedCurrentStepCount = renderCurrentStepCount(isUserTeetotal, questionCount);
   const isNextButtonEnabled = isQuestionRequired ? isQuestionAnswered : false;
-  const isUnitKeyVisible = currentQuestion?.key === "two" || currentQuestion?.key === "three";
   const hasPreviousQuestion = questionCount >= 1;
   console.log("currentQuestion:", currentQuestion);
   console.log("questionCount:", questionCount);
@@ -412,9 +409,11 @@ const Questions = (props: Props): Element<any> => {
         {t(`questionnaire.${currentQuestion.key}.title`)}
       </h2>
       {t(`questionnaire.${currentQuestion.key}.subtitle`, { defaultValue: "" }) && (
-        <h3 className="u-margin-top-none u-margin-bottom-xs">{t(`questionnaire.${currentQuestion.key}.subtitle`)}</h3>
+        <h3 className="u-margin-top-none u-margin-bottom-xs c-questionnaire__subtitle">
+          {t(`questionnaire.${currentQuestion.key}.subtitle`)}
+        </h3>
       )}
-
+      {(currentQuestion.key === "two" || currentQuestion.key === "three") && <UnitKeyGrid />}
       {currentQuestion?.questionType === "radio" ? (
         <div className={radioWrapperClasses} data-testid="questionnaire-radio">
           {currentQuestion.questions.map(question => (
@@ -486,7 +485,7 @@ const Questions = (props: Props): Element<any> => {
         </div>
       ) : currentQuestion?.questionType === "time" ? (
         <>
-          <div className="u-flex u-margin-top-auto u-margin-bottom-huge">
+          <div className="questionnaire-input-group u-flex u-margin-top-auto u-margin-bottom-huge">
             {currentQuestion.questions.map(question => {
               return (question?.options ?? []).map((option, index) => {
                 return (option.items ?? []).map((item, index) => {
@@ -668,20 +667,6 @@ const Questions = (props: Props): Element<any> => {
           >
             {t("common.previous")}
           </Button>
-        )}
-        {isUnitKeyVisible && (
-          <Button
-            className="c-button--tertiary u-margin-top-auto c-questionnaire__btn"
-            onClick={() => setModalVisible(true)}
-          >
-            {t("questionnaire.unitsKey")}
-          </Button>
-        )}
-
-        {modalVisible && (
-          <Modal onClose={() => setModalVisible(false)}>
-            <UnitKey />
-          </Modal>
         )}
         {isFinalQuestion && isViewResultsButtonEnabled ? (
           <Link to="/results" className={viewResultsButtonClasses}>

@@ -5,10 +5,10 @@ import { useTranslation } from "react-i18next";
 import Header from "components/Header/HeaderContainer";
 import DrinkCard from "components/Elements/DrinkCard/DrinkCard";
 
-import pintImage from "assets/images/drinks/BeerCan.png";
-import wineImage from "assets/images/drinks/half-wine.svg";
-import aperitifsImage from "assets/images/drinks/single-aperitifs.svg";
-import spiritImage from "assets/images/drinks/single-spirit.svg";
+import pintImage from "assets/images/drinks/birra330new.svg";
+import wineImage from "assets/images/drinks/vino125.svg";
+import aperitifsImage from "assets/images/drinks/ape80.svg";
+import spiritImage from "assets/images/drinks/shotrealisticoSmall.svg";
 const UnitKey = props => {
   const { t } = useTranslation();
 

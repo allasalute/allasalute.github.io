@@ -1,30 +1,33 @@
 // @flow
 
-import React, { type Element } from "react";
+import React, { type Element, useState } from "react";
 import { useTranslation, Trans } from "react-i18next";
 import { Link, Redirect } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import classnames from "classnames";
-
-//import images from "assets/images/charts/units";
+import ReactGA from "react-ga";
+import Modal from "components/Elements/Modal/Modal";
 
 import { responsiveBreakpoint } from "constants/responsiveBreakpoint";
 import { type Response } from "constants/types";
 
 import List from "components/Elements/List/List";
-import Header from "components/Header/HeaderContainer";
+import Header from "components/Header/SmartHeader";
 import PersonalisedAdvice from "components/PersonalisedAdvice/PersonalisedAdvice";
 
 import drinkingImage from "assets/images/illustrations/drinking.svg";
 import smokerImage from "assets/images/illustrations/smoker.svg";
 import activityImage from "assets/images/illustrations/physical-activity.svg";
+import { categories } from "constants/analytics";
+import { copyTextToClipboard } from "helpers/copy";
 
 type Props = {
-  +response: Array<Response>
+  +response: Array<Response>,
+  +endSession: (history: any) => void
 };
 
 function Results(props: Props): Element<any> {
-  const { response } = props;
+  const { response, endSession } = props;
 
   const getTimeFromResponse = key => {
     const entry = response.find(r => r.question === key);
@@ -39,6 +42,36 @@ function Results(props: Props): Element<any> {
   const calculateMET = ({ days, minutes }, factor) => {
     return minutes * days * factor;
   };
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        // $FlowFixMe
+        await navigator.share({
+          title: t("common.appName"),
+          text: t("common.appDescription"),
+          url: process.env.REACT_APP_FED_URL
+        });
+      } catch (err) {
+        // User cancelled share dialog, can safely ignore
+      }
+    } else {
+      copyUrl();
+    }
+    if (window.ga) {
+      ReactGA.event({
+        category: categories.CLICK,
+        action: "share"
+      });
+    }
+  };
+
+  const copyUrl = () => {
+    copyTextToClipboard(process.env.REACT_APP_FED_URL);
+    setCopySuccess(true);
+  };
+
+  const [copySuccess, setCopySuccess] = useState(false);
 
   const metIntense = calculateMET(getTimeFromResponse("seven"), 8);
   const metModerate = calculateMET(getTimeFromResponse("eight"), 4);
@@ -192,8 +225,15 @@ function Results(props: Props): Element<any> {
 
   return isResponsesAvailable ? (
     <>
-      <Header isHomeBtnVisible isShareVisible isEndSessionBtnVisible />
-      <main>
+      <Header
+        isHomeBtnVisible
+        isShareVisible
+        isEndSessionBtnVisible
+        onShare={handleShare}
+        onEndSession={endSession}
+        homeButtonType="learnMore"
+      />
+      <main className="o-container u-padding-top-navbar u-margin-bottom-huge">
         <div className={wrapperClasses}>
           <aside className="c-sidebar">
             <div className="c-sidebar__inner">
@@ -230,7 +270,7 @@ function Results(props: Props): Element<any> {
                   }}
                   components={[
                     <a
-                      href="/drinkcalculator"
+                      href="#/drinkcalculator"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="u-styled-link u-styled-link--inherit u-font-bold"
@@ -243,7 +283,6 @@ function Results(props: Props): Element<any> {
             </div>
           </section>
         </div>
-        )
         <div className={wrapperClasses}>
           <aside className="c-sidebar">
             <div className="c-sidebar__inner">
@@ -267,7 +306,7 @@ function Results(props: Props): Element<any> {
                       }}
                       components={[
                         <a
-                          href="/smoking"
+                          href="#/smoking"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="u-styled-link u-styled-link--inherit u-font-bold"
@@ -301,7 +340,7 @@ function Results(props: Props): Element<any> {
                       }}
                       components={[
                         <a
-                          href="/weight"
+                          href="#/weight"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="u-styled-link u-styled-link--inherit u-font-bold"
@@ -338,7 +377,7 @@ function Results(props: Props): Element<any> {
                       }}
                       components={[
                         <a
-                          href="/stayingactive"
+                          href="#/stayingactive"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="u-styled-link u-styled-link--inherit u-font-bold"
@@ -366,6 +405,14 @@ function Results(props: Props): Element<any> {
             </div>
           </section>
         </div>
+        {copySuccess && (
+          <Modal onClose={() => setCopySuccess(false)} className="c-modal--small">
+            <div className="o-container u-width-100 u-padding-horizontal-none">
+              <h3 className="c-modal__title u-margin-top">{t("share.title")}</h3>
+              <p className="c-modal__subtitle">{t("share.success")}</p>
+            </div>
+          </Modal>
+        )}
       </main>
     </>
   ) : (

@@ -11,7 +11,7 @@ import illustratedImage from "assets/images/illustrations/wellbeing.svg";
 import { responsiveBreakpoint } from "constants/responsiveBreakpoint";
 
 import Button from "components/Elements/Button/Button";
-import Header from "components/Header/HeaderContainer";
+import Header from "components/Header/SmartResponsiveHeader";
 
 type Props = {};
 
@@ -26,7 +26,7 @@ function Wellbeing(props: Props): Element<any> {
     "u-flex--space-between",
     !isMobile && "u-margin-left-huge"
   );
-  const wrapperClasses = classnames("o-container", !isMobile && "u-flex");
+  const wrapperClasses = classnames("o-container", "u-padding-top-navbar", !isMobile && "u-flex");
 
   const [selectedOption, setSelectedOption] = useState("moodAndAnxiety");
 
@@ -100,7 +100,7 @@ function Wellbeing(props: Props): Element<any> {
 
   return (
     <>
-      <Header isHomeBtnVisible={true} isShareVisible isEndSessionBtnVisible={true} />
+      <Header isHomeBtnVisible={true} homeButtonType="back" isShareVisible isEndSessionBtnVisible={true} />
       <main className={wrapperClasses}>
         <aside className="c-sidebar is-wellbeing">
           <div className="c-sidebar__inner u-position-relative">
@@ -144,7 +144,7 @@ function Wellbeing(props: Props): Element<any> {
             to="/home"
             className="c-button c-button--primary c-button--md u-margin-top-huge u-text-center u-flex--align-self-end"
           >
-            {t("common.home")}
+            {t("common.back")}
           </Link>
         </section>
       </main>

@@ -4,9 +4,7 @@ import React, { type Element } from "react";
 import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 import classnames from "classnames";
-import { Link } from "react-router-dom";
-
-import Card from "components/Elements/Card/Card";
+import { Link, useHistory } from "react-router-dom";
 
 import drinksImage from "assets/images/home/cards/drinks.svg";
 import healthyImage from "assets/images/home/cards/keep-breasts-healthy.svg";
@@ -19,9 +17,12 @@ import weightImage from "assets/images/home/cards/weight.svg";
 import wellbeingImage from "assets/images/home/cards/wellbeing.svg";
 
 import { responsiveBreakpoint } from "constants/responsiveBreakpoint";
-import Header from "components/Header/HeaderContainer";
+import ResponsiveHeader from "components/Navigation/ResponsiveHeader";
+//import Header from "components/Header/HeaderContainer";
 
-type Props = {};
+type Props = {
+  +endSession: (history: any) => void
+};
 type CardContent = {
   +id: string,
   +image: string,
@@ -31,28 +32,27 @@ type CardContent = {
 
 function Home(props: Props): Element<any> {
   const { t } = useTranslation();
-
+  const { endSession } = props;
   const isMobile = useMediaQuery({ maxWidth: responsiveBreakpoint.md });
   const rowClasses = classnames("c-home__row u-flex--space-between", !isMobile && "u-flex");
+  const history = useHistory();
 
   const renderCard = (card: CardContent) => {
     return (
-      <Card className="c-home__card u-text-center" key={card.id}>
-        <img className="u-responsive-image u-width-100" src={card.image} alt="" role="presentation" />
-        <div className="c-home__card-inner ">
+      <Link
+        to={`/${card.id}`}
+        key={card.id}
+        aria-label={t("common.learnMoreAltText", { topic: card.title })}
+        className="c-home__card u-text-center u-link-card"
+      >
+        <div className="c-home__card-image">
+          <img className="u-responsive-image" src={card.image} alt="" role="presentation" />
+        </div>
+        <div className="c-home__card-inner">
           <h3 className="c-home__card-title u-margin-none">{card.title}</h3>
           {card.strapline && <p className="u-margin-bottom-none c-home__card-body">{card.strapline}</p>}
-          <div className="u-margin-top-auto">
-            <Link
-              to={`/${card.id}`}
-              aria-label={t("common.learnMoreAltText", { topic: card.title })}
-              className="c-home__card-cta c-button c-button--primary c-button--md u-text-center u-width-100"
-            >
-              {t("common.learnMore")}
-            </Link>
-          </div>
         </div>
-      </Card>
+      </Link>
     );
   };
 
@@ -121,8 +121,13 @@ function Home(props: Props): Element<any> {
 
   return (
     <>
-      <Header isResultsBtnVisible isShareVisible isEndSessionBtnVisible />
-      <main className="o-container u-margin-bottom-huge">
+      <ResponsiveHeader
+        isResultsBtnVisible
+        isShareVisible
+        isEndSessionBtnVisible
+        onEndSession={() => endSession(history)}
+      />
+      <main className="o-container u-padding-top-navbar u-margin-bottom-huge">
         <h2 className="u-margin-top-large u-margin-bottom-none" data-testid="title">
           {t("homeTiles.improveBreastHealth.title")}
         </h2>

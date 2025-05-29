@@ -1,0 +1,87 @@
+﻿.navigation-bar {
+  position: fixed;
+  width: 100%;
+  height: $global-nav-bar-height;
+  background-color: $white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: $fontFamily;
+  font-size: 0.75rem;
+  color: $primary-colour;
+  z-index: 1000;
+  box-shadow: 0 2px 4px $black12;
+  padding: 0 $global-padding-medium;
+
+  &.top {
+    top: 0;
+    box-shadow: 0 2px 4px $black12;
+  }
+
+  &.bottom {
+    bottom: 0;
+    height: 56px;
+    box-shadow: 0 -2px 4px $black12;
+  }
+
+  &.logo-only {
+    justify-content: center;
+  }
+
+  &__logo {
+    height: 36px;
+    object-fit: contain;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: $primary-colour;
+    font-size: 1.25rem;
+    text-decoration: none;
+    transition: $global-transition;
+
+    span {
+      font-size: 0.65rem;
+      margin-top: 4px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      color: $secondary-colour;
+    }
+
+  }
+
+  &__actions {
+     display: flex;
+     align-items: center;
+     gap: $global-padding-small; // oppure 8px
+    }
+}
+
+.layout-content {
+  padding-top: $global-nav-bar-height;
+  padding-bottom: $global-nav-bar-height;
+
+  @media (min-width: 768px) {
+    padding-bottom: 0;
+  }
+}
+
+.navigation-bar.logo-only {
+  justify-content: center; // oppure `flex-start` se preferisci a sinistra
+  padding: 0 $global-padding-medium;
+
+  .navigation-bar__logo {
+    height: 40px;
+  }
+}
+
+.u-padding-top-navbar {
+  padding-top: $global-padding-medium;
+}

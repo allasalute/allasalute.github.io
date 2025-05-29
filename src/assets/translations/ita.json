@@ -24,6 +24,7 @@
 			"add": "Add one {{measurement}}",
 			"appName": "Alla salute!",
 			"appDescription": "Segreti per un seno sano",
+			"back": "Indietro",
 			"cancel": "Cancella",
 			"close": "Chiudi",
 			"endSession": "Fine Sessione",
@@ -131,7 +132,7 @@
 			"common": {
 				"alcoholContent": "Contenuto Alcolico : {{unit}} unità",
 				"ABV": "(ABV {{percentage}}%",
-				"drinkInfo": "Gradazione {{abv}}% {{container}} da {{ml}} ml Corrisponde a 12g di alcol ({{count}} unità alcolica)",
+				"drinkInfo": "Gradazione {{abv}}% {{container}} da {{ml}} ml Corrisponde a 12g di alcol (1 unità alcolica)",
 				"drinkInfo_plural": "{{count}} unità - {{abv}}%",
 				"half": "Metà",
 				"equivalentTo": "Equivalente alimentare: {{number}} cucchiaini",
@@ -145,16 +146,16 @@
 			},
 			"tag": "{{name}} , {{abv}}%,{{ml}} ml, {{unit}} unità alcolica) ",
 			"lowStrengthPint": {
-				"name": "Birra"
+				"name": "330 ml di Birra"
 			},
 			"regularWine": {
-				"name": "Vino"
+				"name": "125 ml di Vino"
 			},
 			"doubleSprit": {
-				"name": "Superalcolico"
+				"name": "40 ml di Superalcolico"
 			},
 			"pimms": {
-				"name": "Aperitivo"
+				"name": "80 ml di Aperitivo"
 			}
 		},
 		"footer": {
@@ -270,7 +271,7 @@
 		},
 		"onboarding": {
 			"title": "Segreti per un seno sano",
-			"body": "Questa app fornisce semplici informazioni per rimanere in buona salute, prevenire diverse malattie tra cui il tumore al seno. Riguarda: \n\n <0>{{list}}</0>",
+			"body": "Questa app fornisce semplici informazioni per rimanere in buona salute e prevenire diverse malattie, tra cui il tumore al seno. Riguarda: \n\n <0>{{list}}</0>",
 			"list": [
 				"Alcol e fumo",
 				"Peso corporeo",
@@ -282,7 +283,7 @@
 				"data": "Dati Anonimi"
 			},
 			"infoThanksTo": {
-				"Fondazione": "Realizzato in collaborazione con University of Southampton e con il contributo della Fondazione di Sardegna."
+				"Fondazione": "Realizzato in collaborazione con l'University of Southampton e con il contributo della Fondazione di Sardegna."
 			}
 		},
 		"progressBar": "{{current}} / {{max}} - {{category}}",
@@ -424,13 +425,13 @@
 				}
 			},
 			"seven": {
-				"title": "Negli ultimi sette giorni, per quanto tempo hai svolto attività fisica intensa?",
+				"title": "Negli ultimi 7 giorni, per quanti giorni hai svolto attività fisica intensa?",
 				"subtitle": "(attività che ti fa respirare molto più velocemente del normale, come sollevare pesi importanti, corsa veloce, lavori pesanti in giardino etc)",
 				"category": "Attività fisica - intensa",
 				"questions": {
 					"question-seven-days": {
 						"label": {
-							"days": "Giorni"
+							"days": "Giorni alla settimana"
 						},
 						"tab": {
 							"one": "Giorni"
@@ -441,7 +442,7 @@
 					},
 					"question-seven-minutes": {
 						"label": {
-							"minutes": "Minuti"
+							"minutes": "Minuti totali in uno di quei giorni"
 						},
 						"tab": {
 							"two": "Minuti"
@@ -453,13 +454,13 @@
 				}
 			},
 			"eight": {
-				"title": "Negli ultimi sette giorni, per quanto tempo hai svolto attività fisica moderata?",
+				"title": "Negli ultimi 7 giorni, per quanti giorni hai svolto attività fisica moderata?",
 				"subtitle": "(attività che ti fanno respirare un po' più velocemente del normale, come corsa o bicicletta ad un ritmo non sostenuto, lavori domestici etc. – non includere le camminate)",
 				"category": "Attività fisica - moderata",
 				"questions": {
 					"question-eight-days": {
 						"label": {
-							"days": "Giorni"
+							"days": "Giorni alla settimana"
 						},
 						"tab": {
 							"one": "Giorni"
@@ -470,7 +471,7 @@
 					},
 					"question-eight-minutes": {
 						"label": {
-							"minutes": "Minuti"
+							"minutes": "Minuti totali in uno di quei giorni"
 						},
 						"tab": {
 							"two": "Minuti"
@@ -482,12 +483,12 @@
 				}
 			},
 			"nine": {
-				"title": "Negli ultimi sette giorni, per quanto tempo hai camminato?",
+				"title": "Negli ultimi 7 giorni, per quanti giorni hai camminato per almeno 10 minuti?",
 				"category": "Attività fisica - Camminata",
 				"questions": {
 					"question-nine-days": {
 						"label": {
-							"days": "Giorni"
+							"days": "Giorni alla settimana"
 						},
 						"tab": {
 							"one": "Giorni"
@@ -498,7 +499,7 @@
 					},
 					"question-nine-minutes": {
 						"label": {
-							"minutes": "Minuti"
+							"minutes": "Minuti totali in uno di quei giorni"
 						},
 						"tab": {
 							"two": "Minuti"
@@ -613,7 +614,7 @@
 					"CONSUMO ABITUALE: non più di 1 unità alcolica al giorno",
 					"CONSUMO OCCASIONALE: non più di 3 unità alcoliche per occasione"
 				],
-				"support": "Per maggiori informazioni sul consumo a basso richio per la donna <0>{{link}}</0>.",
+				"support": "Per maggiori informazioni sul consumo a basso rischio per la donna <0>{{link}}</0>.",
 				"supportLink": "clicca qui"
 			},
 			"alcoholRisks": {
@@ -861,23 +862,23 @@
 			}
 		},
 		"unitKey": {
-			"title": "Una Bevanda Alcolica (Unità Alcolica) contiene 12 g di alcol e corrisponde a:",
+			"title": "Una Bevanda Alcolica (Unità Alcolica) corrisponde a:",
 			"singleUnits": {
 				"halfPint": {
-					"title": "Birra",
-					"description": "Gradazione 4,5% (lattina di birra da 330 ml)"
+					"title": "330 ml di Birra",
+					"description": "Gradazione 4,5% circa 12g di alcol"
 				},
 				"halfGlass": {
-					"title": "Vino",
-					"description": "Gradazione 12% (bicchiere di vino da 125 ml)"
+					"title": "125 ml di Vino",
+					"description": "Gradazione 12% circa 12g di alcol"
 				},
 				"singleAperitifs": {
-					"title": "Aperitivo",
-					"description": "Gradazione 18% (bicchiere di aperitivo da 80 ml)"
+					"title": "80 ml di Aperitivo",
+					"description": "Gradazione 18% circa 12g di alcol"
 				},
 				"singleSpirit": {
-					"title": "Superalcolico",
-					"description": "Gradazione 40% (bicchierino di superalcolico da 40 ml)"
+					"title": "40 ml di Superalcolico",
+					"description": "Gradazione 40% circa 12g di alcol"
 				}
 			}
 		},

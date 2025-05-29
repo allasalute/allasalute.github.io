@@ -30,7 +30,7 @@ function ChangeRisks(props: Props): Element<any> {
     }
   ];
   return (
-    <ContentWithSidebar sidebarImage={illustratedImage}>
+    <ContentWithSidebar sidebarImage={illustratedImage} homeButtonType="back">
       <h2 className="u-margin-top-none u-margin-bottom" data-testid="title">
         {t("changeMyRisks.title")}
       </h2>
@@ -83,7 +83,7 @@ function ChangeRisks(props: Props): Element<any> {
         to="/home"
         className="c-button c-button--primary c-button--md u-margin-top-huge u-flex--align-self-end u-text-center"
       >
-        {t("common.home")}
+        {t("common.back")}
       </Link>
     </ContentWithSidebar>
   );

@@ -40,10 +40,11 @@
          flex-direction: column;
 
          @media screen and (max-width: $sm) {
-             width: 100%;
+             width: 50%;
              margin-bottom: $global-padding-small;
              margin-right: 0;
          }
+         
          &.has-error input {
           border-color: $color-error; // oppure: red;
          }
@@ -66,4 +67,32 @@
             margin-right: $global-padding-large;
         }
     }
+}
+
+.questionnaire-input-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.c-questionnaire__subtitle {
+  font-size: 1.75rem; // dimensione su desktop
+
+  @media screen and (max-width: $sm) {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+}
+
+.c-questionnaire__navigation-buttons {
+  display: flex;
+  flex-direction: row; // default per desktop
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse; // inverte ordine
+  }
 }

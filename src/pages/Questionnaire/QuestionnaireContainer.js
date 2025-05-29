@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Questionnaire from "./Questionnaire";
-import { getQuestionnaire, updateResponse } from "redux/modules/questionnaire";
+import { getQuestionnaire, updateResponse, restartQuestionnaire } from "redux/modules/questionnaire";
 
 const mapStateToProps = ({ questionnaire }) => ({
   questions: questionnaire.getQuestionnaire,
@@ -14,6 +14,10 @@ const mapDispatchToProps = dispatch => {
     },
     setResponse: payload => {
       dispatch(updateResponse(payload));
+    },
+    endSession: history => {
+      dispatch(restartQuestionnaire());
+      history.push("/");
     }
   };
 };

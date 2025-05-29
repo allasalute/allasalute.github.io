@@ -15,24 +15,32 @@ import Weight from "pages/Weight/Weight";
 import Wellbeing from "pages/Wellbeing/Wellbeing";
 import TopTips from "pages/TopTips/TopTips";
 import StayingActive from "pages/StayingActive/StayingActive";
+import LayoutWithHeader from "components/Layout/LayoutWithHeader";
+
+const withHeader = Component => props =>
+  (
+    <LayoutWithHeader>
+      <Component {...props} />
+    </LayoutWithHeader>
+  );
 
 const AppRoutes = props => {
   return (
     <Switch>
-      <Route exact path="/" component={Landing} />
+      <Route exact path="/" component={withHeader(Landing)} />
       <Route exact path="/cookiePreferences" component={CookiePreferences} />
-      <Route exact path="/questionnaire" component={Questionnaire} />
-      <Route exact path="/changeRisks" component={ChangeRisks} />
-      <Route exact path="/tips" component={TopTips} />
-      <Route exact path="/stayingActive" component={StayingActive} />
-      <Route exact path="/drinkCalculator" component={DrinkCalculator} />
-      <Route exact path="/alcoholRisks" component={AlcoholRisks} />
-      <Route exact path="/weight" component={Weight} />
-      <Route exact path="/wellbeing" component={Wellbeing} />
-      <Route exact path="/smoking" component={Smoking} />
-      <Route exact path="/myths" component={Myths} />
-      <Route exact path="/home" component={Home} />
-      <Route exact path="/results" component={Results} />
+      <Route exact path="/questionnaire" component={withHeader(Questionnaire)} />
+      <Route exact path="/changeRisks" component={withHeader(ChangeRisks)} />
+      <Route exact path="/tips" component={withHeader(TopTips)} />
+      <Route exact path="/stayingActive" component={withHeader(StayingActive)} />
+      <Route exact path="/drinkCalculator" component={withHeader(DrinkCalculator)} />
+      <Route exact path="/alcoholRisks" component={withHeader(AlcoholRisks)} />
+      <Route exact path="/weight" component={withHeader(Weight)} />
+      <Route exact path="/wellbeing" component={withHeader(Wellbeing)} />
+      <Route exact path="/smoking" component={withHeader(Smoking)} />
+      <Route exact path="/myths" component={withHeader(Myths)} />
+      <Route exact path="/home" component={withHeader(Home)} />
+      <Route exact path="/results" component={withHeader(Results)} />
       <Route exact path="/components" component={ComponentPreview} />
       <Route exact path="/foo" component={ComponentPreview} />
       <Route exact path="/bar" component={ComponentPreview} />

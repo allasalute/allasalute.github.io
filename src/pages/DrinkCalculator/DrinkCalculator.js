@@ -6,7 +6,7 @@ import classnames from "classnames";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 
-import Header from "components/Header/HeaderContainer";
+import Header from "components/Header/SmartResponsiveHeader";
 import Button from "components/Elements/Button/Button";
 import DrinkCard from "components/Elements/DrinkCard/DrinkCard";
 import Tag from "components/Elements/Tag/Tag";
@@ -25,7 +25,7 @@ function DrinkCalculator(props: Props): Element<any> {
 
   const isMobile = useMediaQuery({ maxWidth: responsiveBreakpoint.md });
   const isSmallMobile = useMediaQuery({ maxWidth: responsiveBreakpoint.sm });
-  const wrapperClasses = classnames("o-container u-margin-bottom-huge", !isMobile && "u-flex");
+  const wrapperClasses = classnames("o-container", "u-padding-top-navbar", !isMobile && "u-flex");
   const buttonWrapperClasses = classnames(
     !isSmallMobile && "u-flex",
     "u-flex--justify-end",
@@ -62,7 +62,7 @@ function DrinkCalculator(props: Props): Element<any> {
   const sugar = totalKcal ? Math.round(totalKcal / 16) : 0;
   return (
     <>
-      <Header isHomeBtnVisible isShareVisible isEndSessionBtnVisible />
+      <Header isHomeBtnVisible={true} homeButtonType="back" isShareVisible isEndSessionBtnVisible={true} />
       <main className={wrapperClasses}>
         <section className="u-width-100 u-flex u-flex--column">
           {resultsVisible ? (
@@ -168,7 +168,7 @@ function DrinkCalculator(props: Props): Element<any> {
                   to="/home"
                   className="c-button c-button--primary c-button--md u-text-center u-flex--align-self-end"
                 >
-                  {t("common.home")}
+                  {t("common.back")}
                 </Link>
               </div>
             </>

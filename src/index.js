@@ -10,7 +10,7 @@ import "./style/main.scss";
 import App from "./components/App/App";
 import * as serviceWorker from "./serviceWorker";
 import * as Sentry from "@sentry/browser";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import "./i18n";
 import "moment/locale/en-gb";
 
