@@ -22,6 +22,11 @@
     bottom: 0;
     height: 56px;
     box-shadow: 0 -2px 4px $black12;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 0 $global-padding-small;
+    gap: 24px;
   }
 
   &.logo-only {
@@ -44,6 +49,7 @@
     font-size: 1.25rem;
     text-decoration: none;
     transition: $global-transition;
+    flex: 1 1 auto;
 
     span {
       font-size: 0.65rem;
