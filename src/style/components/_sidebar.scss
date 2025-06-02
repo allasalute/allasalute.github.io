@@ -9,10 +9,17 @@
         min-height: 565px;
         justify-content: center;
         align-items: center;
+        img {
+          max-width: 100%;
+          height: auto;
+        }
 
         @media screen and (max-width: $md) {
-            min-height: 200px;
+            min-height: 150px;
             padding: $global-padding-small;
+            img {
+              max-width: 60%
+            }
         }
     }
 
@@ -27,7 +34,9 @@
             min-height: auto;
         }
         @media screen and (max-width: $sm) {
-            width: 70%;
+            img {
+              max-width: 100%
+            }
         }
     }
 
