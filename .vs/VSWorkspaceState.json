@@ -3,14 +3,13 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\Elements",
-    "\\src\\components\\Elements\\Card",
-    "\\src\\components\\Footer\\__tests__",
     "\\src\\pages",
-    "\\src\\pages\\Questionnaire",
+    "\\src\\pages\\AlcoholRisks",
+    "\\src\\pages\\ChangeRisks",
     "\\src\\style",
-    "\\src\\style\\components"
+    "\\src\\style\\components",
+    "\\src\\style\\settings"
   ],
-  "SelectedNode": "\\src\\components\\Elements\\Card\\Card.js",
+  "SelectedNode": "\\src\\style\\settings\\_colors.scss",
   "PreviewInSolutionExplorer": false
 }

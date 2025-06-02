@@ -22,11 +22,11 @@
     bottom: 0;
     height: 56px;
     box-shadow: 0 -2px 4px $black12;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-around;
     align-items: center;
-    display: flex;
     padding: 0 $global-padding-small;
-    gap: 24px;
   }
 
   &.logo-only {
@@ -49,7 +49,7 @@
     font-size: 1.25rem;
     text-decoration: none;
     transition: $global-transition;
-    flex: 1 1 auto;
+    text-align: center;
 
     span {
       font-size: 0.65rem;
@@ -90,4 +90,13 @@
 
 .u-padding-top-navbar {
   padding-top: $global-padding-medium;
+}
+
+.navigation-bar__logo-text {
+  font-family: 'Cabin-bold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2.25rem; // regola in base al contesto
+  color: $darker-pink;
+  margin-left: 8px;
 }
