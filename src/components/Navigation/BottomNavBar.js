@@ -50,8 +50,17 @@ const BottomNavBar = ({
     );
   };
 
+  const activeItemsCount = [isShareVisible, isResultsBtnVisible, isHomeBtnVisible, isEndSessionBtnVisible].filter(
+    Boolean
+  ).length;
+
+  let itemCountClass = "";
+  if (activeItemsCount === 1) itemCountClass = "one-item";
+  else if (activeItemsCount === 2) itemCountClass = "two-items";
+  else if (activeItemsCount === 3) itemCountClass = "three-items";
+
   return (
-    <nav className="navigation-bar bottom">
+    <nav className={`navigation-bar bottom ${itemCountClass}`}>
       {isShareVisible && (
         <button className="navigation-bar__item" onClick={onShare}>
           <FaShareAlt />

@@ -20,13 +20,26 @@
 
   &.bottom {
     bottom: 0;
-    height: 56px;
-    box-shadow: 0 -2px 4px $black12;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: space-around;
     align-items: center;
+    height: 56px;
     padding: 0 $global-padding-small;
+    box-shadow: 0 -2px 4px $black12;
+
+    &.one-item {
+      grid-template-columns: 1fr;
+      justify-items: center; // centro esatto
+    }
+
+    &.two-items {
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+    }
+
+    &.three-items {
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-items: center;
+    }
   }
 
   &.logo-only {
