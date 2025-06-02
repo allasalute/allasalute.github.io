@@ -490,6 +490,7 @@ const Questions = (props: Props): Element<any> => {
               return (question?.options ?? []).map((option, index) => {
                 return (option.items ?? []).map((item, index) => {
                   let formattedValue = "";
+                  const errorKey = `${currentQuestion.key}-${item}`;
                   switch (item) {
                     case "days":
                       formattedValue = numberOfDays;
@@ -502,7 +503,7 @@ const Questions = (props: Props): Element<any> => {
                   }
 
                   return (
-                    <div className={`c-questionnaire__number ${errors[item] ? "has-error" : ""}`}>
+                    <div className={`c-questionnaire__number ${errors[errorKey] ? "has-error" : ""}`}>
                       <Input
                         className="c-input-number"
                         label={t(`questionnaire.${currentQuestion.key}.questions.${question.key}.label.${item}`)}
@@ -511,7 +512,7 @@ const Questions = (props: Props): Element<any> => {
                         type="number"
                         showLabel
                         ref={inputRefs[item]}
-                        value={formattedValue !== null ? Number(formattedValue) : ""}
+                        value={formattedValue !== null ? formattedValue : ""}
                         min={0}
                         max={maxValues[item]}
                         step={1}
@@ -519,17 +520,29 @@ const Questions = (props: Props): Element<any> => {
                         data-unit={item}
                         data-measurement={t(`questionnaire.measurements.${item}`)}
                         onChange={e => {
-                          const val = Number(e.target.value);
+                          const raw = e.target.value;
+                          const questionKey = currentQuestion.key;
                           const unit = e.target.dataset.unit;
+                          const errorKey = `${questionKey}-${unit}`;
+                          // Salva la stringa così com'è
+                          if (unit === "days") setNumberOfDays(raw);
+                          if (unit === "minutes") setNumberOfMinutes(raw);
+
+                          // Se campo vuoto → non validare
+                          if (raw === "") {
+                            setErrors(prev => ({ ...prev, [errorKey]: null }));
+                            return;
+                          }
+                          const val = Number(raw);
                           let isValid = true;
                           if (unit === "days" && (val < 0 || val > 7)) {
                             isValid = false;
-                            setErrors(prev => ({ ...prev, days: "Inserisci un valore tra 0 e 7" }));
+                            setErrors(prev => ({ ...prev, [errorKey]: "Inserisci un valore tra 0 e 7" }));
                           } else if (unit === "minutes" && (val < 0 || val > 300)) {
                             isValid = false;
-                            setErrors(prev => ({ ...prev, minutes: "Inserisci un valore tra 0 e 300" }));
+                            setErrors(prev => ({ ...prev, [errorKey]: "Inserisci un valore tra 0 e 300" }));
                           } else {
-                            setErrors(prev => ({ ...prev, [unit]: null }));
+                            setErrors(prev => ({ ...prev, [errorKey]: null }));
                           }
                           if (isValid) {
                             switch (unit) {
@@ -548,8 +561,8 @@ const Questions = (props: Props): Element<any> => {
                         increaseDecreaseValue={1}
                         tabIndex="0"
                       />
-                      {errors[item] && (
-                        <p className="c-input-error u-color-error u-font-xs u-margin-top-xs"> {errors[item]}</p>
+                      {errors[errorKey] && (
+                        <p className="c-input-error u-color-error u-font-xs u-margin-top-xs"> {errors[errorKey]}</p>
                       )}
                     </div>
                   );
