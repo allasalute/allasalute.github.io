@@ -3,13 +3,12 @@
     "",
     "\\src",
     "\\src\\components",
+    "\\src\\constants",
     "\\src\\pages",
-    "\\src\\pages\\AlcoholRisks",
-    "\\src\\pages\\ChangeRisks",
-    "\\src\\style",
+    "\\src\\pages\\Questionnaire",
     "\\src\\style\\components",
     "\\src\\style\\settings"
   ],
-  "SelectedNode": "\\src\\style\\settings\\_colors.scss",
+  "SelectedNode": "\\src\\constants\\questionnaire.js",
   "PreviewInSolutionExplorer": false
 }

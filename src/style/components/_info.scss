@@ -23,9 +23,25 @@
   gap: 1rem;
   align-items: center;
   justify-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 
   img {
-    max-width: 250px;
+    max-width: 200px;
+    height:auto;
+  }
+}
+
+.info__logos-only {
+  background-color: $tint;
+  border-radius: $global-radius-large;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin-top: 1rem;
+
+  img {
+    max-width: 400px;
     height:auto;
   }
 }
